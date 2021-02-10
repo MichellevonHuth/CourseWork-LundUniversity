@@ -28,119 +28,299 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.WelcomeLabel = new System.Windows.Forms.Label();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.SurenameLabel = new System.Windows.Forms.Label();
-            this.AgeLabel = new System.Windows.Forms.Label();
-            this.NameTextbox = new System.Windows.Forms.TextBox();
-            this.SurenameTextbox = new System.Windows.Forms.TextBox();
-            this.AgeTextbox = new System.Windows.Forms.TextBox();
-            this.Form1NextButton = new System.Windows.Forms.Button();
             this.HeaderLabel = new System.Windows.Forms.Label();
+            this.TotalIncome = new System.Windows.Forms.Label();
+            this.TotalIncomeTextbox = new System.Windows.Forms.TextBox();
+            this.FixedCosts = new System.Windows.Forms.Label();
+            this.FixedCostsTextbox = new System.Windows.Forms.TextBox();
+            this.VariableCosts = new System.Windows.Forms.Label();
+            this.VariableCostsTextbox = new System.Windows.Forms.TextBox();
+            this.SavingGoalsLabel = new System.Windows.Forms.Label();
+            this.SavingGoalLabel = new System.Windows.Forms.Label();
+            this.SavingGoalTextbox = new System.Windows.Forms.TextBox();
+            this.SavingDuration = new System.Windows.Forms.Label();
+            this.DurationComboBox = new System.Windows.Forms.ComboBox();
+            this.AmountTextbox = new System.Windows.Forms.TextBox();
+            this.AmountLabel = new System.Windows.Forms.Label();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.UsernameLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SureNameLabel = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.FindButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // WelcomeLabel
-            // 
-            this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLabel.Location = new System.Drawing.Point(63, 39);
-            this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(215, 45);
-            this.WelcomeLabel.TabIndex = 0;
-            this.WelcomeLabel.Text = "Welcome! ";
-            this.WelcomeLabel.Click += new System.EventHandler(this.WelcomeLabel_Click);
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(129, 178);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(74, 25);
-            this.NameLabel.TabIndex = 1;
-            this.NameLabel.Text = "Name:";
-            this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
-            // 
-            // SurenameLabel
-            // 
-            this.SurenameLabel.AutoSize = true;
-            this.SurenameLabel.Location = new System.Drawing.Point(129, 260);
-            this.SurenameLabel.Name = "SurenameLabel";
-            this.SurenameLabel.Size = new System.Drawing.Size(116, 25);
-            this.SurenameLabel.TabIndex = 2;
-            this.SurenameLabel.Text = "Surename:";
-            // 
-            // AgeLabel
-            // 
-            this.AgeLabel.AutoSize = true;
-            this.AgeLabel.Location = new System.Drawing.Point(129, 342);
-            this.AgeLabel.Name = "AgeLabel";
-            this.AgeLabel.Size = new System.Drawing.Size(50, 25);
-            this.AgeLabel.TabIndex = 3;
-            this.AgeLabel.Text = "Age";
-            // 
-            // NameTextbox
-            // 
-            this.NameTextbox.Location = new System.Drawing.Point(262, 178);
-            this.NameTextbox.Name = "NameTextbox";
-            this.NameTextbox.Size = new System.Drawing.Size(100, 31);
-            this.NameTextbox.TabIndex = 4;
-            this.NameTextbox.TextChanged += new System.EventHandler(this.NameTextbox_TextChanged);
-            // 
-            // SurenameTextbox
-            // 
-            this.SurenameTextbox.Location = new System.Drawing.Point(262, 254);
-            this.SurenameTextbox.Name = "SurenameTextbox";
-            this.SurenameTextbox.Size = new System.Drawing.Size(100, 31);
-            this.SurenameTextbox.TabIndex = 5;
-            this.SurenameTextbox.TextChanged += new System.EventHandler(this.SurenameTextbox_TextChanged);
-            // 
-            // AgeTextbox
-            // 
-            this.AgeTextbox.Location = new System.Drawing.Point(262, 336);
-            this.AgeTextbox.Name = "AgeTextbox";
-            this.AgeTextbox.Size = new System.Drawing.Size(100, 31);
-            this.AgeTextbox.TabIndex = 6;
-            this.AgeTextbox.TextChanged += new System.EventHandler(this.AgeTextbox_TextChanged);
-            // 
-            // Form1NextButton
-            // 
-            this.Form1NextButton.Location = new System.Drawing.Point(540, 427);
-            this.Form1NextButton.Name = "Form1NextButton";
-            this.Form1NextButton.Size = new System.Drawing.Size(159, 52);
-            this.Form1NextButton.TabIndex = 7;
-            this.Form1NextButton.Text = "Next";
-            this.Form1NextButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Form1NextButton.UseVisualStyleBackColor = true;
-            this.Form1NextButton.Click += new System.EventHandler(this.Form1NextButton_Click);
             // 
             // HeaderLabel
             // 
             this.HeaderLabel.AutoSize = true;
-            this.HeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeaderLabel.Location = new System.Drawing.Point(66, 106);
+            this.HeaderLabel.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeaderLabel.Location = new System.Drawing.Point(74, 53);
             this.HeaderLabel.Name = "HeaderLabel";
-            this.HeaderLabel.Size = new System.Drawing.Size(308, 25);
-            this.HeaderLabel.TabIndex = 8;
-            this.HeaderLabel.Text = "Please fill in information below:";
+            this.HeaderLabel.Size = new System.Drawing.Size(868, 45);
+            this.HeaderLabel.TabIndex = 0;
+            this.HeaderLabel.Text = "Your future schedule is ready in any second...";
             this.HeaderLabel.Click += new System.EventHandler(this.HeaderLabel_Click);
+            // 
+            // TotalIncome
+            // 
+            this.TotalIncome.AutoSize = true;
+            this.TotalIncome.Location = new System.Drawing.Point(148, 383);
+            this.TotalIncome.Name = "TotalIncome";
+            this.TotalIncome.Size = new System.Drawing.Size(186, 25);
+            this.TotalIncome.TabIndex = 2;
+            this.TotalIncome.Text = "Your total income:";
+            this.TotalIncome.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // TotalIncomeTextbox
+            // 
+            this.TotalIncomeTextbox.Location = new System.Drawing.Point(373, 377);
+            this.TotalIncomeTextbox.Name = "TotalIncomeTextbox";
+            this.TotalIncomeTextbox.Size = new System.Drawing.Size(100, 31);
+            this.TotalIncomeTextbox.TabIndex = 3;
+            this.TotalIncomeTextbox.TextChanged += new System.EventHandler(this.TotalIncomeTextbox_TextChanged);
+            // 
+            // FixedCosts
+            // 
+            this.FixedCosts.AutoSize = true;
+            this.FixedCosts.Location = new System.Drawing.Point(148, 458);
+            this.FixedCosts.Name = "FixedCosts";
+            this.FixedCosts.Size = new System.Drawing.Size(173, 25);
+            this.FixedCosts.TabIndex = 4;
+            this.FixedCosts.Text = "Your fixed costs:";
+            // 
+            // FixedCostsTextbox
+            // 
+            this.FixedCostsTextbox.Location = new System.Drawing.Point(373, 452);
+            this.FixedCostsTextbox.Name = "FixedCostsTextbox";
+            this.FixedCostsTextbox.Size = new System.Drawing.Size(100, 31);
+            this.FixedCostsTextbox.TabIndex = 5;
+            this.FixedCostsTextbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // VariableCosts
+            // 
+            this.VariableCosts.AutoSize = true;
+            this.VariableCosts.Location = new System.Drawing.Point(148, 533);
+            this.VariableCosts.Name = "VariableCosts";
+            this.VariableCosts.Size = new System.Drawing.Size(203, 25);
+            this.VariableCosts.TabIndex = 6;
+            this.VariableCosts.Text = "Your variable costs:";
+            // 
+            // VariableCostsTextbox
+            // 
+            this.VariableCostsTextbox.Location = new System.Drawing.Point(373, 527);
+            this.VariableCostsTextbox.Name = "VariableCostsTextbox";
+            this.VariableCostsTextbox.Size = new System.Drawing.Size(104, 31);
+            this.VariableCostsTextbox.TabIndex = 7;
+            this.VariableCostsTextbox.TextChanged += new System.EventHandler(this.VariableCostsTextbox_TextChanged);
+            // 
+            // SavingGoalsLabel
+            // 
+            this.SavingGoalsLabel.AutoSize = true;
+            this.SavingGoalsLabel.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SavingGoalsLabel.Location = new System.Drawing.Point(131, 637);
+            this.SavingGoalsLabel.Name = "SavingGoalsLabel";
+            this.SavingGoalsLabel.Size = new System.Drawing.Size(224, 25);
+            this.SavingGoalsLabel.TabIndex = 8;
+            this.SavingGoalsLabel.Text = "Future saving goals:";
+            // 
+            // SavingGoalLabel
+            // 
+            this.SavingGoalLabel.AutoSize = true;
+            this.SavingGoalLabel.Location = new System.Drawing.Point(148, 705);
+            this.SavingGoalLabel.Name = "SavingGoalLabel";
+            this.SavingGoalLabel.Size = new System.Drawing.Size(180, 25);
+            this.SavingGoalLabel.TabIndex = 9;
+            this.SavingGoalLabel.Text = "Your saving goal:";
+            // 
+            // SavingGoalTextbox
+            // 
+            this.SavingGoalTextbox.Location = new System.Drawing.Point(356, 705);
+            this.SavingGoalTextbox.Name = "SavingGoalTextbox";
+            this.SavingGoalTextbox.Size = new System.Drawing.Size(121, 31);
+            this.SavingGoalTextbox.TabIndex = 10;
+            this.SavingGoalTextbox.TextChanged += new System.EventHandler(this.SavingGoalTextbox_TextChanged);
+            // 
+            // SavingDuration
+            // 
+            this.SavingDuration.AutoSize = true;
+            this.SavingDuration.Location = new System.Drawing.Point(148, 766);
+            this.SavingDuration.Name = "SavingDuration";
+            this.SavingDuration.Size = new System.Drawing.Size(168, 25);
+            this.SavingDuration.TabIndex = 11;
+            this.SavingDuration.Text = "Saving duration:";
+            // 
+            // DurationComboBox
+            // 
+            this.DurationComboBox.FormattingEnabled = true;
+            this.DurationComboBox.Location = new System.Drawing.Point(356, 766);
+            this.DurationComboBox.Name = "DurationComboBox";
+            this.DurationComboBox.Size = new System.Drawing.Size(121, 33);
+            this.DurationComboBox.TabIndex = 12;
+            this.DurationComboBox.SelectedIndexChanged += new System.EventHandler(this.DurationComboBox_SelectedIndexChanged);
+            // 
+            // AmountTextbox
+            // 
+            this.AmountTextbox.Location = new System.Drawing.Point(356, 809);
+            this.AmountTextbox.Name = "AmountTextbox";
+            this.AmountTextbox.Size = new System.Drawing.Size(121, 31);
+            this.AmountTextbox.TabIndex = 13;
+            this.AmountTextbox.TextChanged += new System.EventHandler(this.AmountTextbox_TextChanged);
+            // 
+            // AmountLabel
+            // 
+            this.AmountLabel.AutoSize = true;
+            this.AmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AmountLabel.Location = new System.Drawing.Point(492, 816);
+            this.AmountLabel.Name = "AmountLabel";
+            this.AmountLabel.Size = new System.Drawing.Size(73, 20);
+            this.AmountLabel.TabIndex = 14;
+            this.AmountLabel.Text = "(amount)";
+            // 
+            // AddButton
+            // 
+            this.AddButton.BackColor = System.Drawing.Color.OliveDrab;
+            this.AddButton.ForeColor = System.Drawing.Color.Black;
+            this.AddButton.Location = new System.Drawing.Point(684, 942);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(298, 64);
+            this.AddButton.TabIndex = 15;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // UsernameLabel
+            // 
+            this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Location = new System.Drawing.Point(148, 201);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(116, 25);
+            this.UsernameLabel.TabIndex = 16;
+            this.UsernameLabel.Text = "Username:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(373, 198);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 31);
+            this.textBox1.TabIndex = 17;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(148, 257);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(74, 25);
+            this.NameLabel.TabIndex = 18;
+            this.NameLabel.Text = "Name:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(373, 254);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 31);
+            this.textBox2.TabIndex = 19;
+            // 
+            // SureNameLabel
+            // 
+            this.SureNameLabel.AutoSize = true;
+            this.SureNameLabel.Location = new System.Drawing.Point(148, 313);
+            this.SureNameLabel.Name = "SureNameLabel";
+            this.SureNameLabel.Size = new System.Drawing.Size(116, 25);
+            this.SureNameLabel.TabIndex = 20;
+            this.SureNameLabel.Text = "Surename:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(373, 313);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 31);
+            this.textBox3.TabIndex = 21;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.UpdateButton.Location = new System.Drawing.Point(1020, 942);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(298, 64);
+            this.UpdateButton.TabIndex = 22;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = false;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BackColor = System.Drawing.Color.IndianRed;
+            this.DeleteButton.Location = new System.Drawing.Point(1355, 942);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(294, 65);
+            this.DeleteButton.TabIndex = 23;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            // 
+            // FindButton
+            // 
+            this.FindButton.BackColor = System.Drawing.Color.SandyBrown;
+            this.FindButton.Location = new System.Drawing.Point(1283, 128);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(133, 33);
+            this.FindButton.TabIndex = 24;
+            this.FindButton.Text = "Find";
+            this.FindButton.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1447, 128);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(193, 33);
+            this.comboBox1.TabIndex = 25;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Location = new System.Drawing.Point(684, 198);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(965, 642);
+            this.panel1.TabIndex = 26;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 551);
-            this.Controls.Add(this.HeaderLabel);
-            this.Controls.Add(this.Form1NextButton);
-            this.Controls.Add(this.AgeTextbox);
-            this.Controls.Add(this.SurenameTextbox);
-            this.Controls.Add(this.NameTextbox);
-            this.Controls.Add(this.AgeLabel);
-            this.Controls.Add(this.SurenameLabel);
+            this.ClientSize = new System.Drawing.Size(1742, 1068);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.FindButton);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.UpdateButton);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.SureNameLabel);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.WelcomeLabel);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UsernameLabel);
+            this.Controls.Add(this.AddButton);
+            this.Controls.Add(this.AmountLabel);
+            this.Controls.Add(this.AmountTextbox);
+            this.Controls.Add(this.DurationComboBox);
+            this.Controls.Add(this.SavingDuration);
+            this.Controls.Add(this.SavingGoalTextbox);
+            this.Controls.Add(this.SavingGoalLabel);
+            this.Controls.Add(this.SavingGoalsLabel);
+            this.Controls.Add(this.VariableCostsTextbox);
+            this.Controls.Add(this.VariableCosts);
+            this.Controls.Add(this.FixedCostsTextbox);
+            this.Controls.Add(this.FixedCosts);
+            this.Controls.Add(this.TotalIncomeTextbox);
+            this.Controls.Add(this.TotalIncome);
+            this.Controls.Add(this.HeaderLabel);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Create schedule";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,14 +328,31 @@
 
         #endregion
 
-        private System.Windows.Forms.Label WelcomeLabel;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label SurenameLabel;
-        private System.Windows.Forms.Label AgeLabel;
-        private System.Windows.Forms.TextBox NameTextbox;
-        private System.Windows.Forms.TextBox SurenameTextbox;
-        private System.Windows.Forms.TextBox AgeTextbox;
-        private System.Windows.Forms.Button Form1NextButton;
         private System.Windows.Forms.Label HeaderLabel;
+        private System.Windows.Forms.Label TotalIncome;
+        private System.Windows.Forms.TextBox TotalIncomeTextbox;
+        private System.Windows.Forms.Label FixedCosts;
+        private System.Windows.Forms.TextBox FixedCostsTextbox;
+        private System.Windows.Forms.Label VariableCosts;
+        private System.Windows.Forms.TextBox VariableCostsTextbox;
+        private System.Windows.Forms.Label SavingGoalsLabel;
+        private System.Windows.Forms.Label SavingGoalLabel;
+        private System.Windows.Forms.TextBox SavingGoalTextbox;
+        private System.Windows.Forms.Label SavingDuration;
+        private System.Windows.Forms.ComboBox DurationComboBox;
+        private System.Windows.Forms.TextBox AmountTextbox;
+        private System.Windows.Forms.Label AmountLabel;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Label UsernameLabel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label SureNameLabel;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button FindButton;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

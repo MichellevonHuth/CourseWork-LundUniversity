@@ -17,42 +17,52 @@ namespace MyDesktopApp
             InitializeComponent();
         }
 
+        private void TotalIncomeTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void HeaderLabel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void PleaseFillInLabel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void WelcomeLabel_Click(object sender, EventArgs e)
+        private void VariableCostsTextbox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void NameLabel_Click(object sender, EventArgs e)
+        private void SavingGoalTextbox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void NameTextbox_TextChanged(object sender, EventArgs e)
+        private void DurationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void SurenameTextbox_TextChanged(object sender, EventArgs e)
+        private void AmountTextbox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void AgeTextbox_TextChanged(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-
+            //ignore this method, dont remove!!
         }
 
-        private void Form1NextButton_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //ignore this method, dont remove!!
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
         {
 
         }

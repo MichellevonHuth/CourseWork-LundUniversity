@@ -48,7 +48,7 @@ namespace MyDesktopApp
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * users FROM Users", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand(x, sqlConnection))
 
                 {
                     try
@@ -66,7 +66,7 @@ namespace MyDesktopApp
                         }
                     }
 
-                    catch(SqlExecption ex)
+                    catch(Execption ex)
                     {
                         Console.WriteLine(ErrorHandler(ex)); 
                     }
@@ -75,6 +75,7 @@ namespace MyDesktopApp
                     {
                         sqlConnection.Close();
                     }
+            
                 }   
             }
 
