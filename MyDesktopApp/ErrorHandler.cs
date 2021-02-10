@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,21 +13,25 @@ namespace MyDesktopApp
         {
             string errorMessage;
 
-            if (ex instanceof NullPointerException) {
+            if (ex.GetType() == typeof(NullReferenceException)) {
 
                 errorMessage = "This object doesn't exist";
             }
-		    else if (ex instanceof IndexOutOfBoundsException) {
+
+		    else if (ex.GetType() == typeof(IndexOutOfRangeException)) {
                 errorMessage = "Coudn't find what you are looking for";
             }
-		    else if (ex instanceof NumberFormatException) {
+
+		    else if (ex.GetType() == typeof(FormatException)) {
                 errorMessage = "Wrong format on input value";
             }
 
-		    else if (ex instanceof SQLException) {
+		    else if (ex.GetType() == typeof(SqlException)) {
 
-                int errorCode = ((SQLException)ex).getErrorCode();
-                switch (errorCode)
+       
+                SqlException e  = ((SqlException)ex);
+
+                switch (e.Number)
                 {
 
                     case 2627:

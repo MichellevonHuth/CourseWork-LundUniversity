@@ -16,10 +16,12 @@ namespace MyDesktopApp
         public static void AddUser(String str)
         {
 
+
         }
 
         public static void DeleteUser(String str)
         {
+
 
         }
 
@@ -66,7 +68,7 @@ namespace MyDesktopApp
 
                     catch(SqlExecption ex)
                     {
-                        ErrorHandler(ex); 
+                        Console.WriteLine(ErrorHandler(ex)); 
                     }
 
                     finally
