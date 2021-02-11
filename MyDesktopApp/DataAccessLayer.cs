@@ -68,6 +68,16 @@ namespace MyDesktopApp
 
         }
 
+        public ArrayList<string> getAllAccounts() {
+            ArrayList<string> allAccounts = new ArrayList<string>();
+
+            string query = "SELECT username FROM Account";
+           // ny metod där vi kan hämta från databasen
+
+
+
+        }
+
         public int CreateSchedule(int i)
         {
             return 0;
