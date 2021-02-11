@@ -11,28 +11,30 @@ namespace MyDesktopApp
 {
     class DataAccessLayer
     {
-        private static string connectionString = "Server=localhost;Database=DB_Grupp12;User=IS12; Password=Grupp12.fmmi!";
+        private static string connectionString = "Integrated Security = True;server=localhost;Trusted_Connection=yes;Database=Grupp12_DB";
 
         public static int [] AddUser(string username, string name, string surename, int totalIncome, int fixedCost, int variableCost, int savingGoal, int durationAmount)
         {
+            string test = "INSERT INTO Account(username, name, surename) Values ('mat', 'mats', 'mats')";
+            UpdateDB(test);
+
             string query1 = "INSERT INTO Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
             string query2 = "INSERT INTO SavingSchedule(accountUsername, totalIncome, fixedCost, variableCost,savingGoal, savingDuration) Values ('" + username + "','" + totalIncome + "','" + fixedCost + "','" + variableCost + "','" + savingGoal + "')";
             UpdateDB(query1);
             UpdateDB(query2);
 
             int []createSchedule = CreateSchedule(totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
-
+           
             return createSchedule;
         }
 
         public static int [] CreateSchedule(int totalIncome1, int fixedCost1, int variableCost1, int savingGoal1, int durationAmount1)
         {
-            int moneyLeft = totalIncome1 - (fixedCost1 + variableCost1);
+            int x = fixedCost1 - variableCost1;
+            int moneyLeft = totalIncome1 - x;
             int moneySaving = savingGoal1 / durationAmount1;
 
-
-            int[] array = new int[2];
-
+            int[] array = new int[3];
 
             if (moneySaving < moneyLeft)
             {
@@ -80,11 +82,10 @@ namespace MyDesktopApp
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
-                {
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
                     try
                     {
-                        sqlConnection.Open();
                         sqlCommand.ExecuteNonQuery();
                     }
 
@@ -93,12 +94,7 @@ namespace MyDesktopApp
 
                         ErrorHandler.HandleException(ex);
                     }
-
-                    finally
-                    {
-                        sqlConnection.Close();
-                    }
-                }
+                
             }
 
         }

@@ -77,19 +77,11 @@ namespace MyDesktopApp
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            string username = UsernameTextbox.Text;
-            string name = NameTextbox.Text;
-            string surename = SurenameTextbox.Text;
-
-            int totalIncome = Int32.Parse(TotalIncomeTextbox.Text);
-            int fixedCost = Int32.Parse(FixedCostTextbox.Text);
-            int variableCost = Int32.Parse(VariableCostsTextbox.Text);
-            int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
-            int durationAmount = Int32.Parse(AmountTextbox.Text);
+       
 
             try
             {
-                if (username == "" && name == "" && surename == "" && name == "" && totalIncome == 0 && fixedCost == 0 && variableCost == 0 && savingGoal == 0 && durationAmount == 0)
+                if (UsernameTextbox.Text == "" || NameTextbox.Text == "" || SurenameTextbox.Text == "" || TotalIncomeTextbox.Text == "" || FixedCostTextbox.Text == "" || VariableCostsTextbox.Text == "" || SavingGoalTextbox.Text == "" || AmountTextbox.Text == "" )
                 {
 
                     MessageBox.Show("Please fill all the fields");
@@ -97,25 +89,35 @@ namespace MyDesktopApp
 
                 else
                 {
+                  
+                    string username = UsernameTextbox.Text;
+                    string name = NameTextbox.Text;
+                    string surename = SurenameTextbox.Text;
+
+                    int totalIncome = Int32.Parse(TotalIncomeTextbox.Text);
+                    int fixedCost = Int32.Parse(FixedCostTextbox.Text);
+                    int variableCost = Int32.Parse(VariableCostsTextbox.Text);
+                    int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
+                    int durationAmount = Int32.Parse(AmountTextbox.Text);
+
                     int [] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
-                    
 
                     if (createSchedule[2] == 0)
                     {
-                       
-                        panel1.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
+
+                        UsernameTextbox.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
                     }
 
                     else
                     {
-                        
-                        panel1.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
+
+                        UsernameTextbox.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
                     }              
                 }
             }
             catch (Exception ex)
             {
-                ErrorHandler.HandleException(ex);
+                throw (ex);
             }
         }
 
@@ -227,11 +229,13 @@ namespace MyDesktopApp
 
         private void FixedCostTextbox_TextChanged(object sender, EventArgs e)
         {
-           /*/ if (!System.Text.RegularExpressions.Regex.IsMatch(FixedCostTextbox.Text, "[^0-9]"))
+            int outParse;
+
+            // Check if the point entered is numeric or not
+            if (!Int32.TryParse(FixedCostTextbox.Text, out outParse))
             {
-                MessageBox.Show("This textbox only accepts numbers.");
-                FixedCostTextbox.Text.Remove(FixedCostTextbox.Text.Length - 1);
-            }/*/
+                MessageBox.Show("This textbox accepts only numbers");
+            }
 
         }
     }
