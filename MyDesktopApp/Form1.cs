@@ -105,13 +105,13 @@ namespace MyDesktopApp
                     if (createSchedule[2] == 0)
                     {
 
-                        UsernameTextbox.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
+                        outputBOX.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
                     }
 
                     else
                     {
 
-                        UsernameTextbox.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
+                        outputBOX.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
                     }              
                 }
             }
@@ -236,6 +236,11 @@ namespace MyDesktopApp
             {
                 MessageBox.Show("This textbox accepts only numbers");
             }
+
+        }
+
+        private void outputBOX_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

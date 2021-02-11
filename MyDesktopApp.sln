@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1340
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDesktopApp", "MyDesktopApp\MyDesktopApp.csproj", "{9643FF22-CAB8-4281-BC6C-58524E3ECCD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment2", "Assignment2", "{450D6DC9-D472-4D02-8866-7E3B411B03C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment2", "Assignment2\Assignment2.csproj", "{138DA3F0-4450-4040-AF1D-B2BF80C4000C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{9643FF22-CAB8-4281-BC6C-58524E3ECCD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9643FF22-CAB8-4281-BC6C-58524E3ECCD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9643FF22-CAB8-4281-BC6C-58524E3ECCD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138DA3F0-4450-4040-AF1D-B2BF80C4000C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138DA3F0-4450-4040-AF1D-B2BF80C4000C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138DA3F0-4450-4040-AF1D-B2BF80C4000C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138DA3F0-4450-4040-AF1D-B2BF80C4000C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{138DA3F0-4450-4040-AF1D-B2BF80C4000C} = {450D6DC9-D472-4D02-8866-7E3B411B03C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA4F5770-DB31-4150-BD9C-ADD1CC6CD0ED}
