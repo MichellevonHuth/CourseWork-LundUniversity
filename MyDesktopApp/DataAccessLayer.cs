@@ -3,21 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ErrorHandler; 
+using System.Data.SqlClient;
+
 
 namespace MyDesktopApp
 
 {
     class DataAccessLayer
     {
-        private string connectionString = "Server=localhost;Database=DB_Grupp12;User=IS12; Password=Grupp12.fmmi!";
+        private static string connectionString = "Server=localhost;Database=DB_Grupp12;User=IS12; Password=Grupp12.fmmi!";
 
-        public void AddUser(string username, string name, string surename, string accountUsername, int totalIncome, int fixedCost, int variableCost, int savingGoal, int savingDuration)
+        public static int [] AddUser(string username, string name, string surename, int totalIncome, int fixedCost, int variableCost, int savingGoal, int durationAmount)
         {
             string query1 = "INSERT INTO Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
-            string query2 = "INSERT INTO SavingSchedule(accountUsername, totalIncome, fixedCost, variableCost,savingGoal, savingDuration) Values ('" + accountUsername + "','" + totalIncome + "','" + fixedCost + "','" + variableCost + "','" + savingGoal + "','" + savingDuration + "')";
-            CallOnDB(query1);
-            CallOnDB(query2);
+            string query2 = "INSERT INTO SavingSchedule(accountUsername, totalIncome, fixedCost, variableCost,savingGoal, savingDuration) Values ('" + username + "','" + totalIncome + "','" + fixedCost + "','" + variableCost + "','" + savingGoal + "')";
+            UpdateDB(query1);
+            UpdateDB(query2);
+
+            int []createSchedule = CreateSchedule(totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
+
+            return createSchedule;
+        }
+
+        public static int [] CreateSchedule(int totalIncome1, int fixedCost1, int variableCost1, int savingGoal1, int durationAmount1)
+        {
+            int moneyLeft = totalIncome1 - (fixedCost1 + variableCost1);
+            int moneySaving = savingGoal1 / durationAmount1;
+
+
+            int[] array = new int[2];
+
+
+            if (moneySaving < moneyLeft)
+            {
+
+                array[2] = moneySaving;
+
+            }
+
+            else if (moneySaving > moneyLeft)
+            {
+                int howManyMonths = savingGoal1 / moneyLeft;
+
+               
+                array[0] = howManyMonths;
+                array[1] = moneyLeft;
+            }
+
+            return array;
+
         }
 
         public void DeleteUser(String str)
@@ -28,7 +62,7 @@ namespace MyDesktopApp
 
         public void UpdateUser(String str)
         {
-            
+
 
         }
 
@@ -39,46 +73,38 @@ namespace MyDesktopApp
 
         public void UpdateSchedule(int i)
         {
-            
+
         }
 
-        public void CallOnDB (object x)
+        public static void UpdateDB(string query)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand(x, sqlConnection))
-
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     try
                     {
                         sqlConnection.Open();
-
-                        using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
-                        {
-                            while(dataReader.Read())
-                            {
-
-                                returnString = (String.Format("{0}", dataReader[0]));
-                            }
-
-                            dataReader.Close();
-                        }
+                        sqlCommand.ExecuteNonQuery();
                     }
 
-                    catch(Execption ex)
+                    catch (Exception ex)
                     {
-                        Console.WriteLine(ErrorHandler(ex)); 
+
+                        ErrorHandler.HandleException(ex);
                     }
 
                     finally
                     {
                         sqlConnection.Close();
                     }
-            
-                }   
+                }
             }
 
         }
+
     }
-    
+
 }
+           
+        

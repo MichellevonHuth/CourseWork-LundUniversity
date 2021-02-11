@@ -8,18 +8,12 @@ namespace MyDesktopApp
 {
     static class Program
     {
-        
-
-  
         [STAThread]
         static void Main()
         {
-            Console.WriteLine("HEJ");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-
         }
 
     }

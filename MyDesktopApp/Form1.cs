@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MyDesktopApp.DataAccessLayer;
 using System.Windows.Forms;
 
 namespace MyDesktopApp
@@ -19,11 +20,12 @@ namespace MyDesktopApp
 
         private void TotalIncomeTextbox_TextChanged(object sender, EventArgs e)
         {
+            /*/
             if (!System.Text.RegularExpressions.Regex.IsMatch(TotalIncomeTextbox.Text, "[^0-9]"))
             {
                 MessageBox.Show("This textbox only accepts numbers.");
                 TotalIncomeTextbox.Text.Remove(TotalIncomeTextbox.Text.Length - 1);
-            }
+            }/*/
         }
 
         private void HeaderLabel_Click(object sender, EventArgs e)
@@ -38,36 +40,31 @@ namespace MyDesktopApp
 
         private void VariableCostsTextbox_TextChanged(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(VariableCostsTextbox.Text, "[^0-9]"))
+           /*/ if (!System.Text.RegularExpressions.Regex.IsMatch(VariableCostsTextbox.Text, "[^0-9]"))
             {
                 MessageBox.Show("This textbox only accepts numbers.");
                 VariableCostsTextbox.Text.Remove(VariableCostsTextbox.Text.Length - 1);
-            }
+            }/*/
 
         }
 
         private void SavingGoalTextbox_TextChanged(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(SavingGoalTextbox.Text, "[^0-9]"))
+            /*/if (!System.Text.RegularExpressions.Regex.IsMatch(SavingGoalTextbox.Text, "[^0-9]"))
             {
                 MessageBox.Show("This textbox only accepts numbers.");
                 SavingGoalTextbox.Text.Remove(SavingGoalTextbox.Text.Length - 1);
-            }
-
-        }
-
-        private void DurationComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            }/*/
 
         }
 
         private void AmountTextbox_TextChanged(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(AmountTextbox.Text, "[^0-9]"))
+           /*/ if (!System.Text.RegularExpressions.Regex.IsMatch(AmountTextbox.Text, "[^0-9]"))
             {
                 MessageBox.Show("This textbox only accepts numbers.");
                 AmountTextbox.Text.Remove(AmountTextbox.Text.Length - 1);
-            }
+            }/*/
 
         }
 
@@ -84,17 +81,15 @@ namespace MyDesktopApp
             string name = NameTextbox.Text;
             string surename = SurenameTextbox.Text;
 
-            string totalIncome = TotalIncomeTextbox.Text;
-            string fixedCost = FixedCostTextbox.Text; 
-            string variableCost = VariableCostsTextbox.Text;
-            string savingGoal = SavingGoalTextbox.Text;
-            string durationAmount = AmountTextbox.Text;
-
-            string duration = DurationComboBox.GetItemText(DurationComboBox.SelectedItem);
+            int totalIncome = Int32.Parse(TotalIncomeTextbox.Text);
+            int fixedCost = Int32.Parse(FixedCostTextbox.Text);
+            int variableCost = Int32.Parse(VariableCostsTextbox.Text);
+            int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
+            int durationAmount = Int32.Parse(AmountTextbox.Text);
 
             try
             {
-                if (username == "" && name == "" && surename == "" && duration == "" && name == "" && totalIncome == "" && fixedCost == "" && variableCost == "" && savingGoal == "" && durationAmount == "" && duration == "")
+                if (username == "" && name == "" && surename == "" && name == "" && totalIncome == 0 && fixedCost == 0 && variableCost == 0 && savingGoal == 0 && durationAmount == 0)
                 {
 
                     MessageBox.Show("Please fill all the fields");
@@ -102,16 +97,25 @@ namespace MyDesktopApp
 
                 else
                 {
-                    dal.addStudent(studentID, studentName);
-                    applicationWindow.getMessageField().setText("Student added");
-                    setGreenColor();
-                    setComboBoxesStudent();
+                    int [] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
+                    
+
+                    if (createSchedule[2] == 0)
+                    {
+                       
+                        panel1.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
+                    }
+
+                    else
+                    {
+                        
+                        panel1.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
+                    }              
                 }
             }
-            catch (Exception e1)
+            catch (Exception ex)
             {
-                applicationWindow.getMessageField().setText(errorHandler.handleException(e1));
-                setRedColor();
+                ErrorHandler.HandleException(ex);
             }
         }
 
@@ -223,11 +227,11 @@ namespace MyDesktopApp
 
         private void FixedCostTextbox_TextChanged(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(FixedCostTextbox.Text, "[^0-9]"))
+           /*/ if (!System.Text.RegularExpressions.Regex.IsMatch(FixedCostTextbox.Text, "[^0-9]"))
             {
                 MessageBox.Show("This textbox only accepts numbers.");
                 FixedCostTextbox.Text.Remove(FixedCostTextbox.Text.Length - 1);
-            }
+            }/*/
 
         }
     }

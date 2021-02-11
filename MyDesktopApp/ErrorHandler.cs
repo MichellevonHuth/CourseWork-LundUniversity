@@ -9,7 +9,7 @@ namespace MyDesktopApp
 {
     public class ErrorHandler
     {
-        public string HandleException(Exception ex)
+        public static string HandleException(Exception ex)
         {
             string errorMessage;
 

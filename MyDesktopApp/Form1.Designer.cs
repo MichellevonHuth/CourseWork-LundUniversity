@@ -38,7 +38,6 @@
             this.SavingGoalLabel = new System.Windows.Forms.Label();
             this.SavingGoalTextbox = new System.Windows.Forms.TextBox();
             this.SavingDuration = new System.Windows.Forms.Label();
-            this.DurationComboBox = new System.Windows.Forms.ComboBox();
             this.AmountTextbox = new System.Windows.Forms.TextBox();
             this.AmountLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
@@ -152,18 +151,9 @@
             this.SavingDuration.Text = "Saving duration:";
             this.SavingDuration.Click += new System.EventHandler(this.SavingDuration_Click);
             // 
-            // DurationComboBox
-            // 
-            this.DurationComboBox.FormattingEnabled = true;
-            this.DurationComboBox.Location = new System.Drawing.Point(356, 766);
-            this.DurationComboBox.Name = "DurationComboBox";
-            this.DurationComboBox.Size = new System.Drawing.Size(121, 33);
-            this.DurationComboBox.TabIndex = 12;
-            this.DurationComboBox.SelectedIndexChanged += new System.EventHandler(this.DurationComboBox_SelectedIndexChanged);
-            // 
             // AmountTextbox
             // 
-            this.AmountTextbox.Location = new System.Drawing.Point(356, 809);
+            this.AmountTextbox.Location = new System.Drawing.Point(356, 760);
             this.AmountTextbox.Name = "AmountTextbox";
             this.AmountTextbox.Size = new System.Drawing.Size(121, 31);
             this.AmountTextbox.TabIndex = 13;
@@ -173,11 +163,11 @@
             // 
             this.AmountLabel.AutoSize = true;
             this.AmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AmountLabel.Location = new System.Drawing.Point(492, 816);
+            this.AmountLabel.Location = new System.Drawing.Point(498, 767);
             this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.Size = new System.Drawing.Size(73, 20);
+            this.AmountLabel.Size = new System.Drawing.Size(72, 20);
             this.AmountLabel.TabIndex = 14;
-            this.AmountLabel.Text = "(amount)";
+            this.AmountLabel.Text = "(months)";
             this.AmountLabel.Click += new System.EventHandler(this.AmountLabel_Click);
             // 
             // AddButton
@@ -325,7 +315,6 @@
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.AmountLabel);
             this.Controls.Add(this.AmountTextbox);
-            this.Controls.Add(this.DurationComboBox);
             this.Controls.Add(this.SavingDuration);
             this.Controls.Add(this.SavingGoalTextbox);
             this.Controls.Add(this.SavingGoalLabel);
@@ -356,7 +345,6 @@
         private System.Windows.Forms.Label SavingGoalLabel;
         private System.Windows.Forms.TextBox SavingGoalTextbox;
         private System.Windows.Forms.Label SavingDuration;
-        private System.Windows.Forms.ComboBox DurationComboBox;
         private System.Windows.Forms.TextBox AmountTextbox;
         private System.Windows.Forms.Label AmountLabel;
         private System.Windows.Forms.Button AddButton;
