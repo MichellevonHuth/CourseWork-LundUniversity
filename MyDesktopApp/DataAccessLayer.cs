@@ -56,10 +56,10 @@ namespace MyDesktopApp
 
         }
 
-        public void DeleteUser(String str)
+        public void DeleteUser(string username, string name, string surename)
         {
-
-
+           string query =  "DELETE INTO Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
+           UpdateDB(query);
         }
 
         public void UpdateUser(String str)
