@@ -58,7 +58,7 @@ namespace MyDesktopApp
 
         public void DeleteUser(string username, string name, string surename)
         {
-           string query =  "DELETE INTO Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
+           string query =  "DELETE FROM Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
            UpdateDB(query);
         }
 
