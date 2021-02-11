@@ -12,11 +12,12 @@ namespace MyDesktopApp
     {
         private string connectionString = "Server=localhost;Database=DB_Grupp12;User=IS12; Password=Grupp12.fmmi!";
 
-        
-        public static void AddUser(String str)
+        public static void AddUser(string username, string name, string surename, string accountUsername, int totalIncome, int fixedCost, int variableCost, int savingGoal, int savingDuration)
         {
-
-
+            string query1 = "INSERT INTO Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
+            string query2 = "INSERT INTO SavingSchedule(accountUsername, totalIncome, fixedCost, variableCost,savingGoal, savingDuration) Values ('" + accountUsername + "','" + totalIncome + "','" + fixedCost + "','" + variableCost + "','" + savingGoal + "','" + savingDuration + "')";
+            CallOnDB(query1);
+            CallOnDB(query2);
         }
 
         public static void DeleteUser(String str)
@@ -43,9 +44,6 @@ namespace MyDesktopApp
 
         public static string CallOnDB (object x)
         {
-
-            string returnString; 
-
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
                 using (SqlCommand sqlCommand = new SqlCommand(x, sqlConnection))
@@ -78,8 +76,6 @@ namespace MyDesktopApp
             
                 }   
             }
-
-            return returnString;
 
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace MyDesktopApp
 {
-    partial class Form1
+    partial class Form1 
     {
         /// <summary>
         /// Required designer variable.
@@ -93,6 +93,7 @@
             this.FixedCosts.Size = new System.Drawing.Size(173, 25);
             this.FixedCosts.TabIndex = 4;
             this.FixedCosts.Text = "Your fixed costs:";
+            this.FixedCosts.Click += new System.EventHandler(this.FixedCosts_Click);
             // 
             // FixedCostsTextbox
             // 
@@ -110,6 +111,7 @@
             this.VariableCosts.Size = new System.Drawing.Size(203, 25);
             this.VariableCosts.TabIndex = 6;
             this.VariableCosts.Text = "Your variable costs:";
+            this.VariableCosts.Click += new System.EventHandler(this.VariableCosts_Click);
             // 
             // VariableCostsTextbox
             // 
@@ -128,6 +130,7 @@
             this.SavingGoalsLabel.Size = new System.Drawing.Size(224, 25);
             this.SavingGoalsLabel.TabIndex = 8;
             this.SavingGoalsLabel.Text = "Future saving goals:";
+            this.SavingGoalsLabel.Click += new System.EventHandler(this.SavingGoalsLabel_Click);
             // 
             // SavingGoalLabel
             // 
@@ -137,6 +140,7 @@
             this.SavingGoalLabel.Size = new System.Drawing.Size(180, 25);
             this.SavingGoalLabel.TabIndex = 9;
             this.SavingGoalLabel.Text = "Your saving goal:";
+            this.SavingGoalLabel.Click += new System.EventHandler(this.SavingGoalLabel_Click);
             // 
             // SavingGoalTextbox
             // 
@@ -154,6 +158,7 @@
             this.SavingDuration.Size = new System.Drawing.Size(168, 25);
             this.SavingDuration.TabIndex = 11;
             this.SavingDuration.Text = "Saving duration:";
+            this.SavingDuration.Click += new System.EventHandler(this.SavingDuration_Click);
             // 
             // DurationComboBox
             // 
@@ -181,6 +186,7 @@
             this.AmountLabel.Size = new System.Drawing.Size(73, 20);
             this.AmountLabel.TabIndex = 14;
             this.AmountLabel.Text = "(amount)";
+            this.AmountLabel.Click += new System.EventHandler(this.AmountLabel_Click);
             // 
             // AddButton
             // 
@@ -190,7 +196,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(298, 64);
             this.AddButton.TabIndex = 15;
-            this.AddButton.Text = "Add";
+            this.AddButton.Text = "Create schedule";
             this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -202,6 +208,7 @@
             this.UsernameLabel.Size = new System.Drawing.Size(116, 25);
             this.UsernameLabel.TabIndex = 16;
             this.UsernameLabel.Text = "Username:";
+            this.UsernameLabel.Click += new System.EventHandler(this.UsernameLabel_Click);
             // 
             // textBox1
             // 
@@ -209,6 +216,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 31);
             this.textBox1.TabIndex = 17;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // NameLabel
             // 
@@ -218,6 +226,7 @@
             this.NameLabel.Size = new System.Drawing.Size(74, 25);
             this.NameLabel.TabIndex = 18;
             this.NameLabel.Text = "Name:";
+            this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
             // textBox2
             // 
@@ -225,6 +234,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 31);
             this.textBox2.TabIndex = 19;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // SureNameLabel
             // 
@@ -234,6 +244,7 @@
             this.SureNameLabel.Size = new System.Drawing.Size(116, 25);
             this.SureNameLabel.TabIndex = 20;
             this.SureNameLabel.Text = "Surename:";
+            this.SureNameLabel.Click += new System.EventHandler(this.SureNameLabel_Click);
             // 
             // textBox3
             // 
@@ -241,6 +252,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 31);
             this.textBox3.TabIndex = 21;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // UpdateButton
             // 
@@ -251,6 +263,7 @@
             this.UpdateButton.TabIndex = 22;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = false;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DeleteButton
             // 
@@ -261,6 +274,7 @@
             this.DeleteButton.TabIndex = 23;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // FindButton
             // 
@@ -271,6 +285,7 @@
             this.FindButton.TabIndex = 24;
             this.FindButton.Text = "Find";
             this.FindButton.UseVisualStyleBackColor = false;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
             // comboBox1
             // 
@@ -279,6 +294,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 33);
             this.comboBox1.TabIndex = 25;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -287,6 +303,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(965, 642);
             this.panel1.TabIndex = 26;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Form1
             // 
@@ -321,6 +338,7 @@
             this.Controls.Add(this.HeaderLabel);
             this.Name = "Form1";
             this.Text = "Create schedule";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,15 +362,15 @@
         private System.Windows.Forms.Label AmountLabel;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label UsernameLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1; 
+        private System.Windows.Forms.Label NameLabel; 
+        private System.Windows.Forms.TextBox textBox2; 
         private System.Windows.Forms.Label SureNameLabel;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button FindButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button FindButton; 
+        private System.Windows.Forms.ComboBox comboBox1; 
         private System.Windows.Forms.Panel panel1;
     }
 }
