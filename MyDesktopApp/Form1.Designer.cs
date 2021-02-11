@@ -32,7 +32,6 @@
             this.TotalIncome = new System.Windows.Forms.Label();
             this.TotalIncomeTextbox = new System.Windows.Forms.TextBox();
             this.FixedCosts = new System.Windows.Forms.Label();
-            this.FixedCostsTextbox = new System.Windows.Forms.TextBox();
             this.VariableCosts = new System.Windows.Forms.Label();
             this.VariableCostsTextbox = new System.Windows.Forms.TextBox();
             this.SavingGoalsLabel = new System.Windows.Forms.Label();
@@ -44,16 +43,17 @@
             this.AmountLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SureNameLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.FindButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.UsernameTextbox = new System.Windows.Forms.TextBox();
+            this.NameTextbox = new System.Windows.Forms.TextBox();
+            this.SurenameTextbox = new System.Windows.Forms.TextBox();
+            this.FixedCostTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // HeaderLabel
@@ -94,14 +94,6 @@
             this.FixedCosts.TabIndex = 4;
             this.FixedCosts.Text = "Your fixed costs:";
             this.FixedCosts.Click += new System.EventHandler(this.FixedCosts_Click);
-            // 
-            // FixedCostsTextbox
-            // 
-            this.FixedCostsTextbox.Location = new System.Drawing.Point(373, 452);
-            this.FixedCostsTextbox.Name = "FixedCostsTextbox";
-            this.FixedCostsTextbox.Size = new System.Drawing.Size(100, 31);
-            this.FixedCostsTextbox.TabIndex = 5;
-            this.FixedCostsTextbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // VariableCosts
             // 
@@ -210,14 +202,6 @@
             this.UsernameLabel.Text = "Username:";
             this.UsernameLabel.Click += new System.EventHandler(this.UsernameLabel_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(373, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
@@ -228,14 +212,6 @@
             this.NameLabel.Text = "Name:";
             this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(373, 254);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 31);
-            this.textBox2.TabIndex = 19;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            // 
             // SureNameLabel
             // 
             this.SureNameLabel.AutoSize = true;
@@ -245,14 +221,6 @@
             this.SureNameLabel.TabIndex = 20;
             this.SureNameLabel.Text = "Surename:";
             this.SureNameLabel.Click += new System.EventHandler(this.SureNameLabel_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(373, 313);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 31);
-            this.textBox3.TabIndex = 21;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // UpdateButton
             // 
@@ -305,21 +273,54 @@
             this.panel1.TabIndex = 26;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // UsernameTextbox
+            // 
+            this.UsernameTextbox.Location = new System.Drawing.Point(373, 195);
+            this.UsernameTextbox.Name = "UsernameTextbox";
+            this.UsernameTextbox.Size = new System.Drawing.Size(100, 31);
+            this.UsernameTextbox.TabIndex = 27;
+            this.UsernameTextbox.TextChanged += new System.EventHandler(this.UsernameTextbox_TextChanged);
+            // 
+            // NameTextbox
+            // 
+            this.NameTextbox.Location = new System.Drawing.Point(373, 254);
+            this.NameTextbox.Name = "NameTextbox";
+            this.NameTextbox.Size = new System.Drawing.Size(100, 31);
+            this.NameTextbox.TabIndex = 28;
+            this.NameTextbox.TextChanged += new System.EventHandler(this.NameTextbox_TextChanged);
+            // 
+            // SurenameTextbox
+            // 
+            this.SurenameTextbox.Location = new System.Drawing.Point(373, 310);
+            this.SurenameTextbox.Name = "SurenameTextbox";
+            this.SurenameTextbox.Size = new System.Drawing.Size(100, 31);
+            this.SurenameTextbox.TabIndex = 29;
+            this.SurenameTextbox.TextChanged += new System.EventHandler(this.SurenameTextbox_TextChanged);
+            // 
+            // FixedCostTextbox
+            // 
+            this.FixedCostTextbox.Location = new System.Drawing.Point(373, 455);
+            this.FixedCostTextbox.Name = "FixedCostTextbox";
+            this.FixedCostTextbox.Size = new System.Drawing.Size(100, 31);
+            this.FixedCostTextbox.TabIndex = 30;
+            this.FixedCostTextbox.TextChanged += new System.EventHandler(this.FixedCostTextbox_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1742, 1068);
+            this.Controls.Add(this.FixedCostTextbox);
+            this.Controls.Add(this.SurenameTextbox);
+            this.Controls.Add(this.NameTextbox);
+            this.Controls.Add(this.UsernameTextbox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.FindButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.UpdateButton);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.SureNameLabel);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.AmountLabel);
@@ -331,7 +332,6 @@
             this.Controls.Add(this.SavingGoalsLabel);
             this.Controls.Add(this.VariableCostsTextbox);
             this.Controls.Add(this.VariableCosts);
-            this.Controls.Add(this.FixedCostsTextbox);
             this.Controls.Add(this.FixedCosts);
             this.Controls.Add(this.TotalIncomeTextbox);
             this.Controls.Add(this.TotalIncome);
@@ -350,7 +350,6 @@
         private System.Windows.Forms.Label TotalIncome;
         private System.Windows.Forms.TextBox TotalIncomeTextbox;
         private System.Windows.Forms.Label FixedCosts;
-        private System.Windows.Forms.TextBox FixedCostsTextbox;
         private System.Windows.Forms.Label VariableCosts;
         private System.Windows.Forms.TextBox VariableCostsTextbox;
         private System.Windows.Forms.Label SavingGoalsLabel;
@@ -362,15 +361,16 @@
         private System.Windows.Forms.Label AmountLabel;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label UsernameLabel;
-        private System.Windows.Forms.TextBox textBox1; 
         private System.Windows.Forms.Label NameLabel; 
-        private System.Windows.Forms.TextBox textBox2; 
         private System.Windows.Forms.Label SureNameLabel;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button FindButton; 
         private System.Windows.Forms.ComboBox comboBox1; 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox UsernameTextbox;
+        private System.Windows.Forms.TextBox NameTextbox;
+        private System.Windows.Forms.TextBox SurenameTextbox;
+        private System.Windows.Forms.TextBox FixedCostTextbox;
     }
 }

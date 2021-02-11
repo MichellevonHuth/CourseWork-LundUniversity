@@ -12,7 +12,7 @@ namespace MyDesktopApp
     {
         private string connectionString = "Server=localhost;Database=DB_Grupp12;User=IS12; Password=Grupp12.fmmi!";
 
-        public static void AddUser(string username, string name, string surename, string accountUsername, int totalIncome, int fixedCost, int variableCost, int savingGoal, int savingDuration)
+        public void AddUser(string username, string name, string surename, string accountUsername, int totalIncome, int fixedCost, int variableCost, int savingGoal, int savingDuration)
         {
             string query1 = "INSERT INTO Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
             string query2 = "INSERT INTO SavingSchedule(accountUsername, totalIncome, fixedCost, variableCost,savingGoal, savingDuration) Values ('" + accountUsername + "','" + totalIncome + "','" + fixedCost + "','" + variableCost + "','" + savingGoal + "','" + savingDuration + "')";
@@ -20,29 +20,29 @@ namespace MyDesktopApp
             CallOnDB(query2);
         }
 
-        public static void DeleteUser(String str)
+        public void DeleteUser(String str)
         {
 
 
         }
 
-        public static void UpdateUser(String str)
+        public void UpdateUser(String str)
         {
             
 
         }
 
-        public static int CreateSchedule(int i)
+        public int CreateSchedule(int i)
         {
             return 0;
         }
 
-        public static void UpdateSchedule(int i)
+        public void UpdateSchedule(int i)
         {
             
         }
 
-        public static string CallOnDB (object x)
+        public void CallOnDB (object x)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
@@ -57,6 +57,7 @@ namespace MyDesktopApp
                         {
                             while(dataReader.Read())
                             {
+
                                 returnString = (String.Format("{0}", dataReader[0]));
                             }
 

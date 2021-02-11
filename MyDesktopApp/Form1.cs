@@ -19,7 +19,11 @@ namespace MyDesktopApp
 
         private void TotalIncomeTextbox_TextChanged(object sender, EventArgs e)
         {
-
+            if (!System.Text.RegularExpressions.Regex.IsMatch(TotalIncomeTextbox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("This textbox only accepts numbers.");
+                TotalIncomeTextbox.Text.Remove(TotalIncomeTextbox.Text.Length - 1);
+            }
         }
 
         private void HeaderLabel_Click(object sender, EventArgs e)
@@ -34,11 +38,21 @@ namespace MyDesktopApp
 
         private void VariableCostsTextbox_TextChanged(object sender, EventArgs e)
         {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(VariableCostsTextbox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("This textbox only accepts numbers.");
+                VariableCostsTextbox.Text.Remove(VariableCostsTextbox.Text.Length - 1);
+            }
 
         }
 
         private void SavingGoalTextbox_TextChanged(object sender, EventArgs e)
         {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(SavingGoalTextbox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("This textbox only accepts numbers.");
+                SavingGoalTextbox.Text.Remove(SavingGoalTextbox.Text.Length - 1);
+            }
 
         }
 
@@ -49,6 +63,11 @@ namespace MyDesktopApp
 
         private void AmountTextbox_TextChanged(object sender, EventArgs e)
         {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(AmountTextbox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("This textbox only accepts numbers.");
+                AmountTextbox.Text.Remove(AmountTextbox.Text.Length - 1);
+            }
 
         }
 
@@ -57,14 +76,43 @@ namespace MyDesktopApp
            
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-     
-        }
+
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            string username = UsernameTextbox.Text;
+            string name = NameTextbox.Text;
+            string surename = SurenameTextbox.Text;
 
+            string totalIncome = TotalIncomeTextbox.Text;
+            string fixedCost = FixedCostTextbox.Text; 
+            string variableCost = VariableCostsTextbox.Text;
+            string savingGoal = SavingGoalTextbox.Text;
+            string durationAmount = AmountTextbox.Text;
+
+            string duration = DurationComboBox.GetItemText(DurationComboBox.SelectedItem);
+
+            try
+            {
+                if (username == "" && name == "" && surename == "" && duration == "" && name == "" && totalIncome == "" && fixedCost == "" && variableCost == "" && savingGoal == "" && durationAmount == "" && duration == "")
+                {
+
+                    MessageBox.Show("Please fill all the fields");
+                }
+
+                else
+                {
+                    dal.addStudent(studentID, studentName);
+                    applicationWindow.getMessageField().setText("Student added");
+                    setGreenColor();
+                    setComboBoxesStudent();
+                }
+            }
+            catch (Exception e1)
+            {
+                applicationWindow.getMessageField().setText(errorHandler.handleException(e1));
+                setRedColor();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -82,30 +130,20 @@ namespace MyDesktopApp
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void NameLabel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void SureNameLabel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void FixedCosts_Click(object sender, EventArgs e)
         {
@@ -157,6 +195,40 @@ namespace MyDesktopApp
 
         }
 
+        private void UsernameTextbox_TextChanged(object sender, EventArgs e)
+        {
 
+
+        }
+
+        private void NameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(NameTextbox.Text, "^[a-zA-Z]"))
+            {
+                MessageBox.Show("This textbox accepts only alphabetical characters");
+                NameTextbox.Text.Remove(NameTextbox.Text.Length - 1);
+            }
+
+        }
+
+        private void SurenameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(SurenameTextbox.Text, "^[a-zA-Z]"))
+            {
+                MessageBox.Show("This textbox accepts only alphabetical characters");
+                SurenameTextbox.Text.Remove(SurenameTextbox.Text.Length - 1);
+            }
+
+        }
+
+        private void FixedCostTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(FixedCostTextbox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("This textbox only accepts numbers.");
+                FixedCostTextbox.Text.Remove(FixedCostTextbox.Text.Length - 1);
+            }
+
+        }
     }
 }
