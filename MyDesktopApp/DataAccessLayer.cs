@@ -11,10 +11,12 @@ namespace MyDesktopApp
 {
     class DataAccessLayer
     { 
-        private static string connectionString = "Integrated Security = True;server=localhost;Trusted_Connection=yes;Database=Grupp12_DB";
+        private static string connectionString = "Integrated Security = True;server=localhost;Trusted_Connection=yes;Database=DB_Grupp12";
         
         public static int [] AddUser(string username, string name, string surename, int totalIncome, int fixedCost, int variableCost, int savingGoal, int durationAmount)
         {
+
+            int[] createSchedule = CreateSchedule(totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
@@ -24,30 +26,51 @@ namespace MyDesktopApp
             sqlCommand.Parameters.AddWithValue("@name",name);
             sqlCommand.Parameters.AddWithValue("@surename",surename);
 
-            SqlCommand sqlCommand1= new SqlCommand("INSERT INTO SavingSchedule VALUES(@accountUsername,@totalIncome, @fixedCost, @variableCost, @savingGoal)");
-            sqlCommand1.Parameters.AddWithValue("@table","SavingSchedule");
-            sqlCommand1.Parameters.AddWithValue("@accountUsername",username);
-            sqlCommand1.Parameters.AddWithValue("@totalIncome",totalIncome);
-            sqlCommand1.Parameters.AddWithValue("@fixedCost",fixedCost);
-            sqlCommand1.Parameters.AddWithValue("@variableCost",variableCost);
-            sqlCommand1.Parameters.AddWithValue("@durationAmount",durationAmount);
-
             sqlCommand.Connection = sqlConnection;
-
-            int []createSchedule = CreateSchedule(totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
 
             try 
             {
                 sqlConnection.Open();
-
-                sqlCommand.EndExecuteNonQuery();
-
+                sqlCommand.ExecuteNonQuery();
+                
             }
             catch(SqlException ex)
             {
                 ErrorHandler.HandleException(ex);
-            }     
+            }
+
+            InsertIntoSaving(username, totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
+
             return createSchedule;
+        }
+
+
+        public static void InsertIntoSaving(string username, int totalIncome, int fixedCost, int variableCost, int savingGoal, int durationAmount)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            SqlCommand sqlCommand1 = new SqlCommand("INSERT INTO SavingSchedule VALUES(@accountUsername, @totalIncome, @fixedCost, @variableCost, @savingGoal, @savingDuration)");
+            sqlCommand1.Parameters.AddWithValue("@table", "SavingSchedule");
+            sqlCommand1.Parameters.AddWithValue("@accountUsername", username);
+            sqlCommand1.Parameters.AddWithValue("@totalIncome", totalIncome);
+            sqlCommand1.Parameters.AddWithValue("@fixedCost", fixedCost);
+            sqlCommand1.Parameters.AddWithValue("@variableCost", variableCost);
+            sqlCommand1.Parameters.AddWithValue("@savingGoal", savingGoal);
+            sqlCommand1.Parameters.AddWithValue("@savingDuration", durationAmount);
+
+            sqlCommand1.Connection = sqlConnection;
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand1.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                ErrorHandler.HandleException(ex);
+            }
+
         }
 
         public static int [] CreateSchedule(int totalIncome1, int fixedCost1, int variableCost1, int savingGoal1, int durationAmount1)
@@ -80,8 +103,60 @@ namespace MyDesktopApp
 
         public void DeleteUser(string username, string name, string surename)
         {
-           string query =  "DELETE FROM Account(username, name, surename) Values ('" + username + "','" + name + "','" + surename + "')";
-           UpdateDB(query);
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            SqlCommand sqlCommand = new SqlCommand("DELETE FROM Account VALUES(@username, @name, @surename)");
+            sqlCommand.Parameters.AddWithValue("@table", "Account");
+            sqlCommand.Parameters.AddWithValue("@username", username);
+            sqlCommand.Parameters.AddWithValue("@name", name);
+            sqlCommand.Parameters.AddWithValue("@surename", surename);
+
+            try
+            {
+                sqlConnection.Open();
+
+                sqlCommand.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                ErrorHandler.HandleException(ex);
+            }
+
+        }
+
+
+        public static string FindAllUserAccounts(string username)
+        {
+            string getUsername = ""; 
+
+            using(SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+
+                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Account WHERE username='" + username +"'"))
+                {
+                    try
+                    {
+                        sqlConnection.Open();
+
+                        using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                               getUsername = String.Format("{0}", dataReader[0]);
+                              
+                            }
+                        }
+                    }
+
+                    catch (Exception ex)
+                    {
+                        ErrorHandler.HandleException(ex);
+                    }
+                }
+            }
+           
+            return getUsername; 
         }
 
         public void UpdateUser(String str)
@@ -90,36 +165,10 @@ namespace MyDesktopApp
 
         }
 
-     
-
-
         public void UpdateSchedule(int i)
         {
 
         }
-        
-       
-        public static void UpdateDB(string query)
-        {
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-            {
-                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-
-                    try
-                    {
-                        sqlCommand.ExecuteNonQuery();
-                    }
-
-                    catch (Exception ex)
-                    {
-
-                        ErrorHandler.HandleException(ex);
-                    }
-                
-            }
-
-        }
-
     }
 
 }

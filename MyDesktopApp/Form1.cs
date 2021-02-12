@@ -102,6 +102,10 @@ namespace MyDesktopApp
 
                     int [] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
 
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = DataAccessLayer.GetAllUserAccounts();
+                    comboBox1.DataSource = bs;
+
                     if (createSchedule[2] == 0)
                     {
 
@@ -117,9 +121,11 @@ namespace MyDesktopApp
             }
             catch (Exception ex)
             {
-                throw (ex);
+                ErrorHandler.HandleException(ex);
             }
         }
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -186,11 +192,6 @@ namespace MyDesktopApp
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void UpdateButton_Click(object sender, EventArgs e)
         {
 
@@ -198,7 +199,9 @@ namespace MyDesktopApp
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+           // string test =  comboBox1.SelectedValue; 
 
+           // DataAccessLayer.DeleteUser(test); 
         }
 
         private void UsernameTextbox_TextChanged(object sender, EventArgs e)
@@ -240,6 +243,11 @@ namespace MyDesktopApp
         }
 
         private void outputBOX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
