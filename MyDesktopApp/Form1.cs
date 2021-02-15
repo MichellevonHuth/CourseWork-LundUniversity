@@ -241,12 +241,6 @@ namespace MyDesktopApp
             }
 
         }
-
-        private void outputBOX_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
