@@ -27,8 +27,17 @@ namespace Assignment_2
 
         private void allColumnName_btn_Click(object sender, EventArgs e)
         {
-            DataTable dt = dal.ColumnNames();
-            messageDataGridView.DataSource = dt;
+
+            try
+            {
+                DataTable dt = dal.ColumnNames();
+                messageDataGridView.DataSource = dt;
+            }
+            catch(Exception ex)
+            {
+                Errorhandler.HandleException(ex);
+            }
+        }
         }
 
         private void numberOfRows_btn_Click(object sender, EventArgs e)
