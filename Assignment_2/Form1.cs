@@ -25,7 +25,7 @@ namespace Assignment_2
         //    set => dal = value;
         //}
 
-        private void allColumnName_btn_Click(object sender, EventArgs e)
+        private void AllColumnName_btn_Click(object sender, EventArgs e)
         {
 
             try
@@ -38,12 +38,24 @@ namespace Assignment_2
                 Errorhandler.HandleException(ex);
             }
         }
-        }
 
-        private void numberOfRows_btn_Click(object sender, EventArgs e)
+        private void NumberOfRows_btn_Click(object sender, EventArgs e)
         {
-            DataTable dt = dal.NumberOfRows();
-            messageDataGridView.DataSource = dt;
+            try
+            {
+                DataTable dt = dal.NumberOfRows();
+                messageDataGridView.DataSource = dt;
+            }
+
+            catch (Exception ex)
+            {
+                Errorhandler.HandleException(ex);
+            }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
+    
 }
