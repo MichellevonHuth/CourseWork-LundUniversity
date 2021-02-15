@@ -12,12 +12,12 @@ namespace Assignment2
 
         private static string connectionString = "Server=uwdb18.srv.lu.se\\icssql001;Database=SYSA14_PK_ProgAssignment2;User=sysa14reader; Password=INFreader1";
         private List<string> allcolumnName;
-        private List<int> numberOfRow;
+        private List<string> numberOfRow;
 
 
-        public List<int> NumberOfRows()
+        public List<string> NumberOfRows()
         {
-            List<int> numberOfRow = new List<int>();
+            List<string> numberOfRow = new List<string>();
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
                 using (SqlCommand sqlCommand = new SqlCommand("", sqlConnection))
@@ -28,7 +28,7 @@ namespace Assignment2
                     {
                         while (dataReader.Read())
                         {
-
+                            
                             numberOfRow.Add(String.Format("0", dataReader[0]));
                         }
                     }
@@ -52,7 +52,7 @@ namespace Assignment2
                         while (dataReader.Read())
                         {
 
-                            allColumnName.Add(String.Format("0", dataReader[0]));
+                            allColumnName.Add(String.Format("{0}", dataReader[0]));
 
                         }
                     }
