@@ -213,9 +213,9 @@
             this.NameLabel.Location = new System.Drawing.Point(148, 258);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(74, 25);
+            this.NameLabel.Size = new System.Drawing.Size(119, 25);
             this.NameLabel.TabIndex = 18;
-            this.NameLabel.Text = "Name:";
+            this.NameLabel.Text = "First name:";
             this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
             // SureNameLabel
@@ -224,9 +224,9 @@
             this.SureNameLabel.Location = new System.Drawing.Point(148, 312);
             this.SureNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SureNameLabel.Name = "SureNameLabel";
-            this.SureNameLabel.Size = new System.Drawing.Size(116, 25);
+            this.SureNameLabel.Size = new System.Drawing.Size(104, 25);
             this.SureNameLabel.TabIndex = 20;
-            this.SureNameLabel.Text = "Surename:";
+            this.SureNameLabel.Text = "Surname:";
             this.SureNameLabel.Click += new System.EventHandler(this.SureNameLabel_Click);
             // 
             // UpdateButton
