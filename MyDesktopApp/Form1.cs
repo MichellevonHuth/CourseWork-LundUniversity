@@ -68,19 +68,25 @@ namespace MyDesktopApp
         {
             try
             {
+                string username = FindTextbox.Text;
+                int chechIfUserExists = DataAccessLayer.CheckIfUserExists(username);
+
                 if (FindTextbox.Text == "")
                 {
                     MessageBox.Show("Please fill in your username");
                 }
 
+                else if (chechIfUserExists == 1)
+                {
+                    
+                    string[] databaseValues = DataAccessLayer.FindUserAccounts(username);
+                    outputBOX.Text = "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving duration: " + databaseValues[7];
+                }
+
                 else
                 {
-                    string username = FindTextbox.Text;
-                    string [] databaseValues = DataAccessLayer.FindUserAccounts(username);
 
-                    
-                    outputBOX.Text = "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving duration: " + databaseValues[7];
-
+                    outputBOX.Text = username + " is not registred in the database.";
                 }
 
             }
@@ -177,7 +183,7 @@ namespace MyDesktopApp
             if (!System.Text.RegularExpressions.Regex.IsMatch(NameTextbox.Text, "^[a-zA-Z]"))
             {
                 MessageBox.Show("This textbox accepts only alphabetical characters");
-                NameTextbox.Text.Remove(NameTextbox.Text.Length - 1);
+             
             }
 
         }
@@ -187,7 +193,6 @@ namespace MyDesktopApp
             if (!System.Text.RegularExpressions.Regex.IsMatch(SurenameTextbox.Text, "^[a-zA-Z]"))
             {
                 MessageBox.Show("This textbox accepts only alphabetical characters");
-                SurenameTextbox.Text.Remove(SurenameTextbox.Text.Length - 1);
             }
 
         }
@@ -196,7 +201,6 @@ namespace MyDesktopApp
         {
             int outParse;
 
-            // Check if the point entered is numeric or not
             if (!Int32.TryParse(FixedCostTextbox.Text, out outParse))
             {
                 MessageBox.Show("This textbox accepts only numbers");
@@ -205,6 +209,50 @@ namespace MyDesktopApp
         }
 
         private void TotalIncomeTextbox_TextChanged(object sender, EventArgs e)
+        {
+            int outParse;
+           
+            if (!Int32.TryParse(TotalIncomeTextbox.Text, out outParse))
+            {
+                MessageBox.Show("This textbox accepts only numbers");
+            }
+
+        }
+
+        private void VariableCostsTextbox_TextChanged(object sender, EventArgs e)
+        {
+            int outParse;
+
+            if (!Int32.TryParse(VariableCostsTextbox.Text, out outParse))
+            {
+                MessageBox.Show("This textbox accepts only numbers");
+            }
+        }
+
+        private void SavingGoalTextbox_TextChanged(object sender, EventArgs e)
+        {
+            int outParse;
+
+            if (!Int32.TryParse(SavingGoalTextbox.Text, out outParse))
+            {
+                MessageBox.Show("This textbox accepts only numbers");
+            }
+
+        }
+
+        private void AmountTextbox_TextChanged(object sender, EventArgs e)
+        {
+            int outParse;
+
+            if (!Int32.TryParse(AmountTextbox.Text, out outParse))
+            {
+                MessageBox.Show("This textbox accepts only numbers");
+            }
+
+        }
+
+
+        private void FixedCosts_Click(object sender, EventArgs e)
         {
 
         }
@@ -218,22 +266,6 @@ namespace MyDesktopApp
         {
 
         }
-
-        private void VariableCostsTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SavingGoalTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AmountTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -275,11 +307,6 @@ namespace MyDesktopApp
 
 
 
-        private void FixedCosts_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void VariableCosts_Click(object sender, EventArgs e)
         {
 
@@ -313,9 +340,23 @@ namespace MyDesktopApp
         private void FindTextbox_TextChanged(object sender, EventArgs e)
         {
 
+            FindTextbox.Text = "Username...";
+
+            if (FindTextbox.Text == "Username...")
+            {
+                FindTextbox.Text = "";
+            }
+
+            else if (FindTextbox.Text == "")
+            {
+                FindTextbox.Text = "Username...";
+            }
+
+
         }
 
-        private void outputBOX_TextChanged(object sender, EventArgs e)
+
+      private void outputBOX_TextChanged(object sender, EventArgs e)
         {
           
         }
