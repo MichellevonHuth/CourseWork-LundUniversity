@@ -219,7 +219,13 @@ namespace MyDesktopApp
         {
             string username = FindTextbox.Text;
             DataAccessLayer.DeleteSchedule(username);
-            DataAccessLayer.DeleteUser(username); 
+            DataAccessLayer.DeleteUser(username);
+            string [] findUser = DataAccessLayer.FindUserAccounts(username);
+
+            if(findUser[0] == null)
+            {
+                outputBOX.Text = username + " is deleted!"; 
+            }
         }
 
         private void UsernameTextbox_TextChanged(object sender, EventArgs e)
