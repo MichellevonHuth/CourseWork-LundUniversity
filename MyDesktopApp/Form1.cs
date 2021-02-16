@@ -217,9 +217,9 @@ namespace MyDesktopApp
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-           // string test =  comboBox1.SelectedValue; 
-
-           // DataAccessLayer.DeleteUser(test); 
+            string username = FindTextbox.Text;
+            DataAccessLayer.DeleteSchedule(username);
+            DataAccessLayer.DeleteUser(username); 
         }
 
         private void UsernameTextbox_TextChanged(object sender, EventArgs e)

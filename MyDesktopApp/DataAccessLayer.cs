@@ -101,24 +101,42 @@ namespace MyDesktopApp
 
         }
 
-        public void DeleteUser(string username, string name, string surename)
+        public static void DeleteSchedule(string username)
         {
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            SqlCommand sqlCommand = new SqlCommand("DELETE FROM Account VALUES(@username, @name, @surename)");
-            sqlCommand.Parameters.AddWithValue("@table", "Account");
-            sqlCommand.Parameters.AddWithValue("@username", username);
-            sqlCommand.Parameters.AddWithValue("@name", name);
-            sqlCommand.Parameters.AddWithValue("@surename", surename);
-
             try
             {
-                sqlConnection.Open();
-
-                sqlCommand.ExecuteNonQuery();
-
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand("DELETE FROM SavingSchedule WHERE accountUsername"  + " = '" + username + "'", con))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
             }
-            catch (SqlException ex)
+            catch (SystemException ex)
+            {
+                ErrorHandler.HandleException(ex);
+            }
+
+    }
+
+        public static void DeleteUser(string username)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand("DELETE FROM Account WHERE username" + " = '" + username + "'", con))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
+            }
+            catch (SystemException ex)
             {
                 ErrorHandler.HandleException(ex);
             }
@@ -130,7 +148,7 @@ namespace MyDesktopApp
         {
 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-           ;
+           
 
             SqlCommand sqlCommand = new SqlCommand("SELECT username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration FROM Account JOIN SavingSchedule ON username = accountUsername WHERE username=@username ORDER BY username");
 
