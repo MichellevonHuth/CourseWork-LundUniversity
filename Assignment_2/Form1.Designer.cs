@@ -37,6 +37,7 @@
             // 
             // allColumnNameButton
             // 
+            this.allColumnNameButton.AutoSize = true;
             this.allColumnNameButton.Location = new System.Drawing.Point(43, 47);
             this.allColumnNameButton.Name = "allColumnNameButton";
             this.allColumnNameButton.Size = new System.Drawing.Size(102, 23);
@@ -57,6 +58,7 @@
             // 
             // messageDataGridView
             // 
+            this.messageDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.messageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.messageDataGridView.Location = new System.Drawing.Point(43, 85);
             this.messageDataGridView.Name = "messageDataGridView";
@@ -84,6 +86,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.messageDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
