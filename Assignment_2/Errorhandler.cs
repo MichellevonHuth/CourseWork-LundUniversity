@@ -46,25 +46,6 @@ namespace Assignment_2
 
                 return errorMessage;
             }
-
-            public String ErrorMessageEmptyFields()
-            {
-                String errorMessage = "Fill in all the fields";
-                return errorMessage;
-            }
-
-            public String CreditsError()
-            {
-                String errorMessage = "Student can't read more than 45 credits per semester";
-                return errorMessage;
-            }
-
-            public String WrongInputName()
-            {
-                String errorMessage = "Wrong format on input value";
-                return errorMessage;
-            }
-
         
     }
 }
