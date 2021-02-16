@@ -104,13 +104,13 @@ namespace MyDesktopApp
                     if (createSchedule[2] == 0)
                     {
 
-                        outputBOX.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
+                        outputBOX.Text = "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
                     }
 
                     else
                     {
 
-                        outputBOX.Text = "Username: " + username + "\n Name: " + name + "\n Surename:" + surename + "\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
+                        outputBOX.Text = "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
                     }              
                 }
             }
