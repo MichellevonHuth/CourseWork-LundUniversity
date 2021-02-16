@@ -30,8 +30,7 @@ namespace MyDesktopApp
                 }
 
                 else
-                {
-                  
+                {                 
                     string username = UsernameTextbox.Text;
                     string name = NameTextbox.Text;
                     string surename = SurenameTextbox.Text;
@@ -42,19 +41,31 @@ namespace MyDesktopApp
                     int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
                     int savingDuration = Int32.Parse(AmountTextbox.Text);
 
-                    int [] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
-
-                    if (createSchedule[2] == 0)
+                  
+                    int checkIfUserExists = DataAccessLayer.CheckIfUserExists(username); 
+                    
+                    if(checkIfUserExists == 0)
                     {
+                        int[] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
 
-                        outputBOX.Text = "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months."; 
+                        if (createSchedule[2] == 0)
+                        {
+
+                            outputBOX.Text = "\r\n" + "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months.";
+                        }
+
+                        else
+                        {
+
+                            outputBOX.Text = "\r\n" + "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
+                        }
+
                     }
-
                     else
                     {
-
-                        outputBOX.Text = "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
-                    }              
+                        outputBOX.Text = "\r\n" + username + " is already taken, try a new one!"; 
+                    }               
+                               
                 }
             }
             catch (Exception ex)
@@ -80,13 +91,14 @@ namespace MyDesktopApp
                 {
                     
                     string[] databaseValues = DataAccessLayer.FindUserAccounts(username);
-                    outputBOX.Text = "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving duration: " + databaseValues[7];
+                    outputBOX.Text = "\r\n" + "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving duration: " + databaseValues[7];
+                                 
                 }
 
                 else
                 {
 
-                    outputBOX.Text = username + " is not registred in the database.";
+                    outputBOX.Text = "\r\n" + username + " is not registred in the database.";
                 }
 
             }
@@ -112,13 +124,13 @@ namespace MyDesktopApp
 
                 if (findUser[0] == null)
                 {
-                    outputBOX.Text = username + " is deleted!";
+                    outputBOX.Text = "\r\n" + username + " is deleted!";
                 }
 
             }
             else
             {
-                outputBOX.Text = username + " is not registred in the database.";
+                outputBOX.Text = "\r\n" + username + " is not registred in the database.";
             }
         }
 
@@ -150,24 +162,24 @@ namespace MyDesktopApp
                     {
                         DataAccessLayer.UpdateUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
 
-                        int[] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
+                        int[] createSchedule = DataAccessLayer.CreateSchedule(totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
 
                         if (createSchedule[2] == 0)
                         {
 
-                            outputBOX.Text = "THIS IS YOUR UPDATED SCHEDULE " + "\r\n\r\nUsername: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months.";
+                            outputBOX.Text = "\r\n" + "THIS IS YOUR UPDATED SCHEDULE " + "\r\n\r\nUsername: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months.";
                         }
 
                         else
                         {
 
-                            outputBOX.Text = "THIS IS YOUR UPDATED SCHEDULE " + "\r\n\r\nUsername: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
+                            outputBOX.Text = "\r\n" + "THIS IS YOUR UPDATED SCHEDULE " + "\r\n\r\nUsername: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
                         }
                     }
 
                     else
                     {
-                        outputBOX.Text = username + " is not registred in the database.";
+                        outputBOX.Text = "\r\n" + username + " is not registred in the database.";
                     }
                 }
             }
@@ -339,19 +351,6 @@ namespace MyDesktopApp
 
         private void FindTextbox_TextChanged(object sender, EventArgs e)
         {
-
-            FindTextbox.Text = "Username...";
-
-            if (FindTextbox.Text == "Username...")
-            {
-                FindTextbox.Text = "";
-            }
-
-            else if (FindTextbox.Text == "")
-            {
-                FindTextbox.Text = "Username...";
-            }
-
 
         }
 
