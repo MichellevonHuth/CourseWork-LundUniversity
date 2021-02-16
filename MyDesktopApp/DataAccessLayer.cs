@@ -126,38 +126,40 @@ namespace MyDesktopApp
         }
 
 
-        public static string FindAllUserAccounts(string username)
+        public static string [] FindUserAccounts(string username)
         {
-            string getUsername = ""; 
 
-            using(SqlConnection sqlConnection = new SqlConnection(connectionString))
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+           ;
+
+            SqlCommand sqlCommand = new SqlCommand("SELECT username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration FROM Account JOIN SavingSchedule ON username = accountUsername WHERE username=@username ORDER BY username");
+
+            sqlCommand.Parameters.AddWithValue("@username", username);
+            sqlCommand.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            string[] databaseValues = new string[8];
+
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            while (reader.Read())
             {
+                
+                databaseValues[0] = reader["username"].ToString();
+                databaseValues[1] = reader["name"].ToString();
+                databaseValues[2] = reader["surename"].ToString();
+                databaseValues[3] = reader["totalIncome"].ToString();
+                databaseValues[4] = reader["fixedCost"].ToString();
+                databaseValues[5] = reader["variableCost"].ToString();
+                databaseValues[6] = reader["savingGoal"].ToString();
+                databaseValues[7] = reader["savingDuration"].ToString();
+                
 
-                using (SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Account WHERE username='" + username +"'"))
-                {
-                    try
-                    {
-                        sqlConnection.Open();
-
-                        using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
-                        {
-                            while (dataReader.Read())
-                            {
-                               getUsername = String.Format("{0}", dataReader[0]);
-                              
-                            }
-                        }
-                    }
-
-                    catch (Exception ex)
-                    {
-                        ErrorHandler.HandleException(ex);
-                    }
-                }
             }
-           
-            return getUsername; 
+
+            return databaseValues; 
         }
+ 
 
         public void UpdateUser(String str)
         {

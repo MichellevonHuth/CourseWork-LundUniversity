@@ -77,8 +77,7 @@ namespace MyDesktopApp
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-       
-
+      
             try
             {
                 if (UsernameTextbox.Text == "" || NameTextbox.Text == "" || SurenameTextbox.Text == "" || TotalIncomeTextbox.Text == "" || FixedCostTextbox.Text == "" || VariableCostsTextbox.Text == "" || SavingGoalTextbox.Text == "" || AmountTextbox.Text == "" )
@@ -102,10 +101,6 @@ namespace MyDesktopApp
 
                     int [] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
 
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = DataAccessLayer.GetAllUserAccounts();
-                    comboBox1.DataSource = bs;
-
                     if (createSchedule[2] == 0)
                     {
 
@@ -126,8 +121,34 @@ namespace MyDesktopApp
         }
 
 
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FindTextbox.Text == "")
+                {
+                    MessageBox.Show("Please fill in your username");
+                }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+                else
+                {
+                    string username = FindTextbox.Text;
+                    string [] databaseValues = DataAccessLayer.FindUserAccounts(username);
+
+
+                    outputBOX.Text = "Username: " + databaseValues[0] + "\n Name: " + databaseValues[1] + "\n Surename: " + databaseValues[2] + "Total income: " + databaseValues[3] + "\n Fixed costs: " + databaseValues[4] + "\n Variable costs: " + databaseValues[5] + "\n Saving goal: " + databaseValues[6] + "\n Saving goal: " + databaseValues[7];
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                ErrorHandler.HandleException(ex);
+            }
+        }
+
+            private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -187,10 +208,7 @@ namespace MyDesktopApp
 
         }
 
-        private void FindButton_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
@@ -242,6 +260,11 @@ namespace MyDesktopApp
 
         }
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FindTextbox_TextChanged(object sender, EventArgs e)
         {
 
         }
