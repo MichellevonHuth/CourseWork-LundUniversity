@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Assignment_2
 {
     public partial class Form1 : Form
@@ -19,43 +20,44 @@ namespace Assignment_2
 
         public DataAccessLayer dal = new DataAccessLayer();
 
-        //public DataAccessLayer Dal
-        //{
-        //    get => dal;
-        //    set => dal = value;
-        //}
 
-        private void AllColumnName_btn_Click(object sender, EventArgs e)
+        private void AllColumnNameButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 DataTable dt = dal.ColumnNames();
                 messageDataGridView.DataSource = dt;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Errorhandler.HandleException(ex);
+                string message = Errorhandler.HandleException(ex);
+                this.MessageTextBox_SetText(message);
             }
         }
 
-        private void NumberOfRows_btn_Click(object sender, EventArgs e)
+        private void NumberOfRowsButton_Click(object sender, EventArgs e)
         {
             try
             {
                 DataTable dt = dal.NumberOfRows();
                 messageDataGridView.DataSource = dt;
             }
-
             catch (Exception ex)
             {
-                Errorhandler.HandleException(ex);
+                string message = Errorhandler.HandleException(ex);
+                this.MessageTextBox_SetText(message);
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
+
+        public void MessageTextBox_SetText(string message)
         {
 
+            errorMessageLabel.Text = message;
+        }
+
+        private void errorMessageLabel_Click(object sender, EventArgs e)
+        {
+          
         }
     }
-    
 }
