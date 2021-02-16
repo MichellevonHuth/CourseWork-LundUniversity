@@ -60,12 +60,12 @@
             // 
             this.HeaderLabel.AutoSize = true;
             this.HeaderLabel.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeaderLabel.Location = new System.Drawing.Point(76, 52);
+            this.HeaderLabel.Location = new System.Drawing.Point(36, 69);
             this.HeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HeaderLabel.Name = "HeaderLabel";
-            this.HeaderLabel.Size = new System.Drawing.Size(868, 45);
+            this.HeaderLabel.Size = new System.Drawing.Size(999, 45);
             this.HeaderLabel.TabIndex = 0;
-            this.HeaderLabel.Text = "Your future schedule is ready in any second...";
+            this.HeaderLabel.Text = "Your future saving schedule is ready in any second...";
             this.HeaderLabel.Click += new System.EventHandler(this.HeaderLabel_Click);
             // 
             // TotalIncome

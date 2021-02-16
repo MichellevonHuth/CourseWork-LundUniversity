@@ -18,63 +18,6 @@ namespace MyDesktopApp
             InitializeComponent();
         }
 
-        private void TotalIncomeTextbox_TextChanged(object sender, EventArgs e)
-        {
-            /*/
-            if (!System.Text.RegularExpressions.Regex.IsMatch(TotalIncomeTextbox.Text, "[^0-9]"))
-            {
-                MessageBox.Show("This textbox only accepts numbers.");
-                TotalIncomeTextbox.Text.Remove(TotalIncomeTextbox.Text.Length - 1);
-            }/*/
-        }
-
-        private void HeaderLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PleaseFillInLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VariableCostsTextbox_TextChanged(object sender, EventArgs e)
-        {
-           /*/ if (!System.Text.RegularExpressions.Regex.IsMatch(VariableCostsTextbox.Text, "[^0-9]"))
-            {
-                MessageBox.Show("This textbox only accepts numbers.");
-                VariableCostsTextbox.Text.Remove(VariableCostsTextbox.Text.Length - 1);
-            }/*/
-
-        }
-
-        private void SavingGoalTextbox_TextChanged(object sender, EventArgs e)
-        {
-            /*/if (!System.Text.RegularExpressions.Regex.IsMatch(SavingGoalTextbox.Text, "[^0-9]"))
-            {
-                MessageBox.Show("This textbox only accepts numbers.");
-                SavingGoalTextbox.Text.Remove(SavingGoalTextbox.Text.Length - 1);
-            }/*/
-
-        }
-
-        private void AmountTextbox_TextChanged(object sender, EventArgs e)
-        {
-           /*/ if (!System.Text.RegularExpressions.Regex.IsMatch(AmountTextbox.Text, "[^0-9]"))
-            {
-                MessageBox.Show("This textbox only accepts numbers.");
-                AmountTextbox.Text.Remove(AmountTextbox.Text.Length - 1);
-            }/*/
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-
-
         private void AddButton_Click(object sender, EventArgs e)
         {
       
@@ -97,9 +40,9 @@ namespace MyDesktopApp
                     int fixedCost = Int32.Parse(FixedCostTextbox.Text);
                     int variableCost = Int32.Parse(VariableCostsTextbox.Text);
                     int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
-                    int durationAmount = Int32.Parse(AmountTextbox.Text);
+                    int savingDuration = Int32.Parse(AmountTextbox.Text);
 
-                    int [] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, durationAmount);
+                    int [] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
 
                     if (createSchedule[2] == 0)
                     {
@@ -110,7 +53,7 @@ namespace MyDesktopApp
                     else
                     {
 
-                        outputBOX.Text = "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + durationAmount + " months to achieve your saving goal: " + savingGoal + "kr.";
+                        outputBOX.Text = "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
                     }              
                 }
             }
@@ -136,7 +79,7 @@ namespace MyDesktopApp
                     string [] databaseValues = DataAccessLayer.FindUserAccounts(username);
 
                     
-                    outputBOX.Text = "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving goal: " + databaseValues[7];
+                    outputBOX.Text = "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving duration: " + databaseValues[7];
 
                 }
 
@@ -146,92 +89,87 @@ namespace MyDesktopApp
             {
                 ErrorHandler.HandleException(ex);
             }
-        }
-
-            private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UsernameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void NameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void SureNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
- 
-
-        private void FixedCosts_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VariableCosts_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SavingGoalsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SavingGoalLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SavingDuration_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AmountLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-    
-
-        private void UpdateButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        }  
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             string username = FindTextbox.Text;
-            DataAccessLayer.DeleteSchedule(username);
-            DataAccessLayer.DeleteUser(username);
-            string [] findUser = DataAccessLayer.FindUserAccounts(username);
 
-            if(findUser[0] == null)
+            int chechIfUserExists = DataAccessLayer.CheckIfUserExists(username); 
+
+            if(chechIfUserExists == 1)
             {
-                outputBOX.Text = username + " is deleted!"; 
+                DataAccessLayer.DeleteSchedule(username);
+                DataAccessLayer.DeleteUser(username);
+
+                string[] findUser = DataAccessLayer.FindUserAccounts(username);
+
+                if (findUser[0] == null)
+                {
+                    outputBOX.Text = username + " is deleted!";
+                }
+
+            }
+            else
+            {
+                outputBOX.Text = username + " is not registred in the database.";
             }
         }
 
-        private void UsernameTextbox_TextChanged(object sender, EventArgs e)
+        private void UpdateButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (UsernameTextbox.Text == "" || NameTextbox.Text == "" || SurenameTextbox.Text == "" || TotalIncomeTextbox.Text == "" || FixedCostTextbox.Text == "" || VariableCostsTextbox.Text == "" || SavingGoalTextbox.Text == "" || AmountTextbox.Text == "")
+                {
 
+                    MessageBox.Show("Please fill all the fields");
+                }
 
+                else
+                {
+                    string username = UsernameTextbox.Text;
+                    string name = NameTextbox.Text;
+                    string surename = SurenameTextbox.Text;
+
+                    int totalIncome = Int32.Parse(TotalIncomeTextbox.Text);
+                    int fixedCost = Int32.Parse(FixedCostTextbox.Text);
+                    int variableCost = Int32.Parse(VariableCostsTextbox.Text);
+                    int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
+                    int savingDuration = Int32.Parse(AmountTextbox.Text);
+
+                    int chechIfUserExists = DataAccessLayer.CheckIfUserExists(username);
+                    
+                    if(chechIfUserExists == 1)
+                    {
+                        DataAccessLayer.UpdateUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
+
+                        int[] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
+
+                        if (createSchedule[2] == 0)
+                        {
+
+                            outputBOX.Text = "THIS IS YOUR UPDATED SCHEDULE " + "\r\n\r\nUsername: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months.";
+                        }
+
+                        else
+                        {
+
+                            outputBOX.Text = "THIS IS YOUR UPDATED SCHEDULE " + "\r\n\r\nUsername: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
+                        }
+                    }
+
+                    else
+                    {
+                        outputBOX.Text = username + " is not registred in the database.";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ErrorHandler.HandleException(ex);
+            }
         }
 
         private void NameTextbox_TextChanged(object sender, EventArgs e)
@@ -265,6 +203,108 @@ namespace MyDesktopApp
             }
 
         }
+
+        private void TotalIncomeTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HeaderLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PleaseFillInLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VariableCostsTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SavingGoalTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AmountTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void NameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void SureNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void FixedCosts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VariableCosts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SavingGoalsLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SavingGoalLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SavingDuration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AmountLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
