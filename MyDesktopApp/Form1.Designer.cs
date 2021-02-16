@@ -311,6 +311,7 @@
             this.outputBOX.Size = new System.Drawing.Size(964, 721);
             this.outputBOX.TabIndex = 31;
             this.outputBOX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.outputBOX.TextChanged += new System.EventHandler(this.outputBOX_TextChanged);
             // 
             // FindTextbox
             // 

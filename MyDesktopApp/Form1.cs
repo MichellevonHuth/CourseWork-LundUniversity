@@ -135,8 +135,8 @@ namespace MyDesktopApp
                     string username = FindTextbox.Text;
                     string [] databaseValues = DataAccessLayer.FindUserAccounts(username);
 
-
-                    outputBOX.Text = "Username: " + databaseValues[0] + "\n Name: " + databaseValues[1] + "\n Surename: " + databaseValues[2] + "Total income: " + databaseValues[3] + "\n Fixed costs: " + databaseValues[4] + "\n Variable costs: " + databaseValues[5] + "\n Saving goal: " + databaseValues[6] + "\n Saving goal: " + databaseValues[7];
+                    
+                    outputBOX.Text = "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving goal: " + databaseValues[7];
 
                 }
 
@@ -267,6 +267,11 @@ namespace MyDesktopApp
         private void FindTextbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void outputBOX_TextChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }
