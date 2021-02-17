@@ -24,9 +24,9 @@ namespace WSAssignment3
         }
 
         [WebMethod]
-        public string HelloWld()
+        public int Add(int a, int b)
         {
-            return "Hello Wld";
+            return a+b;
         }
     }
 }

@@ -22,12 +22,11 @@ namespace WSClient_Assignment3.Assignment3ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         System.Threading.Tasks.Task<WSClient_Assignment3.Assignment3ServiceReference.HelloWorldResponse> HelloWorldAsync(WSClient_Assignment3.Assignment3ServiceReference.HelloWorldRequest request);
         
-        // CODEGEN: Generating message contract since element name HelloWldResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWld", ReplyAction="*")]
-        WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponse HelloWld(WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
+        int Add(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWld", ReplyAction="*")]
-        System.Threading.Tasks.Task<WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponse> HelloWldAsync(WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> AddAsync(int a, int b);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -91,67 +90,6 @@ namespace WSClient_Assignment3.Assignment3ServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWldRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWld", Namespace="http://tempuri.org/", Order=0)]
-        public WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequestBody Body;
-        
-        public HelloWldRequest() {
-        }
-        
-        public HelloWldRequest(WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWldRequestBody {
-        
-        public HelloWldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponseBody Body;
-        
-        public HelloWldResponse() {
-        }
-        
-        public HelloWldResponse(WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWldResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWldResult;
-        
-        public HelloWldResponseBody() {
-        }
-        
-        public HelloWldResponseBody(string HelloWldResult) {
-            this.HelloWldResult = HelloWldResult;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Assignment3ServiceSoapChannel : WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -202,27 +140,12 @@ namespace WSClient_Assignment3.Assignment3ServiceReference {
             return ((WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap)(this)).HelloWorldAsync(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponse WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap.HelloWld(WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest request) {
-            return base.Channel.HelloWld(request);
+        public int Add(int a, int b) {
+            return base.Channel.Add(a, b);
         }
         
-        public string HelloWld() {
-            WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest inValue = new WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest();
-            inValue.Body = new WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequestBody();
-            WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponse retVal = ((WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap)(this)).HelloWld(inValue);
-            return retVal.Body.HelloWldResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponse> WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap.HelloWldAsync(WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest request) {
-            return base.Channel.HelloWldAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WSClient_Assignment3.Assignment3ServiceReference.HelloWldResponse> HelloWldAsync() {
-            WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest inValue = new WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequest();
-            inValue.Body = new WSClient_Assignment3.Assignment3ServiceReference.HelloWldRequestBody();
-            return ((WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap)(this)).HelloWldAsync(inValue);
+        public System.Threading.Tasks.Task<int> AddAsync(int a, int b) {
+            return base.Channel.AddAsync(a, b);
         }
     }
 }

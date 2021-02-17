@@ -12,10 +12,12 @@ namespace WSClient_Assignment3
         {
             Assignment3ServiceReference.Assignment3ServiceSoapClient client = new Assignment3ServiceReference.Assignment3ServiceSoapClient();
             string str = client.HelloWorld();
-            string hej = client.HelloWld();
+            int result = client.Add(5, 6);
 
             Console.WriteLine(str);
-            Console.WriteLine(hej);
+            Console.WriteLine(result);
+
+
             Console.ReadLine();
         }
     }
