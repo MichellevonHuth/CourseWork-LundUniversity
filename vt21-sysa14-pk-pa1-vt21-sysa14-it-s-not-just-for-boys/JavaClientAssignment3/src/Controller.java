@@ -33,9 +33,19 @@ public class Controller {
 	
 	public void declareEvents() {
 	
-		aw.getBtnNewButton().addActionListener(new ActionListener() {
+		aw.getShowTextFileBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("h");
+				try {
+					
+					String messageString;
+					
+					messageString = proxy.txtFile("file:///Users/Administrator/Desktop/HelloWorld.txt");
+					aw.getShowTextFileBtn().setText(messageString);
+					}
+					
+					catch(RemoteException ex) {
+						ex.printStackTrace();
+					}
 			}
 		});
 	}

@@ -1,6 +1,4 @@
-import java.awt.EventQueue;
 import java.rmi.RemoteException;
-
 import org.tempuri.Assignment3ServiceSoap;
 import org.tempuri.Assignment3ServiceSoapProxy;
 
@@ -12,7 +10,7 @@ public class Main {
 		Controller controller = new Controller(frame);
 		frame.setController(controller);
 		frame.getFrame().setVisible(true);
-				
+	
 	}
 
 }
