@@ -27,6 +27,13 @@ namespace WSClient_Assignment3.Assignment3ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
         System.Threading.Tasks.Task<int> AddAsync(int a, int b);
+        
+        // CODEGEN: Generating message contract since element name filename from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TxtFile", ReplyAction="*")]
+        WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponse TxtFile(WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TxtFile", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponse> TxtFileAsync(WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -90,6 +97,74 @@ namespace WSClient_Assignment3.Assignment3ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class TxtFileRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="TxtFile", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequestBody Body;
+        
+        public TxtFileRequest() {
+        }
+        
+        public TxtFileRequest(WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class TxtFileRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string filename;
+        
+        public TxtFileRequestBody() {
+        }
+        
+        public TxtFileRequestBody(string filename) {
+            this.filename = filename;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class TxtFileResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="TxtFileResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponseBody Body;
+        
+        public TxtFileResponse() {
+        }
+        
+        public TxtFileResponse(WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class TxtFileResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string TxtFileResult;
+        
+        public TxtFileResponseBody() {
+        }
+        
+        public TxtFileResponseBody(string TxtFileResult) {
+            this.TxtFileResult = TxtFileResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Assignment3ServiceSoapChannel : WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -146,6 +221,31 @@ namespace WSClient_Assignment3.Assignment3ServiceReference {
         
         public System.Threading.Tasks.Task<int> AddAsync(int a, int b) {
             return base.Channel.AddAsync(a, b);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponse WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap.TxtFile(WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest request) {
+            return base.Channel.TxtFile(request);
+        }
+        
+        public string TxtFile(string filename) {
+            WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest inValue = new WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest();
+            inValue.Body = new WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequestBody();
+            inValue.Body.filename = filename;
+            WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponse retVal = ((WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap)(this)).TxtFile(inValue);
+            return retVal.Body.TxtFileResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponse> WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap.TxtFileAsync(WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest request) {
+            return base.Channel.TxtFileAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSClient_Assignment3.Assignment3ServiceReference.TxtFileResponse> TxtFileAsync(string filename) {
+            WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest inValue = new WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequest();
+            inValue.Body = new WSClient_Assignment3.Assignment3ServiceReference.TxtFileRequestBody();
+            inValue.Body.filename = filename;
+            return ((WSClient_Assignment3.Assignment3ServiceReference.Assignment3ServiceSoap)(this)).TxtFileAsync(inValue);
         }
     }
 }

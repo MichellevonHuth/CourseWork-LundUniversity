@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -20,13 +21,23 @@ namespace WSAssignment3
         [WebMethod]
         public string HelloWorld()
         {
-            return "Hello World";
+            return "I am from the HelloWorld method :)";
         }
 
         [WebMethod]
         public int Add(int a, int b)
         {
             return a+b;
+        }
+
+        [WebMethod]
+        public String TxtFile(String filename)
+        {
+            StreamReader sr = File.OpenText(filename);
+            {
+                String line = sr.ReadToEnd();
+                return line;
+            }
         }
     }
 }
