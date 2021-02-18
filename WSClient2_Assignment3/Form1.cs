@@ -22,10 +22,17 @@ namespace WSClient2_Assignment3
 
         private void getFileButton_Click(object sender, EventArgs e)
         {
-           
-            textBox.Text = client.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
+            try
+            {
+                textBox.Text = client.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
+            }
+            catch(Exception ex)
+            {
 
+            }
         }
+
+       
     }
 }
 // denna följer MVC kolla föreläsningen om detta!!
