@@ -56,5 +56,11 @@ public class Assignment3ServiceSoapProxy implements org.tempuri.Assignment3Servi
     return assignment3ServiceSoap.add(a, b);
   }
   
+  public java.lang.String txtFile(java.lang.String filename) throws java.rmi.RemoteException{
+    if (assignment3ServiceSoap == null)
+      _initAssignment3ServiceSoapProxy();
+    return assignment3ServiceSoap.txtFile(filename);
+  }
+  
   
 }
