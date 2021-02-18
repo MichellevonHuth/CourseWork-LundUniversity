@@ -5,41 +5,39 @@ import java.rmi.RemoteException;
 
 public class Controller {
 	
-	private ApplicationWindow frame;
+	private Frame frame;
 	private Assignment3ServiceSoap proxy;
+	private ApplicationWindow aw;
 	
-	public Controller(ApplicationWindow frame) {
-		this.frame = frame;
+	public Controller(ApplicationWindow aw) {
+		this.aw = aw;
 		proxy = new Assignment3ServiceSoapProxy();
 		declareEvents();
 	} 
 	
-	public void setFrame(ApplicationWindow frame) {
+	public void setFrame(Frame frame) {
 		this.frame = frame;
 	}
 		
-	public ApplicationWindow getFrame() {
+	public Frame getFrame() {
 		return frame;
 	}
+	public ApplicationWindow getAw() {
+		return aw;
+	}
+
+	public void setAw(ApplicationWindow aw) {
+		this.aw = aw;
+	}
+
 	
 	public void declareEvents() {
 	
-		frame.getShowTextFieldBtn().addActionListener(new ActionListener() {
+		aw.getBtnNewButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					
-					String messageString;
-					
-					messageString = proxy.txtFile("file:///Users/Administrator/Desktop/HelloWorld.txt");
-					frame.getMessageTextField().setText(messageString);
-					}
-					
-					catch(RemoteException ex) {
-						ex.printStackTrace();
-					}
+				System.out.println("h");
 			}
 		});
-	
 	}
 
 }

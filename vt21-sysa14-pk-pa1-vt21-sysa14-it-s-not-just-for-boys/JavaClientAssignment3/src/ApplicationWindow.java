@@ -1,56 +1,69 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ApplicationWindow extends JFrame {
+public class ApplicationWindow {
 
-	private JPanel contentPane;
-	private JTextField messageTextField;
-	private JButton showTextFileBtn;
-	
+	private JFrame frame;
+	private JTextField textField;
+	private Controller controller;
+	private JButton btnNewButton;
+
+
+
 	public ApplicationWindow() {
+		initialize();
+	}
+
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(167, 24, 89, 49);
+		frame.getContentPane().add(btnNewButton);
 		
-		showTextFileBtn = new JButton("Show Text File");
-		showTextFileBtn.setBounds(157, 48, 128, 23);
-		contentPane.add(showTextFileBtn);
-		
-		messageTextField = new JTextField();
-		messageTextField.setBounds(69, 103, 303, 115);
-		contentPane.add(messageTextField);
-		messageTextField.setColumns(10);
+		textField = new JTextField();
+		textField.setBounds(93, 84, 258, 155);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
 	}
 	
-	public JButton getShowTextFieldBtn() {
-		return showTextFileBtn;
+
+	public Controller getController() {
+		return controller;
 	}
-	public void setShowTextFieldBtn(JButton showTextFileBtn) {
-		this.showTextFileBtn = showTextFileBtn;
+
+
+	public void setController(Controller controller) {
+		this.controller = controller;
 	}
-	public JTextField getMessageTextField() {
-		return messageTextField;
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
 	}
-	public void setMessageTextField(JTextField messageTextField) {
-		this.messageTextField = messageTextField;
+
+
+	public void setBtnNewButton(JButton btnNewButton) {
+		this.btnNewButton = btnNewButton;
 	}
-	public JPanel getContentPane() {
-		return contentPane;
-	}
-	public void setContentPane(JPanel contentPane) {
-		this.contentPane = contentPane;
-	}
+
 
 }

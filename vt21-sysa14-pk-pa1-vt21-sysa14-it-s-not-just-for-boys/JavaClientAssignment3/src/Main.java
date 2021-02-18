@@ -10,7 +10,8 @@ public class Main {
 	
 		ApplicationWindow frame = new ApplicationWindow();
 		Controller controller = new Controller(frame);
-		frame.setVisible(true);
+		frame.setController(controller);
+		frame.getFrame().setVisible(true);
 				
 	}
 
