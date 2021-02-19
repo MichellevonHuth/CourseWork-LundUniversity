@@ -8,7 +8,7 @@ namespace WSAssignment4
 {
         public class DataAccessLayer
         {
-            private static string connectionString = "Integrated Security = True;server=localhost;Trusted_Connection=yes;Database=DB_Grupp12";
+            private static string connectionString = "User Id=IS12;Password=Grupp12.fmmi;Server=localhost;Database=DB_Grupp12";
 
             public void InsertAccount(string username, string name, string surename)
             {
