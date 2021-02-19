@@ -14,20 +14,16 @@ namespace WSClient1_Assignment4
         static void Main(string[] args)
         {
 
-            WSAssignment4.DataAccessLayer dal = new WSAssignment4.DataAccessLayer();
+            Assignment4Service proxy = new Assignment4Service();
 
-  
-
-            List<Account> list = dal.GetAllAccounts();
+            Account[] list = proxy.GetAccounts();
 
             foreach(Account a in list)
             {
                 Console.WriteLine("Username: " +  a.Username + " " + "Name: " + a.Name + " " + "Surname: " + a.Surename);
             }
 
-            
-
-            Assignment4Service proxy = new Assignment4Service();
+          
 
             Console.ReadLine();
 

@@ -28,11 +28,9 @@ using System.Xml.Serialization;
 public partial class Assignment4Service : System.Web.Services.Protocols.SoapHttpClientProtocol
 {
 
-    private System.Threading.SendOrPostCallback HelloWorldOperationCompleted;
+    private System.Threading.SendOrPostCallback InsertUsersOperationCompleted;
 
-    private System.Threading.SendOrPostCallback AddOperationCompleted;
-
-    private System.Threading.SendOrPostCallback GetGrettingOperationCompleted;
+    private System.Threading.SendOrPostCallback GetAccountsOperationCompleted;
 
     /// <remarks/>
     public Assignment4Service()
@@ -41,158 +39,107 @@ public partial class Assignment4Service : System.Web.Services.Protocols.SoapHttp
     }
 
     /// <remarks/>
-    public event HelloWorldCompletedEventHandler HelloWorldCompleted;
+    public event InsertUsersCompletedEventHandler InsertUsersCompleted;
 
     /// <remarks/>
-    public event AddCompletedEventHandler AddCompleted;
+    public event GetAccountsCompletedEventHandler GetAccountsCompleted;
 
     /// <remarks/>
-    public event GetGrettingCompletedEventHandler GetGrettingCompleted;
-
-    /// <remarks/>
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public string HelloWorld()
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertUsers", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public void InsertUsers(string username, string name, string surename)
     {
-        object[] results = this.Invoke("HelloWorld", new object[0]);
-        return ((string)(results[0]));
+        this.Invoke("InsertUsers", new object[] {
+                    username,
+                    name,
+                    surename});
     }
 
     /// <remarks/>
-    public System.IAsyncResult BeginHelloWorld(System.AsyncCallback callback, object asyncState)
+    public System.IAsyncResult BeginInsertUsers(string username, string name, string surename, System.AsyncCallback callback, object asyncState)
     {
-        return this.BeginInvoke("HelloWorld", new object[0], callback, asyncState);
+        return this.BeginInvoke("InsertUsers", new object[] {
+                    username,
+                    name,
+                    surename}, callback, asyncState);
     }
 
     /// <remarks/>
-    public string EndHelloWorld(System.IAsyncResult asyncResult)
+    public void EndInsertUsers(System.IAsyncResult asyncResult)
     {
-        object[] results = this.EndInvoke(asyncResult);
-        return ((string)(results[0]));
+        this.EndInvoke(asyncResult);
     }
 
     /// <remarks/>
-    public void HelloWorldAsync()
+    public void InsertUsersAsync(string username, string name, string surename)
     {
-        this.HelloWorldAsync(null);
+        this.InsertUsersAsync(username, name, surename, null);
     }
 
     /// <remarks/>
-    public void HelloWorldAsync(object userState)
+    public void InsertUsersAsync(string username, string name, string surename, object userState)
     {
-        if ((this.HelloWorldOperationCompleted == null))
+        if ((this.InsertUsersOperationCompleted == null))
         {
-            this.HelloWorldOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHelloWorldOperationCompleted);
+            this.InsertUsersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertUsersOperationCompleted);
         }
-        this.InvokeAsync("HelloWorld", new object[0], this.HelloWorldOperationCompleted, userState);
+        this.InvokeAsync("InsertUsers", new object[] {
+                    username,
+                    name,
+                    surename}, this.InsertUsersOperationCompleted, userState);
     }
 
-    private void OnHelloWorldOperationCompleted(object arg)
+    private void OnInsertUsersOperationCompleted(object arg)
     {
-        if ((this.HelloWorldCompleted != null))
+        if ((this.InsertUsersCompleted != null))
         {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-            this.HelloWorldCompleted(this, new HelloWorldCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            this.InsertUsersCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
 
     /// <remarks/>
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Add", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public int Add(int a, int b)
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAccounts", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public Account[] GetAccounts()
     {
-        object[] results = this.Invoke("Add", new object[] {
-                    a,
-                    b});
-        return ((int)(results[0]));
+        object[] results = this.Invoke("GetAccounts", new object[0]);
+        return ((Account[])(results[0]));
     }
 
     /// <remarks/>
-    public System.IAsyncResult BeginAdd(int a, int b, System.AsyncCallback callback, object asyncState)
+    public System.IAsyncResult BeginGetAccounts(System.AsyncCallback callback, object asyncState)
     {
-        return this.BeginInvoke("Add", new object[] {
-                    a,
-                    b}, callback, asyncState);
+        return this.BeginInvoke("GetAccounts", new object[0], callback, asyncState);
     }
 
     /// <remarks/>
-    public int EndAdd(System.IAsyncResult asyncResult)
+    public Account[] EndGetAccounts(System.IAsyncResult asyncResult)
     {
         object[] results = this.EndInvoke(asyncResult);
-        return ((int)(results[0]));
+        return ((Account[])(results[0]));
     }
 
     /// <remarks/>
-    public void AddAsync(int a, int b)
+    public void GetAccountsAsync()
     {
-        this.AddAsync(a, b, null);
+        this.GetAccountsAsync(null);
     }
 
     /// <remarks/>
-    public void AddAsync(int a, int b, object userState)
+    public void GetAccountsAsync(object userState)
     {
-        if ((this.AddOperationCompleted == null))
+        if ((this.GetAccountsOperationCompleted == null))
         {
-            this.AddOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddOperationCompleted);
+            this.GetAccountsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAccountsOperationCompleted);
         }
-        this.InvokeAsync("Add", new object[] {
-                    a,
-                    b}, this.AddOperationCompleted, userState);
+        this.InvokeAsync("GetAccounts", new object[0], this.GetAccountsOperationCompleted, userState);
     }
 
-    private void OnAddOperationCompleted(object arg)
+    private void OnGetAccountsOperationCompleted(object arg)
     {
-        if ((this.AddCompleted != null))
+        if ((this.GetAccountsCompleted != null))
         {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-            this.AddCompleted(this, new AddCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-        }
-    }
-
-    /// <remarks/>
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetGretting", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public string GetGretting(string name)
-    {
-        object[] results = this.Invoke("GetGretting", new object[] {
-                    name});
-        return ((string)(results[0]));
-    }
-
-    /// <remarks/>
-    public System.IAsyncResult BeginGetGretting(string name, System.AsyncCallback callback, object asyncState)
-    {
-        return this.BeginInvoke("GetGretting", new object[] {
-                    name}, callback, asyncState);
-    }
-
-    /// <remarks/>
-    public string EndGetGretting(System.IAsyncResult asyncResult)
-    {
-        object[] results = this.EndInvoke(asyncResult);
-        return ((string)(results[0]));
-    }
-
-    /// <remarks/>
-    public void GetGrettingAsync(string name)
-    {
-        this.GetGrettingAsync(name, null);
-    }
-
-    /// <remarks/>
-    public void GetGrettingAsync(string name, object userState)
-    {
-        if ((this.GetGrettingOperationCompleted == null))
-        {
-            this.GetGrettingOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetGrettingOperationCompleted);
-        }
-        this.InvokeAsync("GetGretting", new object[] {
-                    name}, this.GetGrettingOperationCompleted, userState);
-    }
-
-    private void OnGetGrettingOperationCompleted(object arg)
-    {
-        if ((this.GetGrettingCompleted != null))
-        {
-            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-            this.GetGrettingCompleted(this, new GetGrettingCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            this.GetAccountsCompleted(this, new GetAccountsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
 
@@ -205,90 +152,89 @@ public partial class Assignment4Service : System.Web.Services.Protocols.SoapHttp
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
-public delegate void HelloWorldCompletedEventHandler(object sender, HelloWorldCompletedEventArgs e);
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+[System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-public partial class HelloWorldCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://tempuri.org/")]
+public partial class Account
 {
 
-    private object[] results;
+    private string usernameField;
 
-    internal HelloWorldCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-    {
-        this.results = results;
-    }
+    private string nameField;
+
+    private string surenameField;
 
     /// <remarks/>
-    public string Result
+    public string Username
     {
         get
         {
-            this.RaiseExceptionIfNecessary();
-            return ((string)(this.results[0]));
+            return this.usernameField;
+        }
+        set
+        {
+            this.usernameField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string Name
+    {
+        get
+        {
+            return this.nameField;
+        }
+        set
+        {
+            this.nameField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string Surename
+    {
+        get
+        {
+            return this.surenameField;
+        }
+        set
+        {
+            this.surenameField = value;
         }
     }
 }
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
-public delegate void AddCompletedEventHandler(object sender, AddCompletedEventArgs e);
+public delegate void InsertUsersCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+public delegate void GetAccountsCompletedEventHandler(object sender, GetAccountsCompletedEventArgs e);
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-public partial class AddCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+public partial class GetAccountsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
 {
 
     private object[] results;
 
-    internal AddCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+    internal GetAccountsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
             base(exception, cancelled, userState)
     {
         this.results = results;
     }
 
     /// <remarks/>
-    public int Result
+    public Account[] Result
     {
         get
         {
             this.RaiseExceptionIfNecessary();
-            return ((int)(this.results[0]));
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
-public delegate void GetGrettingCompletedEventHandler(object sender, GetGrettingCompletedEventArgs e);
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-public partial class GetGrettingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-{
-
-    private object[] results;
-
-    internal GetGrettingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-            base(exception, cancelled, userState)
-    {
-        this.results = results;
-    }
-
-    /// <remarks/>
-    public string Result
-    {
-        get
-        {
-            this.RaiseExceptionIfNecessary();
-            return ((string)(this.results[0]));
+            return ((Account[])(this.results[0]));
         }
     }
 }

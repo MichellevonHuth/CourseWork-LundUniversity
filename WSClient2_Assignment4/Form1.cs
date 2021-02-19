@@ -28,7 +28,14 @@ namespace WSClient2_Assignment4
 
         private void getAllAccountsButton_Click(object sender, EventArgs e)
         {
-           
+
+            Account[] list = proxy.GetAccounts(); 
+
+            foreach(Account a in list)
+            {
+                textBox.Text += ("Username: " + a.Username + " Name: " + a.Name + " Surname: " + a.Surename + "\r\n"); 
+            }
+            
         }
     }
 }

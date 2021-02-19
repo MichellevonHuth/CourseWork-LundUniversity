@@ -14,7 +14,7 @@ namespace WSClient2_Assignment4
         [STAThread]
         static void Main()
         {
-            Assignment4ServiceReference.Assignment4ServiceSoapClient client = new Assignment4ServiceReference.Assignment4ServiceSoapClient();
+            Assignment4Service proxy = new Assignment4Service(); 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

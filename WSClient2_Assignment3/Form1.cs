@@ -30,7 +30,7 @@ namespace WSClient2_Assignment3
             }
             catch(Exception ex)
             {
-
+                throw ex; 
             }
         }
 

@@ -292,4 +292,3 @@ public partial class TxtFileCompletedEventArgs : System.ComponentModel.AsyncComp
         }
     }
 }
-
