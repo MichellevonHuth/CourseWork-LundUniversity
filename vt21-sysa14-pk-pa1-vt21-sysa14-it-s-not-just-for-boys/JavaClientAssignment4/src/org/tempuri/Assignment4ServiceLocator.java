@@ -22,7 +22,7 @@ public class Assignment4ServiceLocator extends org.apache.axis.client.Service im
     }
 
     // Use to get a proxy class for Assignment4ServiceSoap
-    private java.lang.String Assignment4ServiceSoap_address = "http://localhost:49895/Assignment4Service.asmx";
+    private java.lang.String Assignment4ServiceSoap_address = "http://localhost/WSAssignment4/Assignment4Service.asmx";
 
     public java.lang.String getAssignment4ServiceSoapAddress() {
         return Assignment4ServiceSoap_address;

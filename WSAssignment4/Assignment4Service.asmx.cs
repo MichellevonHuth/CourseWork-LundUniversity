@@ -58,13 +58,14 @@ namespace WSAssignment4
 
         }
 
-
+        
         [WebMethod]
         public List<Account> GetAccounts()
         {
             List <Account> accounts = dal.GetAllAccounts();              
             return accounts; 
         }
+        
         
     }
 }

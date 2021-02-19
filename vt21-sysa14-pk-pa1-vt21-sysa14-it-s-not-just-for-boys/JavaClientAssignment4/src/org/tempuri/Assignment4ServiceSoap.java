@@ -10,6 +10,7 @@ package org.tempuri;
 public interface Assignment4ServiceSoap extends java.rmi.Remote {
     public java.lang.String helloWorld() throws java.rmi.RemoteException;
     public int add(int a, int b) throws java.rmi.RemoteException;
-    public java.lang.String getGretting(java.lang.String name) throws java.rmi.RemoteException;
+    public java.lang.String getGreeting(java.lang.String name) throws java.rmi.RemoteException;
     public void insertUsers(java.lang.String username, java.lang.String name, java.lang.String surename) throws java.rmi.RemoteException;
+    public org.tempuri.Account[] getAccounts() throws java.rmi.RemoteException;
 }

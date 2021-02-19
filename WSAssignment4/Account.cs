@@ -5,19 +5,13 @@ using System.Web;
 
 namespace WSAssignment4
 {
+    [Serializable]
     public class Account
     {
 
         private string username;
         private string name;
         private string surename;
-
-        public Account(string username, string name, string surename)
-        {
-            Username = username;
-            Name = name;
-            Surename = surename;
-        }
 
         public string Username
         {
