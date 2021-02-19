@@ -20,6 +20,8 @@ namespace WSAssignment4
                         sqlCommand.Parameters.AddWithValue("@name", name);
                         sqlCommand.Parameters.AddWithValue("@surename", surename);
 
+                        sqlCommand.Connection = sqlConnection;
+
                         sqlConnection.Open();
                         sqlCommand.ExecuteNonQuery();
 
@@ -27,5 +29,8 @@ namespace WSAssignment4
                 }
             }
         }
+
+
+
 }
 
