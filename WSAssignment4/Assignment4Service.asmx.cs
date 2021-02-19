@@ -42,14 +42,12 @@ namespace WSAssignment4
             return "Hello" + name;
         }
 
-<<<<<<< Updated upstream
-=======
         [WebMethod]
         public void InsertUsers(string username, string name, string surename)
         {
             dal.InsertAccount(username, name, surename); 
               
         }
->>>>>>> Stashed changes
+
     }
 }
