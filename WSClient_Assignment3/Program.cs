@@ -10,12 +10,13 @@ namespace WSClient_Assignment3
     {
         static void Main(string[] args)
         {
-            Assignment3ServiceReference.Assignment3ServiceSoapClient client = new Assignment3ServiceReference.Assignment3ServiceSoapClient();
-            string str = client.HelloWorld();
-            int result = client.Add(5, 6);
-            string line = client.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
+            Assignment3Service proxy = new Assignment3Service();
 
 
+            string str = proxy.HelloWorld();
+            int result = proxy.Add(5, 6);
+            string line = proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
+   
             Console.WriteLine(line);
             Console.WriteLine(str);
             Console.WriteLine(result);
