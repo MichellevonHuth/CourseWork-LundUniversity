@@ -12,14 +12,9 @@ namespace WSClient_Assignment3
         {
             Assignment3Service proxy = new Assignment3Service();
 
-
-            string str = proxy.HelloWorld();
-            int result = proxy.Add(5, 6);
-            string line = proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
-   
-            Console.WriteLine(line);
-            Console.WriteLine(str);
-            Console.WriteLine(result);
+            Console.WriteLine(proxy.HelloWorld());
+            Console.WriteLine(proxy.Add(5, 6));
+            Console.WriteLine(proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt"));
 
 
             Console.ReadLine();
