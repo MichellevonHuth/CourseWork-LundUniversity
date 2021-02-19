@@ -10,7 +10,8 @@ namespace WSClient1_Assignment4
     {
         static void Main(string[] args)
         {
-         
+
+            Assignment4Service proxy = new Assignment4Service();
 
             Console.WriteLine("Hello");
             Console.ReadLine();
