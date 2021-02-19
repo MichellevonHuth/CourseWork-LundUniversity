@@ -27,24 +27,6 @@ namespace WSAssignment4
 
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-        [WebMethod]
-        public int Add(int a, int b)
-        {
-            return a + b;
-        }
-
-        [WebMethod]
-        public string GetGreeting(string name)
-        {
-            return "Hello" + name;
-        }
-
-        [WebMethod]
         public void InsertUsers(string username, string name, string surename)
         {
             try

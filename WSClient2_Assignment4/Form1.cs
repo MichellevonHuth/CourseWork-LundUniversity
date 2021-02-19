@@ -12,17 +12,18 @@ namespace WSClient2_Assignment4
 {
     public partial class Form1 : Form
     {
-        private Assignment4ServiceReference.Assignment4ServiceSoapClient client;
+        Assignment4Service proxy = new Assignment4Service();
 
         public Form1()
         {
             InitializeComponent();
-            client = new Assignment4ServiceReference.Assignment4ServiceSoapClient();
+            
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void getAllAccountsButton_Click(object sender, EventArgs e)

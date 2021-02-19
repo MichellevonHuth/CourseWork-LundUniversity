@@ -13,11 +13,12 @@ namespace WSClient2_Assignment3
     public partial class Form1 : Form
 
     {
-        private Assignment3ServiceReference.Assignment3ServiceSoapClient client;
+        Assignment3Service proxy = new Assignment3Service();
+
         public Form1()
         {
             InitializeComponent();
-            client = new Assignment3ServiceReference.Assignment3ServiceSoapClient();
+          
         }
 
         private void getFileButton_Click(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace WSClient2_Assignment3
             try
             {
               
-                textBox.Text = client.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
+                textBox.Text = proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
             }
             catch(Exception ex)
             {
