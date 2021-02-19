@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Web.Services.Protocols;
 
 namespace WSAssignment4
 {
@@ -45,7 +47,14 @@ namespace WSAssignment4
         [WebMethod]
         public void InsertUsers(string username, string name, string surename)
         {
-            dal.InsertAccount(username, name, surename); 
+            try
+            {
+                dal.InsertAccount(username, name, surename);
+            }
+            catch (SqlException ex)
+            {
+                throw new SoapException("User already exist", SoapException.ClientFaultCode, ex);
+            }
               
         }
 

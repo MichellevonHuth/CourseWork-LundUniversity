@@ -62,5 +62,11 @@ public class Assignment4ServiceSoapProxy implements org.tempuri.Assignment4Servi
     return assignment4ServiceSoap.getGretting(name);
   }
   
+  public void insertUsers(java.lang.String username, java.lang.String name, java.lang.String surename) throws java.rmi.RemoteException{
+    if (assignment4ServiceSoap == null)
+      _initAssignment4ServiceSoapProxy();
+    assignment4ServiceSoap.insertUsers(username, name, surename);
+  }
+  
   
 }
