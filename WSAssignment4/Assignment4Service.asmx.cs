@@ -39,7 +39,7 @@ namespace WSAssignment4
         }
 
         [WebMethod]
-        public string GetGretting(string name)
+        public string GetGreeting(string name)
         {
             return "Hello" + name;
         }
@@ -55,8 +55,16 @@ namespace WSAssignment4
             {
                 throw new SoapException("User already exist", SoapException.ClientFaultCode, ex);
             }
-              
+
         }
 
+
+        [WebMethod]
+        public List<Account> GetAccounts()
+        {
+            List <Account> accounts = dal.GetAllAccounts();              
+            return accounts; 
+        }
+        
     }
 }

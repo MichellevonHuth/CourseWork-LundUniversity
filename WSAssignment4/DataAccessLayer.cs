@@ -28,8 +28,41 @@ namespace WSAssignment4
                     }
                 }
             }
+
+        public List<Account> GetAllAccounts()
+        {
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Account");
+            sqlCommand.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            List<Account> accounts = new List<Account>(); 
+            
+            string[] databaseValues = new string[3];
+
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                databaseValues[0] = reader["username"].ToString();
+                databaseValues[1] = reader["name"].ToString();
+                databaseValues[2] = reader["surename"].ToString();
+
+                Account account1 = new Account(databaseValues[0], databaseValues[1], databaseValues[2]);
+                accounts.Add(account1); 
+
+            }
+
+            return accounts;
         }
 
+    }
+
+
+   
 
 
 }
