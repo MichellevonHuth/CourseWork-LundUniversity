@@ -22,7 +22,7 @@ namespace WSClient1_Assignment4
 
             foreach(Account a in list)
             {
-                Console.WriteLine(a.Name + a.Username + a.Surename);
+                Console.WriteLine("Username: " +  a.Username + " " + "Name: " + a.Name + " " + "Surname: " + a.Surename);
             }
 
             

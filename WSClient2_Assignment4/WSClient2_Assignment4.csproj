@@ -74,7 +74,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Connected Services\Assignment4ServiceReference\Assignment4Service.wsdl" />
+    <None Include="Connected Services\Assignment4ServiceReference\WSClient2_Assignment4.Assignment4ServiceReference.Account.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Assignment4ServiceReference\WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Assignment4ServiceReference\WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Assignment4ServiceReference\WSClient2_Assignment4.Assignment4ServiceReference.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Assignment4ServiceReference\WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -95,9 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\Assignment4ServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\Assignment4ServiceReference\Assignment4Service.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\Assignment4ServiceReference\configuration91.svcinfo" />

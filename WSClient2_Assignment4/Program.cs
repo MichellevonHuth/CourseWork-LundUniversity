@@ -14,9 +14,12 @@ namespace WSClient2_Assignment4
         [STAThread]
         static void Main()
         {
+            Assignment4ServiceReference.Assignment4ServiceSoapClient client = new Assignment4ServiceReference.Assignment4ServiceSoapClient();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+           
         }
     }
 }

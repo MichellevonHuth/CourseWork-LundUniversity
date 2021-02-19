@@ -9,7 +9,86 @@
 //------------------------------------------------------------------------------
 
 namespace WSClient2_Assignment4.Assignment4ServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Account", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Account : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurenameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Surename {
+            get {
+                return this.SurenameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurenameField, value) != true)) {
+                    this.SurenameField = value;
+                    this.RaisePropertyChanged("Surename");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Assignment4ServiceReference.Assignment4ServiceSoap")]
@@ -21,6 +100,33 @@ namespace WSClient2_Assignment4.Assignment4ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.HelloWorldResponse> HelloWorldAsync(WSClient2_Assignment4.Assignment4ServiceReference.HelloWorldRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
+        int Add(int a, int b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> AddAsync(int a, int b);
+        
+        // CODEGEN: Generating message contract since element name name from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetGreeting", ReplyAction="*")]
+        WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponse GetGreeting(WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetGreeting", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponse> GetGreetingAsync(WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest request);
+        
+        // CODEGEN: Generating message contract since element name username from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertUsers", ReplyAction="*")]
+        WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponse InsertUsers(WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertUsers", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponse> InsertUsersAsync(WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAccountsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAccounts", ReplyAction="*")]
+        WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponse GetAccounts(WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAccounts", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponse> GetAccountsAsync(WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -84,6 +190,204 @@ namespace WSClient2_Assignment4.Assignment4ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetGreetingRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetGreeting", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequestBody Body;
+        
+        public GetGreetingRequest() {
+        }
+        
+        public GetGreetingRequest(WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetGreetingRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string name;
+        
+        public GetGreetingRequestBody() {
+        }
+        
+        public GetGreetingRequestBody(string name) {
+            this.name = name;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetGreetingResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetGreetingResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponseBody Body;
+        
+        public GetGreetingResponse() {
+        }
+        
+        public GetGreetingResponse(WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetGreetingResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetGreetingResult;
+        
+        public GetGreetingResponseBody() {
+        }
+        
+        public GetGreetingResponseBody(string GetGreetingResult) {
+            this.GetGreetingResult = GetGreetingResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertUsersRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertUsers", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequestBody Body;
+        
+        public InsertUsersRequest() {
+        }
+        
+        public InsertUsersRequest(WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertUsersRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string username;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string surename;
+        
+        public InsertUsersRequestBody() {
+        }
+        
+        public InsertUsersRequestBody(string username, string name, string surename) {
+            this.username = username;
+            this.name = name;
+            this.surename = surename;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertUsersResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertUsersResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponseBody Body;
+        
+        public InsertUsersResponse() {
+        }
+        
+        public InsertUsersResponse(WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsertUsersResponseBody {
+        
+        public InsertUsersResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAccountsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAccounts", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequestBody Body;
+        
+        public GetAccountsRequest() {
+        }
+        
+        public GetAccountsRequest(WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAccountsRequestBody {
+        
+        public GetAccountsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAccountsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAccountsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponseBody Body;
+        
+        public GetAccountsResponse() {
+        }
+        
+        public GetAccountsResponse(WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAccountsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WSClient2_Assignment4.Assignment4ServiceReference.Account[] GetAccountsResult;
+        
+        public GetAccountsResponseBody() {
+        }
+        
+        public GetAccountsResponseBody(WSClient2_Assignment4.Assignment4ServiceReference.Account[] GetAccountsResult) {
+            this.GetAccountsResult = GetAccountsResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Assignment4ServiceSoapChannel : WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -132,6 +436,90 @@ namespace WSClient2_Assignment4.Assignment4ServiceReference {
             WSClient2_Assignment4.Assignment4ServiceReference.HelloWorldRequest inValue = new WSClient2_Assignment4.Assignment4ServiceReference.HelloWorldRequest();
             inValue.Body = new WSClient2_Assignment4.Assignment4ServiceReference.HelloWorldRequestBody();
             return ((WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap)(this)).HelloWorldAsync(inValue);
+        }
+        
+        public int Add(int a, int b) {
+            return base.Channel.Add(a, b);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddAsync(int a, int b) {
+            return base.Channel.AddAsync(a, b);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponse WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap.GetGreeting(WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest request) {
+            return base.Channel.GetGreeting(request);
+        }
+        
+        public string GetGreeting(string name) {
+            WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest inValue = new WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest();
+            inValue.Body = new WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequestBody();
+            inValue.Body.name = name;
+            WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponse retVal = ((WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap)(this)).GetGreeting(inValue);
+            return retVal.Body.GetGreetingResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponse> WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap.GetGreetingAsync(WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest request) {
+            return base.Channel.GetGreetingAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingResponse> GetGreetingAsync(string name) {
+            WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest inValue = new WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequest();
+            inValue.Body = new WSClient2_Assignment4.Assignment4ServiceReference.GetGreetingRequestBody();
+            inValue.Body.name = name;
+            return ((WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap)(this)).GetGreetingAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponse WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap.InsertUsers(WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest request) {
+            return base.Channel.InsertUsers(request);
+        }
+        
+        public void InsertUsers(string username, string name, string surename) {
+            WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest inValue = new WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest();
+            inValue.Body = new WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.name = name;
+            inValue.Body.surename = surename;
+            WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponse retVal = ((WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap)(this)).InsertUsers(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponse> WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap.InsertUsersAsync(WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest request) {
+            return base.Channel.InsertUsersAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersResponse> InsertUsersAsync(string username, string name, string surename) {
+            WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest inValue = new WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequest();
+            inValue.Body = new WSClient2_Assignment4.Assignment4ServiceReference.InsertUsersRequestBody();
+            inValue.Body.username = username;
+            inValue.Body.name = name;
+            inValue.Body.surename = surename;
+            return ((WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap)(this)).InsertUsersAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponse WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap.GetAccounts(WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest request) {
+            return base.Channel.GetAccounts(request);
+        }
+        
+        public WSClient2_Assignment4.Assignment4ServiceReference.Account[] GetAccounts() {
+            WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest inValue = new WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest();
+            inValue.Body = new WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequestBody();
+            WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponse retVal = ((WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap)(this)).GetAccounts(inValue);
+            return retVal.Body.GetAccountsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponse> WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap.GetAccountsAsync(WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest request) {
+            return base.Channel.GetAccountsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsResponse> GetAccountsAsync() {
+            WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest inValue = new WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequest();
+            inValue.Body = new WSClient2_Assignment4.Assignment4ServiceReference.GetAccountsRequestBody();
+            return ((WSClient2_Assignment4.Assignment4ServiceReference.Assignment4ServiceSoap)(this)).GetAccountsAsync(inValue);
         }
     }
 }

@@ -40,6 +40,7 @@
             this.getAllAccountsButton.TabIndex = 0;
             this.getAllAccountsButton.Text = "Get all accounts";
             this.getAllAccountsButton.UseVisualStyleBackColor = true;
+            this.getAllAccountsButton.Click += new System.EventHandler(this.getAllAccountsButton_Click);
             // 
             // textBox
             // 
