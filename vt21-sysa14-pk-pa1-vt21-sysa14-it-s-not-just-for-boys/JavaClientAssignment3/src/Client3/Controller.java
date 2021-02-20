@@ -1,12 +1,13 @@
+package Client3;
 import java.awt.event.ActionEvent;
 import org.tempuri.*;
+
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.rmi.RemoteException;
 
 public class Controller {
 	
-	private Frame frame;
 	private Assignment3ServiceSoap proxy;
 	private ApplicationWindow aw;
 	private Errorhandler eh;
@@ -26,13 +27,6 @@ public class Controller {
 		this.eh = eh;
 	}
 	
-	public void setFrame(Frame frame) {
-		this.frame = frame;
-	}
-		
-	public Frame getFrame() {
-		return frame;
-	}
 	public ApplicationWindow getAw() {
 		return aw;
 	}
