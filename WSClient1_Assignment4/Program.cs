@@ -23,6 +23,13 @@ namespace WSClient1_Assignment4
                 Console.WriteLine("Username: " +  a.Username + " " + "Name: " + a.Name + " " + "Surname: " + a.Surename);
             }
 
+            SavingSchedule[] alist = proxy.GetSavingSchedules();
+
+            foreach (SavingSchedule a in alist)
+            {
+                Console.WriteLine("Username: " + a.AccountUsername +  " Total Income: " + a.TotalIncome +  " Fixed Cost: " + a.FixedCost + " Variable Cost: " + a.VariableCost + " Saving Goal: " + a.SavingGoal + " Saving Duration: " + a.SavingDuration);
+            }
+
           
 
             Console.ReadLine();

@@ -18,9 +18,28 @@ namespace WSAssignment5
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public void CreateEmployee()
         {
-            return "Hello World";
+            
         }
+
+        [WebMethod]
+        public void ReadEmployee()
+        {
+            
+        }
+
+        [WebMethod]
+        public void UpdateEmployee()
+        {
+
+        }
+
+        [WebMethod]
+        public void DeleteEmployee()
+        {
+
+        }
+
     }
 }

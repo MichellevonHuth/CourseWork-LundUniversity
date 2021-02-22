@@ -47,7 +47,14 @@ namespace WSAssignment4
             List <Account> accounts = dal.GetAllAccounts();              
             return accounts; 
         }
-        
-        
+
+        [WebMethod]
+        public List<SavingSchedule> GetSavingSchedules()
+        {
+            List<SavingSchedule> schedules = dal.GetAllSavingSchedules();
+            return schedules;
+        }
+
+
     }
 }

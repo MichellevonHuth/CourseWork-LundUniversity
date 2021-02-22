@@ -32,6 +32,8 @@ public partial class Assignment4Service : System.Web.Services.Protocols.SoapHttp
 
     private System.Threading.SendOrPostCallback GetAccountsOperationCompleted;
 
+    private System.Threading.SendOrPostCallback GetSavingSchedulesOperationCompleted;
+
     /// <remarks/>
     public Assignment4Service()
     {
@@ -43,6 +45,9 @@ public partial class Assignment4Service : System.Web.Services.Protocols.SoapHttp
 
     /// <remarks/>
     public event GetAccountsCompletedEventHandler GetAccountsCompleted;
+
+    /// <remarks/>
+    public event GetSavingSchedulesCompletedEventHandler GetSavingSchedulesCompleted;
 
     /// <remarks/>
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertUsers", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -144,6 +149,52 @@ public partial class Assignment4Service : System.Web.Services.Protocols.SoapHttp
     }
 
     /// <remarks/>
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetSavingSchedules", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public SavingSchedule[] GetSavingSchedules()
+    {
+        object[] results = this.Invoke("GetSavingSchedules", new object[0]);
+        return ((SavingSchedule[])(results[0]));
+    }
+
+    /// <remarks/>
+    public System.IAsyncResult BeginGetSavingSchedules(System.AsyncCallback callback, object asyncState)
+    {
+        return this.BeginInvoke("GetSavingSchedules", new object[0], callback, asyncState);
+    }
+
+    /// <remarks/>
+    public SavingSchedule[] EndGetSavingSchedules(System.IAsyncResult asyncResult)
+    {
+        object[] results = this.EndInvoke(asyncResult);
+        return ((SavingSchedule[])(results[0]));
+    }
+
+    /// <remarks/>
+    public void GetSavingSchedulesAsync()
+    {
+        this.GetSavingSchedulesAsync(null);
+    }
+
+    /// <remarks/>
+    public void GetSavingSchedulesAsync(object userState)
+    {
+        if ((this.GetSavingSchedulesOperationCompleted == null))
+        {
+            this.GetSavingSchedulesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetSavingSchedulesOperationCompleted);
+        }
+        this.InvokeAsync("GetSavingSchedules", new object[0], this.GetSavingSchedulesOperationCompleted, userState);
+    }
+
+    private void OnGetSavingSchedulesOperationCompleted(object arg)
+    {
+        if ((this.GetSavingSchedulesCompleted != null))
+        {
+            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+            this.GetSavingSchedulesCompleted(this, new GetSavingSchedulesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+        }
+    }
+
+    /// <remarks/>
     public new void CancelAsync(object userState)
     {
         base.CancelAsync(userState);
@@ -207,6 +258,106 @@ public partial class Account
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://tempuri.org/")]
+public partial class SavingSchedule
+{
+
+    private string accountUsernameField;
+
+    private string totalIncomeField;
+
+    private string fixedCostField;
+
+    private string variableCostField;
+
+    private string savingGoalField;
+
+    private string savingDurationField;
+
+    /// <remarks/>
+    public string AccountUsername
+    {
+        get
+        {
+            return this.accountUsernameField;
+        }
+        set
+        {
+            this.accountUsernameField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string TotalIncome
+    {
+        get
+        {
+            return this.totalIncomeField;
+        }
+        set
+        {
+            this.totalIncomeField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string FixedCost
+    {
+        get
+        {
+            return this.fixedCostField;
+        }
+        set
+        {
+            this.fixedCostField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string VariableCost
+    {
+        get
+        {
+            return this.variableCostField;
+        }
+        set
+        {
+            this.variableCostField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string SavingGoal
+    {
+        get
+        {
+            return this.savingGoalField;
+        }
+        set
+        {
+            this.savingGoalField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string SavingDuration
+    {
+        get
+        {
+            return this.savingDurationField;
+        }
+        set
+        {
+            this.savingDurationField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
 public delegate void InsertUsersCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 
 /// <remarks/>
@@ -235,6 +386,36 @@ public partial class GetAccountsCompletedEventArgs : System.ComponentModel.Async
         {
             this.RaiseExceptionIfNecessary();
             return ((Account[])(this.results[0]));
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+public delegate void GetSavingSchedulesCompletedEventHandler(object sender, GetSavingSchedulesCompletedEventArgs e);
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class GetSavingSchedulesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+{
+
+    private object[] results;
+
+    internal GetSavingSchedulesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+    {
+        this.results = results;
+    }
+
+    /// <remarks/>
+    public SavingSchedule[] Result
+    {
+        get
+        {
+            this.RaiseExceptionIfNecessary();
+            return ((SavingSchedule[])(this.results[0]));
         }
     }
 }

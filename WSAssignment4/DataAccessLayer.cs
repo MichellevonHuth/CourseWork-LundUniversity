@@ -62,6 +62,43 @@ namespace WSAssignment4
             return accounts;
         }
 
+        public List<SavingSchedule> GetAllSavingSchedules()
+        {
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM SavingSchedule");
+            sqlCommand.Connection = sqlConnection;
+
+            sqlConnection.Open();
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+
+            List<SavingSchedule> schedules = new List<SavingSchedule>();
+
+
+            while (reader.Read())
+            {
+
+                string accountUsername = reader["accountUsername"].ToString();
+                string totalIncome = reader["totalIncome"].ToString();
+                string fixedCost = reader["fixedCost"].ToString();
+                string variableCost = reader["variableCost"].ToString();
+                string savingGoal = reader["savingGoal"].ToString();
+                string savingDuration = reader["savingDuration"].ToString();
+
+                SavingSchedule schedule1 = new SavingSchedule();
+                schedule1.AccountUsername = accountUsername;
+                schedule1.TotalIncome = totalIncome;
+                schedule1.FixedCost = fixedCost;
+                schedule1.VariableCost = variableCost;
+                schedule1.SavingGoal = savingGoal;
+                schedule1.SavingDuration = savingDuration;
+                schedules.Add(schedule1);
+
+            }
+
+            return schedules;
+        }
+
     }
 
 

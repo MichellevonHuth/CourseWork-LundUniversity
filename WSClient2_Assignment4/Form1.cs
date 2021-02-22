@@ -28,6 +28,7 @@ namespace WSClient2_Assignment4
 
         private void getAllAccountsButton_Click(object sender, EventArgs e)
         {
+            textBox.Clear();
 
             Account[] list = proxy.GetAccounts(); 
 
@@ -36,6 +37,18 @@ namespace WSClient2_Assignment4
                 textBox.Text += ("Username: " + a.Username + " Name: " + a.Name + " Surname: " + a.Surename + "\r\n"); 
             }
             
+        }
+
+        private void getAllSchedulesButton_Click(object sender, EventArgs e)
+        {
+            textBox.Clear();
+
+            SavingSchedule[] list = proxy.GetSavingSchedules();
+
+            foreach (SavingSchedule a in list)
+            {
+                textBox.Text += ("Username: " + a.AccountUsername + " Total Income: " + a.TotalIncome + " Fixed Cost: " + a.FixedCost + " Variable Cost: " + a.VariableCost + " Saving Goal: " + a.SavingGoal + " Saving Duration: " + a.SavingDuration + "\r\n");
+            }
         }
     }
 }

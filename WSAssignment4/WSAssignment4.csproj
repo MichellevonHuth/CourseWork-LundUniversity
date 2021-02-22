@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="DataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SavingSchedule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

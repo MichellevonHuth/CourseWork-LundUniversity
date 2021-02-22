@@ -30,13 +30,14 @@
         {
             this.getAllAccountsButton = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.getAllSchedulesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // getAllAccountsButton
             // 
-            this.getAllAccountsButton.Location = new System.Drawing.Point(23, 212);
+            this.getAllAccountsButton.Location = new System.Drawing.Point(140, 301);
             this.getAllAccountsButton.Name = "getAllAccountsButton";
-            this.getAllAccountsButton.Size = new System.Drawing.Size(159, 23);
+            this.getAllAccountsButton.Size = new System.Drawing.Size(198, 23);
             this.getAllAccountsButton.TabIndex = 0;
             this.getAllAccountsButton.Text = "Get all accounts";
             this.getAllAccountsButton.UseVisualStyleBackColor = true;
@@ -47,14 +48,25 @@
             this.textBox.Location = new System.Drawing.Point(23, 12);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(366, 186);
+            this.textBox.Size = new System.Drawing.Size(644, 273);
             this.textBox.TabIndex = 1;
+            // 
+            // getAllSchedulesButton
+            // 
+            this.getAllSchedulesButton.Location = new System.Drawing.Point(383, 301);
+            this.getAllSchedulesButton.Name = "getAllSchedulesButton";
+            this.getAllSchedulesButton.Size = new System.Drawing.Size(185, 23);
+            this.getAllSchedulesButton.TabIndex = 2;
+            this.getAllSchedulesButton.Text = "Get all savingschedules";
+            this.getAllSchedulesButton.UseVisualStyleBackColor = true;
+            this.getAllSchedulesButton.Click += new System.EventHandler(this.getAllSchedulesButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 256);
+            this.ClientSize = new System.Drawing.Size(679, 359);
+            this.Controls.Add(this.getAllSchedulesButton);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.getAllAccountsButton);
             this.Name = "Form1";
@@ -68,6 +80,7 @@
 
         private System.Windows.Forms.Button getAllAccountsButton;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Button getAllSchedulesButton;
     }
 }
 
