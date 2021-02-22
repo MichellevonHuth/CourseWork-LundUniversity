@@ -46,16 +46,16 @@ public class Controller {
 					try {
 					
 					Account[] accounts = proxy.getAccounts();
-					String message = null;
+					String message = "";
 					
 					for(Account account : accounts) {
 							
-						String information = "Username: " + account.getUsername() + " Name: " + account.getName() + " Surname: " + account.getSurename() + "\r";
+						String information = "Username: " + account.getUsername() + " Name: " + account.getName() + " Surname: " + account.getSurename() + "\n";
 						message += information;
-						message += "\n";
+					
 					}
 					
-					aw.getMessageTextField().setText(message);
+					aw.getMessageTextArea().setText(message);
 					
 					}
 					
