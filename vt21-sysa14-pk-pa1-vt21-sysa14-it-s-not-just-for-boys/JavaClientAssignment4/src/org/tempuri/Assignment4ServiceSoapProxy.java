@@ -44,34 +44,22 @@ public class Assignment4ServiceSoapProxy implements org.tempuri.Assignment4Servi
     return assignment4ServiceSoap;
   }
   
-  public java.lang.String helloWorld() throws java.rmi.RemoteException{
-    if (assignment4ServiceSoap == null)
-      _initAssignment4ServiceSoapProxy();
-    return assignment4ServiceSoap.helloWorld();
-  }
-  
-  public int add(int a, int b) throws java.rmi.RemoteException{
-    if (assignment4ServiceSoap == null)
-      _initAssignment4ServiceSoapProxy();
-    return assignment4ServiceSoap.add(a, b);
-  }
-  
   public void insertUsers(java.lang.String username, java.lang.String name, java.lang.String surename) throws java.rmi.RemoteException{
     if (assignment4ServiceSoap == null)
       _initAssignment4ServiceSoapProxy();
     assignment4ServiceSoap.insertUsers(username, name, surename);
   }
   
-  public java.lang.String getGreeting(java.lang.String name) throws java.rmi.RemoteException{
-    if (assignment4ServiceSoap == null)
-      _initAssignment4ServiceSoapProxy();
-    return assignment4ServiceSoap.getGreeting(name);
-  }
-  
   public org.tempuri.Account[] getAccounts() throws java.rmi.RemoteException{
     if (assignment4ServiceSoap == null)
       _initAssignment4ServiceSoapProxy();
     return assignment4ServiceSoap.getAccounts();
+  }
+  
+  public org.tempuri.SavingSchedule[] getSavingSchedules() throws java.rmi.RemoteException{
+    if (assignment4ServiceSoap == null)
+      _initAssignment4ServiceSoapProxy();
+    return assignment4ServiceSoap.getSavingSchedules();
   }
   
   

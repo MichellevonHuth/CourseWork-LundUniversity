@@ -7,6 +7,7 @@ import java.rmi.RemoteException;
 import org.tempuri.Account;
 import org.tempuri.Assignment4ServiceSoap;
 import org.tempuri.Assignment4ServiceSoapProxy;
+import org.tempuri.SavingSchedule;
 
 
 public class Controller {
@@ -63,6 +64,35 @@ public class Controller {
 						String errormessage = eh.handleException(ex);
 						aw.getErrorMessageLbl().setText(errormessage);
 					}
+			}
+		});
+		
+		
+		aw.getShowAllSavingSchedulesBtn().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+				
+				SavingSchedule[] schedules = proxy.getSavingSchedules();
+				String message = "";
+				
+				for(SavingSchedule a : schedules) {
+						
+					String information = "Username: " + a.getAccountUsername() + " Total Income: " + a.getTotalIncome() + " Fixed Cost: " + a.getFixedCost() + " Variable Cost: " + a.getVariableCost() + " Saving Goal: " + a.getSavingGoal() + " Saving Duration: " + a.getSavingDuration() + "\r\n";
+					message += information;
+				
+				}
+				
+				aw.getMessageTextArea().setText(message);
+				
+				}
+				
+				catch(RemoteException ex) {
+					String errormessage = eh.handleException(ex);
+					aw.getErrorMessageLbl().setText(errormessage);
+				}
+				
+				
+				
 			}
 		});
 	}
