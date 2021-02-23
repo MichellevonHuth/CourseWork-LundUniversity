@@ -15,8 +15,6 @@ namespace WSClient_Assignment3
             Console.WriteLine(proxy.HelloWorld());
             Console.WriteLine(proxy.Add(5, 6));
             Console.WriteLine(proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt"));
-
-
             Console.ReadLine();
         }
     }
