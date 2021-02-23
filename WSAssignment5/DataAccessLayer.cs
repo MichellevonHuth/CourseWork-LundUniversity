@@ -98,7 +98,7 @@ namespace WSAssignment5
         }
 
 
-        public static List<string> GetEmployees()
+        public List<string> GetEmployees()
         {
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             SqlCommand sqlCommand = new SqlCommand(SqlQueries.Update(), sqlConnection);
@@ -128,14 +128,16 @@ namespace WSAssignment5
             return allEmployees;
         }
 
-        public static int CheckIfEmployeeExists(string no_)
+        public int CheckIfEmployeeExists(string no_)
         {
             int employeeCount = 0;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             SqlCommand sqlCommand = new SqlCommand(SqlQueries.Count(), sqlConnection);
+
             sqlCommand.Parameters.AddWithValue("@No_", no_);
             sqlCommand.Connection = sqlConnection;
             sqlConnection.Open();
+
             SqlDataReader reader = sqlCommand.ExecuteReader();
 
             while (reader.Read())

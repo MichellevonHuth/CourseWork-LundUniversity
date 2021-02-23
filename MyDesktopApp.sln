@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1340
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1", "MyDesktopApp\Assignment1.csproj", "{9643FF22-CAB8-4281-BC6C-58524E3ECCD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_1", "MyDesktopApp\Assignment_1.csproj", "{9643FF22-CAB8-4281-BC6C-58524E3ECCD0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_2", "Assignment_2\Assignment_2.csproj", "{263B0E57-75AD-42DF-AE58-28C2679ABFC3}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment5", "WSAssignment5\WSAssignment5.csproj", "{C10E2CA8-0F27-4ADD-B924-96295401BDF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment5", "ERPClient1_Assignment5\ERPClient1_Assignment5.csproj", "{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment6", "ERPClient_Assignment6\ERPClient1_Assignment6.csproj", "{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
