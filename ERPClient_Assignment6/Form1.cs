@@ -16,5 +16,10 @@ namespace ERPClient_Assignment6
         {
             InitializeComponent();
         }
+
+        private void outputTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

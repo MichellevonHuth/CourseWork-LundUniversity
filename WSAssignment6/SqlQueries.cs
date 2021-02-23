@@ -7,5 +7,7 @@ namespace WSAssignment6
 {
     public class SqlQueries
     {
+
+
     }
 }

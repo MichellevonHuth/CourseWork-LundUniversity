@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment5", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment6", "ERPClient_Assignment6\ERPClient1_Assignment6.csproj", "{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment6", "WSAssignment6\WSAssignment6.csproj", "{9606CDE9-A171-48A5-8262-20FFF4AD6BBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9606CDE9-A171-48A5-8262-20FFF4AD6BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9606CDE9-A171-48A5-8262-20FFF4AD6BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9606CDE9-A171-48A5-8262-20FFF4AD6BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9606CDE9-A171-48A5-8262-20FFF4AD6BBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

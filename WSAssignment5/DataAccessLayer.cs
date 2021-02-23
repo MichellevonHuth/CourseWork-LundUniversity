@@ -62,6 +62,10 @@ namespace WSAssignment5
                     sqlCommand.Parameters.AddWithValue("@[Title]", "");
                     sqlCommand.Parameters.AddWithValue("@[Salespers__Purch_ Code]", "");
 
+                    sqlCommand.Connection = sqlConnection;
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteNonQuery();
+
                 }
 
             }
@@ -78,6 +82,10 @@ namespace WSAssignment5
                     sqlCommand.Parameters.AddWithValue("@[First Name]", firstName);
                     sqlCommand.Parameters.AddWithValue("@[Last Name]", lastName);
                     sqlCommand.Parameters.AddWithValue("@[Job Title]", jobTitle);
+
+                    sqlCommand.Connection = sqlConnection;
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteNonQuery();
                 }
             }
         }
@@ -93,6 +101,9 @@ namespace WSAssignment5
 
                     sqlCommand.Parameters.AddWithValue("@[No_]", no_);
 
+                    sqlCommand.Connection = sqlConnection;
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteNonQuery();
                 }
             }
         }
@@ -105,10 +116,9 @@ namespace WSAssignment5
 
             sqlCommand.Connection = sqlConnection;
             sqlConnection.Open();
+            SqlDataReader reader = sqlCommand.ExecuteReader();
 
             List<string> allEmployees = new List<string>();
-
-            SqlDataReader reader = sqlCommand.ExecuteReader();
 
             while (reader.Read())
             {

@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSAssignment5\WSAssignment5.csproj">
+      <Project>{c10e2ca8-0f27-4add-b924-96295401bdf4}</Project>
+      <Name>WSAssignment5</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
