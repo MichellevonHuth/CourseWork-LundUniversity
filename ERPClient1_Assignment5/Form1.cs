@@ -16,5 +16,10 @@ namespace ERPClient1_Assignment5
         {
             InitializeComponent();
         }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

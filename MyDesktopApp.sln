@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSClient2_Assignment4", "WS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment5", "WSAssignment5\WSAssignment5.csproj", "{C10E2CA8-0F27-4ADD-B924-96295401BDF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment5", "ERPClient1_Assignment5\ERPClient1_Assignment5.csproj", "{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{C10E2CA8-0F27-4ADD-B924-96295401BDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C10E2CA8-0F27-4ADD-B924-96295401BDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C10E2CA8-0F27-4ADD-B924-96295401BDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
