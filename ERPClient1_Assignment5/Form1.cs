@@ -21,10 +21,6 @@ namespace ERPClient1_Assignment5
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            textBoxJobTitle.Clear();
-            textBoxLastName.Clear();
-            textBoxName.Clear();
-            textBoxNo_.Clear();
 
 
             if (textBoxJobTitle.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "" )
@@ -42,8 +38,13 @@ namespace ERPClient1_Assignment5
 
                 OutputTextBox.Text = proxy.CreateEmployee(no_, firstName, lastName, jobTitle);
             }
-          
-            }
+
+            textBoxJobTitle.Clear();
+            textBoxLastName.Clear();
+            textBoxName.Clear();
+            textBoxNo_.Clear();
+
+        }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
