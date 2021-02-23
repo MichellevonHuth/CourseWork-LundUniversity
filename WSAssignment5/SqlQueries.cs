@@ -36,6 +36,12 @@ namespace WSAssignment5
             return sqlCommand;
         }
 
+        public static string Count()
+        {
+            string sqlCommand = "SELECT COUNT(*) AS Count from [CRONUS Sverige AB$Employee] where No_=@no_";
+            return sqlCommand;
+        }
+
       
     }
 

@@ -98,28 +98,53 @@ namespace WSAssignment5
         }
 
 
-        public static string[] GetEmployees()
+        public static List<string> GetEmployees()
         {
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand sqlCommand = new SqlCommand(SqlQueries.Update(),sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(SqlQueries.Update(), sqlConnection);
 
             sqlCommand.Connection = sqlConnection;
             sqlConnection.Open();
 
-            string[] databaseValues = new string[4];
+            List<string> allEmployees = new List<string>();
 
             SqlDataReader reader = sqlCommand.ExecuteReader();
+
             while (reader.Read())
             {
 
-                databaseValues[0] = reader["[No_]"].ToString();
-                databaseValues[1] = reader["[First Name]"].ToString();
-                databaseValues[2] = reader["[Last Name]"].ToString();
-                databaseValues[3] = reader["[Job Title]"].ToString();
+                string no_ = reader["[No_]"].ToString();
+                string firstName = reader["[First Name]"].ToString();
+                string lastName = reader["[Last Name]"].ToString();
+                string jobTitle = reader["[Job Title]"].ToString();
+
+                allEmployees.Add(no_);
+                allEmployees.Add(firstName);
+                allEmployees.Add(lastName);
+                allEmployees.Add(jobTitle);
 
             }
 
-            return databaseValues; 
+            return allEmployees;
+        }
+
+        public static int CheckIfEmployeeExists(string no_)
+        {
+            int employeeCount = 0;
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand(SqlQueries.Count(), sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@No_", no_);
+            sqlCommand.Connection = sqlConnection;
+            sqlConnection.Open();
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+                employeeCount = reader.GetInt32(0);
+
+            }
+
+            return employeeCount;
         }
 
     }
