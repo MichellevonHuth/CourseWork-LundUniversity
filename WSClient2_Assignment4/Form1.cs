@@ -21,10 +21,6 @@ namespace WSClient2_Assignment4
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-          
-        }
 
         private void getAllAccountsButton_Click(object sender, EventArgs e)
         {

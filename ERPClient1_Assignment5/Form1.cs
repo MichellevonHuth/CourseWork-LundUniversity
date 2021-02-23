@@ -72,18 +72,14 @@ namespace ERPClient1_Assignment5
             textBoxNo_.Clear();
 
             string no_ = textBoxNo_.Text;
-            string firstName = textBoxName.Text;
-            string lastName = textBoxLastName.Text;
-            string jobTitle = textBoxJobTitle.Text;
-
-            proxy.DeleteEmployee(no_, firstName, lastName, jobTitle);
+            proxy.DeleteEmployee(no_);
 
             OutputTextBox.Text = no_ + "just got deleted!";
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
         {
-            List<string> allEmployees = proxy.ReadEmployee();
+            string[] allEmployees = proxy.ReadEmployees();
 
             foreach (string a in allEmployees)
             {
