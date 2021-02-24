@@ -31,6 +31,7 @@ public class ApplicationWindow {
 	private JLabel headerLbl;
 	private JLabel errorLbl;
 	private TextArea textArea;
+	private Controller controller;
 
 
 
@@ -42,43 +43,43 @@ public class ApplicationWindow {
 		frame.getContentPane().setLayout(null);
 		
 		textArea = new TextArea();
-		textArea.setBounds(230, 97, 567, 329);
+		textArea.setBounds(271, 97, 553, 329);
 		frame.getContentPane().add(textArea);
 		
 		numberTextField = new JTextField();
-		numberTextField.setBounds(104, 118, 120, 20);
+		numberTextField.setBounds(124, 118, 120, 20);
 		frame.getContentPane().add(numberTextField);
 		numberTextField.setColumns(10);
 		
 		firstNameTextField = new JTextField();
-		firstNameTextField.setBounds(104, 203, 120, 20);
+		firstNameTextField.setBounds(124, 203, 120, 20);
 		frame.getContentPane().add(firstNameTextField);
 		firstNameTextField.setColumns(10);
 		
 		lastNameTextField = new JTextField();
-		lastNameTextField.setBounds(104, 291, 120, 20);
+		lastNameTextField.setBounds(124, 291, 120, 20);
 		frame.getContentPane().add(lastNameTextField);
 		lastNameTextField.setColumns(10);
 		
 		jobTitleTextField = new JTextField();
-		jobTitleTextField.setBounds(104, 377, 120, 20);
+		jobTitleTextField.setBounds(124, 377, 120, 20);
 		frame.getContentPane().add(jobTitleTextField);
 		jobTitleTextField.setColumns(10);
 		
 		empNbrLbl = new JLabel("Employee number:");
-		empNbrLbl.setBounds(10, 118, 89, 20);
+		empNbrLbl.setBounds(10, 118, 114, 20);
 		frame.getContentPane().add(empNbrLbl);
 		
 		firstNameLbl = new JLabel("First name:");
-		firstNameLbl.setBounds(37, 206, 57, 14);
+		firstNameLbl.setBounds(10, 206, 84, 14);
 		frame.getContentPane().add(firstNameLbl);
 		
 		lastNameLbl = new JLabel("Last name:");
-		lastNameLbl.setBounds(37, 294, 57, 14);
+		lastNameLbl.setBounds(10, 294, 84, 14);
 		frame.getContentPane().add(lastNameLbl);
 		
 		jobTitleLbl = new JLabel("Job title:");
-		jobTitleLbl.setBounds(37, 380, 57, 14);
+		jobTitleLbl.setBounds(10, 380, 84, 14);
 		frame.getContentPane().add(jobTitleLbl);
 		
 		createBtn = new Button("Create");
@@ -234,6 +235,14 @@ public class ApplicationWindow {
 
 	public void setTextArea(TextArea textArea) {
 		this.textArea = textArea;
+	}
+	
+	public Controller getController() {
+		return controller;
+	}
+
+	public void setController(Controller controller) {
+		this.controller = controller;
 	}
 
 }
