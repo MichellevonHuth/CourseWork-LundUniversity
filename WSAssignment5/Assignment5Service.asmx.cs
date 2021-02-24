@@ -58,7 +58,7 @@ namespace WSAssignment5
             int ifExist = dal.CheckIfEmployeeExists(no_);
             bool resultOutput = true;
 
-            if (ifExist == 0)
+            if (ifExist == 1)
             {
                 dal.UpdateEmployee(no_, firstName, lastName, jobTitle);
             }
@@ -77,7 +77,7 @@ namespace WSAssignment5
             int ifExist = dal.CheckIfEmployeeExists(no_);
             bool resultOutput = true;
 
-            if (ifExist == 0)
+            if (ifExist == 1)
             {
                 dal.DeleteEmployee(no_);
             }
