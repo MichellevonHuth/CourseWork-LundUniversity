@@ -14,81 +14,36 @@ namespace WSAssignment5
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand(SqlQueries.Create(), sqlConnection))
+                sqlConnection.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO[CRONUS Sverige AB$Employee]([No_], [First Name], [Last Name], [Job Title], Address,[E-Mail], [Phone No_], [No_ Series], [Middle Name], Initials,[Search Name], [Address 2],[Post Code], County, [Mobile Phone No_], City, [Alt_ Address Code],[Alt_ Address Start Date], [Alt_ Address End Date], [Birth Date], [Social Security No_],[Union Code], [Union Membership No_], Sex, [Country_Region Code], [Manager No_], [Emplymt_ Contract Code], [Statistics Group Code],[Employment Date], Status, [Inactive Date], [Cause of Inactivity Code],[Termination Date], [Grounds for Term_ Code], [Global Dimension 1 Code], [Global Dimension 2 Code],[Resource No_],[Last Date Modified],[Extension], Pager, [Fax No_],[Company E-Mail],[Title],[Salespers__Purch_ Code]) VALUES('" + no_ + "', '" + firstName + "', '" + lastName + "', '" + jobTitle + "', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ')", sqlConnection))
                 {
-
-                    sqlCommand.Parameters.AddWithValue("@[No_]", no_);
-                    sqlCommand.Parameters.AddWithValue("@[First Name]", firstName);
-                    sqlCommand.Parameters.AddWithValue("@[Last Name]", lastName);
-                    sqlCommand.Parameters.AddWithValue("@[Job Title]", jobTitle);
-                    sqlCommand.Parameters.AddWithValue("@Address", "");
-                    sqlCommand.Parameters.AddWithValue("@[E - Mail]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Phone No_]", "");
-                    sqlCommand.Parameters.AddWithValue("@[No_ Series]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Middle Name]", "");
-                    sqlCommand.Parameters.AddWithValue("@Initials", "");
-                    sqlCommand.Parameters.AddWithValue("@[Search Name]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Address 2]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Post Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@County", "");
-                    sqlCommand.Parameters.AddWithValue("@[Mobile Phone No_]", "");
-                    sqlCommand.Parameters.AddWithValue("@City", "");
-                    sqlCommand.Parameters.AddWithValue("@[Alt_ Address Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Alt_ Address Start Date]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Alt_ Address End Date]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Birth Date]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Social Security No_]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Union Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Union Membership No_]", "");
-                    sqlCommand.Parameters.AddWithValue("@Sex", "");
-                    sqlCommand.Parameters.AddWithValue("@[Country_Region Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Manager No_]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Emplymt_ Contract Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Statistics Group Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Employment Date]", "");
-                    sqlCommand.Parameters.AddWithValue("@Status", "");
-                    sqlCommand.Parameters.AddWithValue("@[Inactive Date]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Cause of Inactivity Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Termination Date]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Grounds for Term_ Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Global Dimension 1 Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Global Dimension 2 Code]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Resource No_]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Last Date Modified]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Extension]", "");
-                    sqlCommand.Parameters.AddWithValue("@Pager", "");
-                    sqlCommand.Parameters.AddWithValue("@[Fax No_]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Company E - Mail]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Title]", "");
-                    sqlCommand.Parameters.AddWithValue("@[Salespers__Purch_ Code]", "");
-
                     sqlCommand.Connection = sqlConnection;
-                    sqlConnection.Open();
+
                     sqlCommand.ExecuteNonQuery();
 
                 }
 
             }
         }
-
+     
         public void UpdateEmployee(string no_, string firstName, string lastName, string jobTitle)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand(SqlQueries.Update(), sqlConnection))
-                {
+                sqlConnection.Open();
 
-                    sqlCommand.Parameters.AddWithValue("@[No_]", no_);
-                    sqlCommand.Parameters.AddWithValue("@[First Name]", firstName);
-                    sqlCommand.Parameters.AddWithValue("@[Last Name]", lastName);
-                    sqlCommand.Parameters.AddWithValue("@[Job Title]", jobTitle);
-
+                using (SqlCommand sqlCommand = new SqlCommand("UPDATE [CRONUS Sverige AB$Employee] SET [First Name] = '" + firstName + "', " + "[Last Name] = '" + lastName + "', " + "[Job Title] = '" + jobTitle + "'" + " WHERE No_ = '" + no_ + "'", sqlConnection))
+                {  
                     sqlCommand.Connection = sqlConnection;
-                    sqlConnection.Open();
                     sqlCommand.ExecuteNonQuery();
+                    sqlConnection.Close();
                 }
             }
         }
+     
+
+  
 
 
 
@@ -96,10 +51,8 @@ namespace WSAssignment5
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                using (SqlCommand sqlCommand = new SqlCommand(SqlQueries.Delete(), sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("DELETE FROM [CRONUS Sverige AB$Employee] WHERE No_ = '" + no_ + "'", sqlConnection))
                 {
-
-                    sqlCommand.Parameters.AddWithValue("@[No_]", no_);
 
                     sqlCommand.Connection = sqlConnection;
                     sqlConnection.Open();
@@ -112,7 +65,7 @@ namespace WSAssignment5
         public List<string> GetEmployees()
         {
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand sqlCommand = new SqlCommand(SqlQueries.Update(), sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("SELECT No_, [First Name], [Last Name], [Job Title] FROM [CRONUS Sverige AB$Employee]", sqlConnection);
 
             sqlCommand.Connection = sqlConnection;
             sqlConnection.Open();
@@ -123,15 +76,20 @@ namespace WSAssignment5
             while (reader.Read())
             {
 
-                string no_ = reader["[No_]"].ToString();
-                string firstName = reader["[First Name]"].ToString();
-                string lastName = reader["[Last Name]"].ToString();
-                string jobTitle = reader["[Job Title]"].ToString();
+                string no_ = reader["No_"].ToString();
+                string firstName = reader["First Name"].ToString();
+                string lastName = reader["Last Name"].ToString();
+                string jobTitle = reader["Job Title"].ToString();
 
-                allEmployees.Add(no_);
+                allEmployees.Add("No_: " + no_ + "   First Name: " + firstName + "   Last Name: " + lastName + "   Job Title: " + jobTitle);     
+               /*/ allEmployees.Add(no_);
+                allEmployees.Add(" First Name: ");
                 allEmployees.Add(firstName);
+                allEmployees.Add(" Last Name: ");
                 allEmployees.Add(lastName);
-                allEmployees.Add(jobTitle);
+                allEmployees.Add(" Job Title: ");
+                allEmployees.Add(jobTitle + "\r\n"); /*/
+                
 
             }
 
