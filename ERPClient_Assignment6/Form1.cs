@@ -17,7 +17,38 @@ namespace ERPClient_Assignment6
             InitializeComponent();
         }
 
-        private void outputTextBox_TextChanged(object sender, EventArgs e)
+        private void buttonEmployeeTables_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = proxy.MetaDataForEmployeeTable();
+                dataGridView.DataSource = dt;
+            }
+
+            catch (Exception ex)
+            {
+                string message = Errorhandler.HandleException(ex);
+                this.dataGridView_SetText(message);
+            }
+        }
+
+        private void buttonEmployeeRelative_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = proxy.EmployeeRelatives(); 
+                messageDataGridView.DataSource = dt;
+            }
+
+            catch (Exception ex)
+            {
+                string message = Errorhandler.HandleException(ex);
+                this.MessageTextBox_SetText(message);
+            }
+
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

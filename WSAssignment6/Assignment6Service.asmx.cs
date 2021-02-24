@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -16,53 +17,88 @@ namespace WSAssignment6
     // [System.Web.Script.Services.ScriptService]
     public class Assignment6Service : System.Web.Services.WebService
     {
+        DataAccessLayer dal;
 
-        [WebMethod]
-        public string HelloWorld()
+        public Assignment6Service()
         {
-            return "Hello World";
+            dal = new DataAccessLayer();
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public DataTable MetaDataForEmployeeTable()
         {
-            return "Hello World";
+            DataTable dt = dal.MetaDataForEmployeeTable();
+            return dt; 
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public DataTable EmployeeRelatives()
         {
-            return "Hello World";
+            DataTable dt = dal.EmployeeRelatives(); 
+            return dt;
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public DataTable EmployeeAbsent2004()
         {
-            return "Hello World";
+            DataTable dt = dal.EmployeeAbsent2004();
+            return dt;
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public DataTable EmployeeAbsentTheMost()
         {
-            return "Hello World";
+            DataTable dt = dal.EmployeeAbsentTheMost();
+            return dt;
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public DataTable AllKeys()
         {
-            return "Hello World";
+            DataTable dt = dal.AllKeys();
+            return dt;
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public DataTable AllIndexes()
         {
-            return "Hello World";
+            DataTable dt = dal.AllIndexes();
+            return dt;
         }
 
         [WebMethod]
-        public string HelloWorld()
+        public DataTable AllTableConstraints()
         {
-            return "Hello World";
+            DataTable dt = dal.AllTableConstraints();
+            return dt;
+        }
+
+        [WebMethod]
+        public DataTable AllTables1()
+        {
+            DataTable dt = dal.AllTables1();
+            return dt;
+        }
+
+        [WebMethod]
+        public DataTable AllTables2()
+        {
+            DataTable dt = dal.AllTables2();
+            return dt;
+        }
+
+        [WebMethod]
+        public DataTable AllColumns1()
+        {
+            DataTable dt = dal.AllColumns1();
+            return dt;
+        }
+
+        [WebMethod]
+        public DataTable AllColumns2()
+        {
+            DataTable dt = dal.AllColumns2();
+            return dt;
         }
     }
 }
