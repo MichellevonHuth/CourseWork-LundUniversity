@@ -26,7 +26,7 @@ namespace ERPClient1_Assignment5
 
             {
 
-                MessageBox.Show("Please fill all the fields");
+                MessageBox.Show("Please fill in all the fields");
             }
 
             else
@@ -38,7 +38,7 @@ namespace ERPClient1_Assignment5
 
                 bool ifExists = proxy.CreateEmployee(no_, firstName, lastName, jobTitle);
 
-                if(ifExists = true)
+                if(ifExists == true)
                 {
                     OutputTextBox.Text = no_ + " is now added in the database!";
                 }
@@ -64,7 +64,7 @@ namespace ERPClient1_Assignment5
 
             {
 
-                MessageBox.Show("Please fill all the fields");
+                MessageBox.Show("Please fill in all the fields");
             }
 
             else
@@ -76,7 +76,7 @@ namespace ERPClient1_Assignment5
 
                 bool ifExists = proxy.UpdateEmployee(no_, firstName, lastName, jobTitle);
 
-                if (ifExists = true)
+                if (ifExists == true)
                 {
                     OutputTextBox.Text = no_ + " just got updated in the database!";
                 }
@@ -112,7 +112,7 @@ namespace ERPClient1_Assignment5
                 string no_ = textBoxNo_.Text;
                 bool ifExists = proxy.DeleteEmployee(no_);
 
-                if (ifExists = true)
+                if (ifExists == true)
                 {
                     OutputTextBox.Text = no_ + " just got deleted from the database!";
                 }

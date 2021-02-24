@@ -36,7 +36,7 @@ namespace WSAssignment5
                 dal.CreateEmployee(no_, firstName, lastName, jobTitle);
             }
 
-            else
+            else if (ifExist != 0)
             {
                 resultOutput = false;
             }
