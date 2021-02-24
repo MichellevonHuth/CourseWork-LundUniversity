@@ -25,26 +25,24 @@ namespace WSAssignment5
 
 
         [WebMethod]
-        public string CreateEmployee(string no_, string firstName, string lastName, string jobTitle)
+        public bool CreateEmployee(string no_, string firstName, string lastName, string jobTitle)
         {
 
             int ifExist = dal.CheckIfEmployeeExists(no_);
-            
-
-            string resultOutput = ""; 
+            bool resultOutput = true;
 
             if (ifExist == 0)
             {
                 dal.CreateEmployee(no_, firstName, lastName, jobTitle);
             }
 
-            else
+            else if (ifExist != 0)
             {
-               resultOutput = "\r\n" + no_ + " is already taken, try a new one!";
+                resultOutput = false;
             }
 
             return resultOutput;
-        
+     
         }
 
         [WebMethod]
@@ -55,15 +53,41 @@ namespace WSAssignment5
         }
 
         [WebMethod]
-        public void UpdateEmployee(string no_, string firstName, string lastName, string jobTitle)
+        public bool UpdateEmployee(string no_, string firstName, string lastName, string jobTitle)
         {
-            dal.UpdateEmployee(no_, firstName, lastName, jobTitle);
+            int ifExist = dal.CheckIfEmployeeExists(no_);
+            bool resultOutput = true;
+
+            if (ifExist == 1)
+            {
+                dal.UpdateEmployee(no_, firstName, lastName, jobTitle);
+            }
+
+            else
+            {
+                resultOutput = false;
+            }
+
+            return resultOutput;
         }
 
         [WebMethod]
-        public void DeleteEmployee(string no_)
+        public bool DeleteEmployee(string no_)
         {
-            dal.DeleteEmployee(no_);
+            int ifExist = dal.CheckIfEmployeeExists(no_);
+            bool resultOutput = true;
+
+            if (ifExist == 1)
+            {
+                dal.DeleteEmployee(no_);
+            }
+
+            else
+            {
+                resultOutput = false;
+            }
+
+            return resultOutput;
         }
 
     }

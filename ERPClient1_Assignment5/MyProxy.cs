@@ -56,14 +56,14 @@ public partial class Assignment5Service : System.Web.Services.Protocols.SoapHttp
 
     /// <remarks/>
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CreateEmployee", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public string CreateEmployee(string no_, string firstName, string lastName, string jobTitle)
+    public bool CreateEmployee(string no_, string firstName, string lastName, string jobTitle)
     {
         object[] results = this.Invoke("CreateEmployee", new object[] {
                     no_,
                     firstName,
                     lastName,
                     jobTitle});
-        return ((string)(results[0]));
+        return ((bool)(results[0]));
     }
 
     /// <remarks/>
@@ -77,10 +77,10 @@ public partial class Assignment5Service : System.Web.Services.Protocols.SoapHttp
     }
 
     /// <remarks/>
-    public string EndCreateEmployee(System.IAsyncResult asyncResult)
+    public bool EndCreateEmployee(System.IAsyncResult asyncResult)
     {
         object[] results = this.EndInvoke(asyncResult);
-        return ((string)(results[0]));
+        return ((bool)(results[0]));
     }
 
     /// <remarks/>
@@ -160,13 +160,14 @@ public partial class Assignment5Service : System.Web.Services.Protocols.SoapHttp
 
     /// <remarks/>
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateEmployee", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public void UpdateEmployee(string no_, string firstName, string lastName, string jobTitle)
+    public bool UpdateEmployee(string no_, string firstName, string lastName, string jobTitle)
     {
-        this.Invoke("UpdateEmployee", new object[] {
+        object[] results = this.Invoke("UpdateEmployee", new object[] {
                     no_,
                     firstName,
                     lastName,
                     jobTitle});
+        return ((bool)(results[0]));
     }
 
     /// <remarks/>
@@ -180,9 +181,10 @@ public partial class Assignment5Service : System.Web.Services.Protocols.SoapHttp
     }
 
     /// <remarks/>
-    public void EndUpdateEmployee(System.IAsyncResult asyncResult)
+    public bool EndUpdateEmployee(System.IAsyncResult asyncResult)
     {
-        this.EndInvoke(asyncResult);
+        object[] results = this.EndInvoke(asyncResult);
+        return ((bool)(results[0]));
     }
 
     /// <remarks/>
@@ -210,16 +212,17 @@ public partial class Assignment5Service : System.Web.Services.Protocols.SoapHttp
         if ((this.UpdateEmployeeCompleted != null))
         {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-            this.UpdateEmployeeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            this.UpdateEmployeeCompleted(this, new UpdateEmployeeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
 
     /// <remarks/>
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DeleteEmployee", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public void DeleteEmployee(string no_)
+    public bool DeleteEmployee(string no_)
     {
-        this.Invoke("DeleteEmployee", new object[] {
+        object[] results = this.Invoke("DeleteEmployee", new object[] {
                     no_});
+        return ((bool)(results[0]));
     }
 
     /// <remarks/>
@@ -230,9 +233,10 @@ public partial class Assignment5Service : System.Web.Services.Protocols.SoapHttp
     }
 
     /// <remarks/>
-    public void EndDeleteEmployee(System.IAsyncResult asyncResult)
+    public bool EndDeleteEmployee(System.IAsyncResult asyncResult)
     {
-        this.EndInvoke(asyncResult);
+        object[] results = this.EndInvoke(asyncResult);
+        return ((bool)(results[0]));
     }
 
     /// <remarks/>
@@ -257,7 +261,7 @@ public partial class Assignment5Service : System.Web.Services.Protocols.SoapHttp
         if ((this.DeleteEmployeeCompleted != null))
         {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-            this.DeleteEmployeeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            this.DeleteEmployeeCompleted(this, new DeleteEmployeeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
 
@@ -288,12 +292,12 @@ public partial class CreateEmployeeCompletedEventArgs : System.ComponentModel.As
     }
 
     /// <remarks/>
-    public string Result
+    public bool Result
     {
         get
         {
             this.RaiseExceptionIfNecessary();
-            return ((string)(this.results[0]));
+            return ((bool)(this.results[0]));
         }
     }
 }
@@ -330,8 +334,60 @@ public partial class ReadEmployeesCompletedEventArgs : System.ComponentModel.Asy
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
-public delegate void UpdateEmployeeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+public delegate void UpdateEmployeeCompletedEventHandler(object sender, UpdateEmployeeCompletedEventArgs e);
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
-public delegate void DeleteEmployeeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class UpdateEmployeeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+{
+
+    private object[] results;
+
+    internal UpdateEmployeeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+    {
+        this.results = results;
+    }
+
+    /// <remarks/>
+    public bool Result
+    {
+        get
+        {
+            this.RaiseExceptionIfNecessary();
+            return ((bool)(this.results[0]));
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+public delegate void DeleteEmployeeCompletedEventHandler(object sender, DeleteEmployeeCompletedEventArgs e);
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class DeleteEmployeeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
+{
+
+    private object[] results;
+
+    internal DeleteEmployeeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
+            base(exception, cancelled, userState)
+    {
+        this.results = results;
+    }
+
+    /// <remarks/>
+    public bool Result
+    {
+        get
+        {
+            this.RaiseExceptionIfNecessary();
+            return ((bool)(this.results[0]));
+        }
+    }
+}
