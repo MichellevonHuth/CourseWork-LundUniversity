@@ -26,7 +26,7 @@ using System.Xml.Serialization;
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Web.Services.WebServiceBindingAttribute(Name = "Assignment6Service1Soap", Namespace = "http://tempuri.org/")]
-public partial class Assignment6Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol
+public partial class Assignment6Service : System.Web.Services.Protocols.SoapHttpClientProtocol
 {
 
     private System.Threading.SendOrPostCallback MetaDataForEmployeeTableOperationCompleted;
@@ -52,7 +52,7 @@ public partial class Assignment6Service1 : System.Web.Services.Protocols.SoapHtt
     private System.Threading.SendOrPostCallback AllColumns2OperationCompleted;
 
     /// <remarks/>
-    public Assignment6Service1()
+    public Assignment6Service()
     {
         this.Url = "http://localhost/WSAssignment_6/Assignment6Service.asmx";
     }
