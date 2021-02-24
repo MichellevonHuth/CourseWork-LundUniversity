@@ -79,10 +79,17 @@ namespace ERPClient1_Assignment5
         private void buttonRead_Click(object sender, EventArgs e)
         {
             string[] allEmployees = proxy.ReadEmployees();
+            string message = "";
 
-            foreach (string a in allEmployees)
-            {
-                OutputTextBox.Text = "No_:" + a + "First Name: " + a + "Last Name: " + a + "Job Title: " + a + "\r\n";
+            {   
+                foreach(string a in allEmployees)
+
+                {
+                    message += a;
+                    message += "\r\n"; 
+                }
+
+                OutputTextBox.Text = message;
             }
         }
 
