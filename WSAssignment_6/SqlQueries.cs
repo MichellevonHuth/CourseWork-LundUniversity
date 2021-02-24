@@ -10,7 +10,7 @@ namespace WSAssignment_6
         public static string MetaDataForEmployeeTable()
 
         {
-            string sqlCommand = "";
+            string sqlCommand = "SELECT TABLE_CATALOG as table_catalog, TABLE_NAME as table_name, COLUMN_NAME as column_name, ORDINAL_POSITION as ordinal_position, IS_NULLABLE as is_nullable, DATA_TYPE as data_type FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CRONUS Sverige AB$Employee'";
             return sqlCommand;
         }
 
