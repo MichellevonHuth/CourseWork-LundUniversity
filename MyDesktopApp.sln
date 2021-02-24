@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment5", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment6", "ERPClient_Assignment6\ERPClient1_Assignment6.csproj", "{F2D6D520-FDDA-47B9-B6C8-3F5597107A02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment_6", "WSAssignment_6\WSAssignment_6.csproj", "{F3CCEE2C-7228-4902-8531-A51ABCF4E0D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment6", "WSAssignment_6\WSAssignment6.csproj", "{F3CCEE2C-7228-4902-8531-A51ABCF4E0D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

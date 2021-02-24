@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERPClient_Assignment6
+namespace ERPClient1_Assignment6
 {
     public partial class Form1 : Form
     {
+        Assignment6Service1 proxy = new Assignment6Service1();
+ 
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +30,8 @@ namespace ERPClient_Assignment6
             catch (Exception ex)
             {
                 string message = Errorhandler.HandleException(ex);
-                this.dataGridView_SetText(message);
+                errorMessageLbl.Text = message;
+
             }
         }
 
@@ -36,14 +39,14 @@ namespace ERPClient_Assignment6
         {
             try
             {
-                DataTable dt = proxy.EmployeeRelatives(); 
-                messageDataGridView.DataSource = dt;
+                DataTable dt = proxy.EmployeeRelatives();
+                dataGridView.DataSource = dt;
             }
 
             catch (Exception ex)
             {
                 string message = Errorhandler.HandleException(ex);
-                this.MessageTextBox_SetText(message);
+                errorMessageLbl.Text = message;
             }
 
         }
@@ -54,6 +57,11 @@ namespace ERPClient_Assignment6
         }
 
         private void buttonAllKeys_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void errorMessageLbl_Click(object sender, EventArgs e)
         {
 
         }
