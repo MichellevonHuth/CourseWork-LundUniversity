@@ -28,6 +28,7 @@ namespace ERPClient1_Assignment5
 
                 MessageBox.Show("Please fill all the fields");
             }
+
             else
             {
                 string no_ = textBoxNo_.Text;
@@ -35,10 +36,18 @@ namespace ERPClient1_Assignment5
                 string lastName = textBoxLastName.Text;
                 string jobTitle = textBoxJobTitle.Text;
 
-                OutputTextBox.Text = proxy.CreateEmployee(no_, firstName, lastName, jobTitle);
-                OutputTextBox.Text = no_ + " is now added in the database!";
+                bool ifExists = proxy.CreateEmployee(no_, firstName, lastName, jobTitle);
 
+                if(ifExists = true)
+                {
+                    OutputTextBox.Text = no_ + " is now added in the database!";
+                }
 
+                else
+                {
+                    MessageBox.Show(no_ + " already exists, please use another employee number.");
+                }
+               
                 textBoxJobTitle.Clear();
                 textBoxLastName.Clear();
                 textBoxName.Clear();
@@ -65,9 +74,19 @@ namespace ERPClient1_Assignment5
                 string lastName = textBoxLastName.Text;
                 string jobTitle = textBoxJobTitle.Text;
 
-                proxy.UpdateEmployee(no_, firstName, lastName, jobTitle);
+                bool ifExists = proxy.UpdateEmployee(no_, firstName, lastName, jobTitle);
 
-                OutputTextBox.Text = no_ + " just got updated in the database!";
+                if (ifExists = true)
+                {
+                    OutputTextBox.Text = no_ + " just got updated in the database!";
+                }
+
+                else
+                {
+                    MessageBox.Show(no_ + " does not exists, please use another employee number.");
+                }
+
+               
 
                 textBoxJobTitle.Clear();
                 textBoxLastName.Clear();
@@ -83,7 +102,7 @@ namespace ERPClient1_Assignment5
             if (textBoxNo_.Text == "")
 
             {
-                MessageBox.Show("Please fill in your employee number!"); 
+                MessageBox.Show("Please fill in the employee number!"); 
 
             }
 
@@ -91,19 +110,24 @@ namespace ERPClient1_Assignment5
             {
                 
                 string no_ = textBoxNo_.Text;
-                bool ifEmployeeExists = proxy.DeleteEmployee(no_); 
+                bool ifExists = proxy.DeleteEmployee(no_);
 
-                proxy.DeleteEmployee(no_);
+                if (ifExists = true)
+                {
+                    OutputTextBox.Text = no_ + " just got deleted from the database!";
+                }
 
-                OutputTextBox.Text = no_ + " just got deleted from the database!";
-
+                else
+                {
+                    MessageBox.Show(no_ + " does not exists, please use another employee number.");
+                }
+            
                 textBoxJobTitle.Clear();
                 textBoxLastName.Clear();
                 textBoxName.Clear();
                 textBoxNo_.Clear();
 
             }
-            //"\r\n" + no_ + " is already taken, try a new one!"
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
