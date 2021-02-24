@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERPClient1_Assignment6
+namespace ERPClient_Assignment6
 {
     public partial class Form1 : Form
     {
-        Assignment6Service1 proxy = new Assignment6Service1();
+        Assignment6Service proxy = new Assignment6Service();
  
         public Form1()
         {

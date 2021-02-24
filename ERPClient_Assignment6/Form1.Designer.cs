@@ -1,4 +1,4 @@
-﻿namespace ERPClient1_Assignment6
+﻿namespace ERPClient_Assignment6
 {
     partial class Form1
     {

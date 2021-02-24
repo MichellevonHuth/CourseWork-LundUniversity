@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERPClient1_Assignment6
+namespace ERPClient_Assignment6
 {
     static class Program
     {

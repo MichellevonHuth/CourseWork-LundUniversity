@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERPClient1_Assignment6
+namespace ERPClient_Assignment6
 {
     public static class Errorhandler
     {
