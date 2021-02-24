@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_2
+namespace ERPClient1_Assignment6
 {
-    public class Errorhandler
+    class ErrorHandler
     {
-
         public static string HandleException(Exception ex)
         {
             string errorMessage;
@@ -49,3 +48,4 @@ namespace Assignment_2
 
     }
 }
+

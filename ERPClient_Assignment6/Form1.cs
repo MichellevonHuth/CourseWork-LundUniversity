@@ -52,5 +52,10 @@ namespace ERPClient_Assignment6
         {
 
         }
+
+        private void buttonAllKeys_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
