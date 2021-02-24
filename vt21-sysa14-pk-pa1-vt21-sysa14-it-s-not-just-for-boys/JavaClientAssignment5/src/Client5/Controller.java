@@ -32,7 +32,7 @@ public class Controller {
 	aw.getCreateBtn().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			if(aw.getNumberTextField().getText() == "" || aw.getFirstNameTextField().getText() == "" || aw.getLastNameTextField().getText() == "" || aw.getJobTitleTextField().getText() == "") {
+			if(aw.getNumberTextField().getText().isEmpty() || aw.getFirstNameTextField().getText().isEmpty() || aw.getLastNameTextField().getText().isEmpty() || aw.getJobTitleTextField().getText().isEmpty()) {
 				
 				aw.getErrorLbl().setText("Please fill in all the fields");
 			}
@@ -49,8 +49,12 @@ public class Controller {
 				if(ifExist == true) {
 					aw.getErrorLbl().setText("");
 					aw.getTextArea().setText(number + " is now added in the database!");
+					aw.getNumberTextField().setText("");
+					aw.getFirstNameTextField().setText("");
+					aw.getLastNameTextField().setText("");
+					aw.getJobTitleTextField().setText("");
 				}
-				else {
+				else if(ifExist == false) {
 					aw.getErrorLbl().setText(number + " already exists, please use another employee number.");
 				}
 				
@@ -66,16 +70,35 @@ public class Controller {
 	aw.getUpdateBtn().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			String number = aw.getNumberTextField().getText();
-			String firstname = aw.getFirstNameTextField().getText();
-			String lastname = aw.getLastNameTextField().getText();
-			String jobTitle = aw.getJobTitleTextField().getText();
+			if(aw.getNumberTextField().getText().isEmpty() || aw.getFirstNameTextField().getText().isEmpty() || aw.getLastNameTextField().getText().isEmpty() || aw.getJobTitleTextField().getText().isEmpty()) {
+				
+				aw.getErrorLbl().setText("Please fill in all the fields");
+			}
+			else {		
 			
-			try {
-				proxy.updateEmployee(number, firstname, lastname, jobTitle);
-			} catch (RemoteException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				try {
+					
+					String number = aw.getNumberTextField().getText();
+					String firstname = aw.getFirstNameTextField().getText();
+					String lastname = aw.getLastNameTextField().getText();
+					String jobTitle = aw.getJobTitleTextField().getText();
+					boolean exist = proxy.updateEmployee(number, firstname, lastname, jobTitle);
+					
+					if(exist == true) {
+						aw.getTextArea().setText(number +  " just got updated in the database!");
+						aw.getErrorLbl().setText("");
+					}
+					else {
+						aw.getErrorLbl().setText(number +  " does not exists, please create this employee number.");
+						aw.getTextArea().setText("");
+					}
+					
+				
+				} 
+				catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 	});
@@ -83,12 +106,30 @@ public class Controller {
 	aw.getDeleteBtn().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			String number = aw.getNumberTextField().getText();;
-			try {
-				proxy.deleteEmployee(number);
-			} catch (RemoteException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+			if(aw.getNumberTextField().getText().isEmpty()) {
+				aw.getErrorLbl().setText("Please fill in the employee number!");
+			}
+			
+			else {
+				
+				try {
+				String number = aw.getNumberTextField().getText();;
+				boolean exist = proxy.deleteEmployee(number);
+					
+				if(exist == true) {
+					aw.getErrorLbl().setText("");
+					aw.getTextArea().setText(number +  " just got deleted from the database!");
+				}
+				else {
+					aw.getErrorLbl().setText(number +  " does not exists, please use another employee number.");
+					aw.getTextArea().setText("");
+				}
+					
+				} 
+				catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		
 		}
@@ -99,7 +140,20 @@ public class Controller {
 			
 			try {
 				String[] employees = proxy.readEmployees();
-			} catch (RemoteException e1) {
+				String message = "";
+				
+				for(int i = 0; i < employees.length; i++){
+					
+					String a = employees[i];
+					message += a + "\r\n";
+					
+				}
+				
+				aw.getTextArea().setText(message);
+				aw.getErrorLbl().setText("");
+				
+			}
+			catch (RemoteException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
