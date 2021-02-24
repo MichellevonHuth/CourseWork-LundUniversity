@@ -10,7 +10,7 @@ namespace WSAssignment6
         public static string MetaDataForEmployeeTable()
 
         {
-            string sqlCommand = 
+            string sqlCommand = "";
             return sqlCommand;
         }
 
@@ -23,13 +23,13 @@ namespace WSAssignment6
         public static string EmployeeAbsent2004()
         {
 
-            string sqlCommand = "UPDATE [CRONUS Sverige AB$Employee] SET [First Name] = @[First Name], [Last Name]= @[Last Name], [Job Title] = @[Job Title] WHERE[No_] = @[No_]";
+            string sqlCommand = "SELECT [Employee No_] as Employee_Number FROM[CRONUS Sverige AB$Employee Absence] WHERE[Cause of Absence Code] = 'SJUK' AND[From Date] < '2005-01-01 00:00:00.000' GROUP BY[Employee No_]";
             return sqlCommand;
         }
 
         public static string EmployeeAbsentTheMost()
         {
-            string sqlCommand = "DELETE FROM [CRONUS Sverige AB$Employee] WHERE [No_] = @[No_]";
+            string sqlCommand = "SELECT TOP 1 e.[First Name] FROM[CRONUS Sverige AB$Employee] e JOIN[CRONUS Sverige AB$Employee Absence] er ON e.No_ = er.[Employee No_] GROUP BY er.[Employee No_], e.[First Name] ORDER BY COUNT(*) DESC";
             return sqlCommand;
         }
 
