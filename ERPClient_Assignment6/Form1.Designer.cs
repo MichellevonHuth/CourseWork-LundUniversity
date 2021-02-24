@@ -1,4 +1,4 @@
-﻿namespace ERPClient_Assignment6
+﻿namespace ERPClient1_Assignment6
 {
     partial class Form1
     {
@@ -44,6 +44,7 @@
             this.buttonEmployeeColumns1 = new System.Windows.Forms.Button();
             this.buttonEmployeeColumns2 = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.errorMessageLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,18 +192,27 @@
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(253, 36);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 33;
             this.dataGridView.Size = new System.Drawing.Size(318, 361);
             this.dataGridView.TabIndex = 17;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
+            // errorMessageLbl
+            // 
+            this.errorMessageLbl.Location = new System.Drawing.Point(253, 441);
+            this.errorMessageLbl.Name = "errorMessageLbl";
+            this.errorMessageLbl.Size = new System.Drawing.Size(465, 21);
+            this.errorMessageLbl.TabIndex = 18;
+            this.errorMessageLbl.Click += new System.EventHandler(this.errorMessageLbl_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 494);
+            this.Controls.Add(this.errorMessageLbl);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.buttonEmployeeColumns2);
             this.Controls.Add(this.buttonEmployeeColumns1);
@@ -244,6 +254,7 @@
         private System.Windows.Forms.Button buttonEmployeeColumns1;
         private System.Windows.Forms.Button buttonEmployeeColumns2;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Label errorMessageLbl;
     }
 }
 

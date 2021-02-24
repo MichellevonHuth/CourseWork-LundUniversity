@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WSAssignment_6</RootNamespace>
-    <AssemblyName>WSAssignment_6</AssemblyName>
+    <RootNamespace>WSAssignment6</RootNamespace>
+    <AssemblyName>WSAssignment6</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
@@ -67,12 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assignment6Service1.asmx" />
+    <Content Include="Assignment6Service.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assignment6Service1.asmx.cs">
-      <DependentUpon>Assignment6Service1.asmx</DependentUpon>
+    <Compile Include="Assignment6Service.asmx.cs">
+      <DependentUpon>Assignment6Service.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataAccessLayer.cs" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ERPClient1_Assignment6
 {
-    class ErrorHandler
+    public static class Errorhandler
     {
         public static string HandleException(Exception ex)
         {
