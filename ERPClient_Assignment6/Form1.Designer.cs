@@ -111,6 +111,7 @@
             this.buttonAllKeys.TabIndex = 7;
             this.buttonAllKeys.Text = "All keys";
             this.buttonAllKeys.UseVisualStyleBackColor = true;
+            this.buttonAllKeys.Click += new System.EventHandler(this.buttonAllKeys_Click);
             // 
             // buttonAllIndexes
             // 
