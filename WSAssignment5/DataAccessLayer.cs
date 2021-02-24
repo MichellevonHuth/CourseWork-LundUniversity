@@ -81,14 +81,7 @@ namespace WSAssignment5
                 string lastName = reader["Last Name"].ToString();
                 string jobTitle = reader["Job Title"].ToString();
 
-                allEmployees.Add("No_: " + no_ + "   First Name: " + firstName + "   Last Name: " + lastName + "   Job Title: " + jobTitle);     
-               /*/ allEmployees.Add(no_);
-                allEmployees.Add(" First Name: ");
-                allEmployees.Add(firstName);
-                allEmployees.Add(" Last Name: ");
-                allEmployees.Add(lastName);
-                allEmployees.Add(" Job Title: ");
-                allEmployees.Add(jobTitle + "\r\n"); /*/
+                allEmployees.Add("No_: " + no_ + "     First Name: " + firstName + "     Last Name: " + lastName + "     Job Title: " + jobTitle);     
                 
 
             }
@@ -100,9 +93,9 @@ namespace WSAssignment5
         {
             int employeeCount = 0;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand sqlCommand = new SqlCommand(SqlQueries.Count(), sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) AS Count from[CRONUS Sverige AB$Employee] where No_ = '" + no_ + "'", sqlConnection);
 
-            sqlCommand.Parameters.AddWithValue("@No_", no_);
+
             sqlCommand.Connection = sqlConnection;
             sqlConnection.Open();
 
