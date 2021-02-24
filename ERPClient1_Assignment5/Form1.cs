@@ -22,11 +22,11 @@ namespace ERPClient1_Assignment5
         private void buttonCreate_Click(object sender, EventArgs e)
         {
 
-            if (textBoxJobTitle.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "" )
+            if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "" )
 
             {
 
-                OutputTextBox.Text = "Please fill all the fields";
+                MessageBox.Show("Please fill all the fields");
             }
             else
             {
@@ -36,44 +36,74 @@ namespace ERPClient1_Assignment5
                 string jobTitle = textBoxJobTitle.Text;
 
                 OutputTextBox.Text = proxy.CreateEmployee(no_, firstName, lastName, jobTitle);
+                OutputTextBox.Text = no_ + " is now added in the database!";
+
+
+                textBoxJobTitle.Clear();
+                textBoxLastName.Clear();
+                textBoxName.Clear();
+                textBoxNo_.Clear();
             }
 
-            textBoxJobTitle.Clear();
-            textBoxLastName.Clear();
-            textBoxName.Clear();
-            textBoxNo_.Clear();
 
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            string no_ = textBoxNo_.Text;
-            string firstName = textBoxName.Text;
-            string lastName = textBoxLastName.Text;
-            string jobTitle = textBoxJobTitle.Text;
 
-            proxy.UpdateEmployee(no_, firstName, lastName, jobTitle);
+            if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "")
 
-            OutputTextBox.Text = no_ + "just got updated!";
+            {
 
-            textBoxJobTitle.Clear();
-            textBoxLastName.Clear();
-            textBoxName.Clear();
-            textBoxNo_.Clear();
+                MessageBox.Show("Please fill all the fields");
+            }
+
+            else
+            {
+                string no_ = textBoxNo_.Text;
+                string firstName = textBoxName.Text;
+                string lastName = textBoxLastName.Text;
+                string jobTitle = textBoxJobTitle.Text;
+
+                proxy.UpdateEmployee(no_, firstName, lastName, jobTitle);
+
+                OutputTextBox.Text = no_ + " just got updated in the database!";
+
+                textBoxJobTitle.Clear();
+                textBoxLastName.Clear();
+                textBoxName.Clear();
+                textBoxNo_.Clear();
+            }
+            
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
 
-            string no_ = textBoxNo_.Text;
-            proxy.DeleteEmployee(no_);
+            if (textBoxNo_.Text == "")
 
-            OutputTextBox.Text = no_ + "just got deleted!";
+            {
+                MessageBox.Show("Please fill in your employee number!"); 
 
-            textBoxJobTitle.Clear();
-            textBoxLastName.Clear();
-            textBoxName.Clear();
-            textBoxNo_.Clear();
+            }
+
+            else
+            {
+                
+                string no_ = textBoxNo_.Text;
+                bool ifEmployeeExists = proxy.DeleteEmployee(no_); 
+
+                proxy.DeleteEmployee(no_);
+
+                OutputTextBox.Text = no_ + " just got deleted from the database!";
+
+                textBoxJobTitle.Clear();
+                textBoxLastName.Clear();
+                textBoxName.Clear();
+                textBoxNo_.Clear();
+
+            }
+            //"\r\n" + no_ + " is already taken, try a new one!"
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
