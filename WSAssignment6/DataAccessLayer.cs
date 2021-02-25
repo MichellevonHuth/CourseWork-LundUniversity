@@ -17,7 +17,7 @@ namespace WSAssignment6
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                SqlCommand sqlCommand = new SqlCommand(SqlQueries.MetaDataForEmployeeTable(), sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("SELECT TABLE_CATALOG as table_catalog, TABLE_NAME as table_name, COLUMN_NAME as column_name, ORDINAL_POSITION as ordinal_position, IS_NULLABLE as is_nullable, DATA_TYPE as data_type FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CRONUS Sverige AB$Employee'", sqlConnection);
 
                 try
                 {

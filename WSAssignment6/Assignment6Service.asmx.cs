@@ -28,6 +28,7 @@ namespace WSAssignment6
         public DataTable MetaDataForEmployeeTable()
         {
             DataTable dt = dal.MetaDataForEmployeeTable();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -35,6 +36,7 @@ namespace WSAssignment6
         public DataTable EmployeeRelatives()
         {
             DataTable dt = dal.EmployeeRelatives();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -42,6 +44,7 @@ namespace WSAssignment6
         public DataTable EmployeeAbsent2004()
         {
             DataTable dt = dal.EmployeeAbsent2004();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -49,6 +52,7 @@ namespace WSAssignment6
         public DataTable EmployeeAbsentTheMost()
         {
             DataTable dt = dal.EmployeeAbsentTheMost();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -56,6 +60,7 @@ namespace WSAssignment6
         public DataTable AllKeys()
         {
             DataTable dt = dal.AllKeys();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -63,6 +68,7 @@ namespace WSAssignment6
         public DataTable AllIndexes()
         {
             DataTable dt = dal.AllIndexes();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -70,6 +76,7 @@ namespace WSAssignment6
         public DataTable AllTableConstraints()
         {
             DataTable dt = dal.AllTableConstraints();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -77,6 +84,7 @@ namespace WSAssignment6
         public DataTable AllTables1()
         {
             DataTable dt = dal.AllTables1();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -84,6 +92,7 @@ namespace WSAssignment6
         public DataTable AllTables2()
         {
             DataTable dt = dal.AllTables2();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -91,6 +100,7 @@ namespace WSAssignment6
         public DataTable AllColumns1()
         {
             DataTable dt = dal.AllColumns1();
+            dt.TableName = "MyDt";
             return dt;
         }
 
@@ -98,6 +108,7 @@ namespace WSAssignment6
         public DataTable AllColumns2()
         {
             DataTable dt = dal.AllColumns2();
+            dt.TableName = "MyDt";
             return dt;
         }
     }

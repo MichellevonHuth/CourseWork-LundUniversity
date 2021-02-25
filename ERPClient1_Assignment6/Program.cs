@@ -17,7 +17,7 @@ namespace ERPClient1_Assignment6
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            Console.WriteLine("hej");
+            
         }
     }
 }
