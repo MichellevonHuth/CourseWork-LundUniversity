@@ -59,5 +59,10 @@ namespace Assignment_2
         {
           
         }
+
+        private void messageDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

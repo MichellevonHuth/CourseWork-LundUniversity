@@ -64,6 +64,7 @@
             this.messageDataGridView.Name = "messageDataGridView";
             this.messageDataGridView.Size = new System.Drawing.Size(240, 150);
             this.messageDataGridView.TabIndex = 2;
+            this.messageDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.messageDataGridView_CellContentClick);
             // 
             // errorMessageLabel
             // 
