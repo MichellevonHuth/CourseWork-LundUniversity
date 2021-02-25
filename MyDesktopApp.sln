@@ -35,8 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment5", "WSAssignme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment5", "ERPClient1_Assignment5\ERPClient1_Assignment5.csproj", "{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment6", "WSAssignment_6\WSAssignment6.csproj", "{F3CCEE2C-7228-4902-8531-A51ABCF4E0D7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPClient1_Assignment6", "ERPClient1_Assignment6\ERPClient1_Assignment6.csproj", "{9B14E67A-356C-4B39-9BA1-135591A1A432}"
 EndProject
 Global
@@ -85,10 +83,6 @@ Global
 		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF7C1DF-134A-4F46-A95D-2AA5DAA0A808}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3CCEE2C-7228-4902-8531-A51ABCF4E0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3CCEE2C-7228-4902-8531-A51ABCF4E0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3CCEE2C-7228-4902-8531-A51ABCF4E0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3CCEE2C-7228-4902-8531-A51ABCF4E0D7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B14E67A-356C-4B39-9BA1-135591A1A432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B14E67A-356C-4B39-9BA1-135591A1A432}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B14E67A-356C-4B39-9BA1-135591A1A432}.Release|Any CPU.ActiveCfg = Release|Any CPU
