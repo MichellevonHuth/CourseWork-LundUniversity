@@ -289,8 +289,5 @@ namespace WSAssignment6
             }
 
         }
-
     }
 }
-
-

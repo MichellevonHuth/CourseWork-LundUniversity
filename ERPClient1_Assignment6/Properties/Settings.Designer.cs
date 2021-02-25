@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ERPClient_Assignment6.Properties
+namespace ERPClient1_Assignment6.Properties
 {
 
 

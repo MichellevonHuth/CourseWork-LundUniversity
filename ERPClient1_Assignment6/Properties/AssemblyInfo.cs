@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ERPClient_Assignment6")]
+[assembly: AssemblyTitle("ERPClient1_Assignment6")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ERPClient_Assignment6")]
+[assembly: AssemblyProduct("ERPClient1_Assignment6")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f2d6d520-fdda-47b9-b6c8-3f5597107a02")]
+[assembly: Guid("9b14e67a-356c-4b39-9ba1-135591a1a432")]
 
 // Version information for an assembly consists of the following four values:
 //
