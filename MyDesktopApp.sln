@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_2", "Assignment_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSAssignment3", "WSAssignment3\WSAssignment3.csproj", "{5A8A594B-0C3F-4EE9-9504-6A5B509DA16A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSClient1_Assignment3", "WSClient_Assignment3\WSClient1_Assignment3.csproj", "{CB8AFFA4-1AA6-4180-BE46-06416EBBC0B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSClient_Assignment3", "WSClient_Assignment3\WSClient_Assignment3.csproj", "{CB8AFFA4-1AA6-4180-BE46-06416EBBC0B6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5A8A594B-0C3F-4EE9-9504-6A5B509DA16A} = {5A8A594B-0C3F-4EE9-9504-6A5B509DA16A}
 	EndProjectSection
