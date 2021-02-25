@@ -211,9 +211,8 @@
             this.errorMessageLbl.AutoSize = true;
             this.errorMessageLbl.Location = new System.Drawing.Point(313, 432);
             this.errorMessageLbl.Name = "errorMessageLbl";
-            this.errorMessageLbl.Size = new System.Drawing.Size(85, 13);
+            this.errorMessageLbl.Size = new System.Drawing.Size(0, 13);
             this.errorMessageLbl.TabIndex = 16;
-            this.errorMessageLbl.Text = "errorMessageLbl";
             this.errorMessageLbl.Click += new System.EventHandler(this.errorMessageLbl_Click);
             // 
             // Form1
@@ -240,6 +239,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
