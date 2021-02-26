@@ -25,91 +25,80 @@ namespace WSAssignment6
         }
 
         [WebMethod]
-        public DataTable MetaDataForEmployeeTable()
+        public List<string[]> MetaDataForEmployeeTable()
         {
-            DataTable dt = dal.MetaDataForEmployeeTable();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable EmployeeRelatives()
+        public List<string[]> EmployeeRelatives()
         {
-            DataTable dt = dal.EmployeeRelatives();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable EmployeeAbsent2004()
+        public List<string[]> EmployeeAbsent2004()
         {
-            DataTable dt = dal.EmployeeAbsent2004();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable EmployeeAbsentTheMost()
+        public List<string[]> EmployeeAbsentTheMost()
         {
-            DataTable dt = dal.EmployeeAbsentTheMost();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable AllKeys()
+        public List<string[]> AllKeys()
         {
-            DataTable dt = dal.AllKeys();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable AllIndexes()
+        public List<string[]> AllIndexes()
         {
-            DataTable dt = dal.AllIndexes();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable AllTableConstraints()
+        public List<string[]> AllTableConstraints()
         {
-            DataTable dt = dal.AllTableConstraints();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable AllTables1()
+        public List<string[]> AllTables1()
         {
-            DataTable dt = dal.AllTables1();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable AllTables2()
+        public List<string[]> AllTables2()
         {
-            DataTable dt = dal.AllTables2();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable AllColumns1()
+        public List<string[]> AllColumns1()
         {
-            DataTable dt = dal.AllColumns1();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
 
         [WebMethod]
-        public DataTable AllColumns2()
+        public List<string[]> AllColumns2()
         {
-            DataTable dt = dal.AllColumns2();
-            dt.TableName = "MyDt";
-            return dt;
+            List<string[]> list = dal.EmployeeRelatives();
+            return list;
         }
     }
 }
