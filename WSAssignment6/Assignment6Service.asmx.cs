@@ -29,6 +29,7 @@ namespace WSAssignment6
         {
             List<string[]> list = dal.EmployeeRelatives();
             return list;
+            
         }
 
         [WebMethod]
