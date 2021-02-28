@@ -138,9 +138,6 @@ namespace WSAssignment6
         }
 
 
-
-
-
         public List<string[]> EmployeeAbsentTheMost()
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
@@ -450,5 +447,5 @@ namespace WSAssignment6
     }
 
 }
-}
+
 

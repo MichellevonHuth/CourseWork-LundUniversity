@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERPClient1_Assignment6.Assignment6Reference;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,50 @@ namespace ERPClient1_Assignment6
 {
     public partial class Form1 : Form
     {
-        Assignment6Service proxy = new Assignment6Service();
+        
+
+        Assignment6Reference.Assignment6ServiceSoapClient proxy = new Assignment6Reference.Assignment6ServiceSoapClient();
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        static DataTable ConvertListToDataTable(List<ArrayOfString> list)
+        {
+            // New table.
+            DataTable table = new DataTable();
+
+            // Get max columns.
+            int columns = 0;
+            foreach (var array in list)
+            {
+                if (array.Length > columns)
+                {
+                    columns = array.Length;
+                }
+            }
+
+            // Add columns.
+            for (int i = 0; i < columns; i++)
+            {
+                table.Columns.Add();
+            }
+
+            // Add rows.
+            foreach (var array in list)
+            {
+                table.Rows.Add(array);
+            }
+
+            return table;
+        }
+
         private void buttonAllKeys_Click(object sender, EventArgs e)
         {
             try
             {
-                DataTable dt = proxy.AllKeys();
+                DataTable dt = this.ConvertListToDataTable(proxy.AllKeys());
                 dataGridView.DataSource = dt;
             }
 
@@ -33,6 +66,11 @@ namespace ERPClient1_Assignment6
                 errorMessageLbl.Text = message;
             }
 
+        }
+
+        private DataTable ConvertListToDataTable(ArrayOfString[] arrayOfString)
+        {
+            throw new NotImplementedException();
         }
 
         private void buttonAllIndexes_Click(object sender, EventArgs e)
