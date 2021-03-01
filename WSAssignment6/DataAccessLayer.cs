@@ -115,7 +115,7 @@ namespace WSAssignment6
                     while (reader.Read())
                     {
 
-                        for (int i = 0; i < 7; i++)
+                        for (int i = 0; i < 1; i++)
                         {
 
                             rows[0] = reader["Employee_Number"].ToString();
@@ -154,7 +154,7 @@ namespace WSAssignment6
                     while (reader.Read())
                     {
 
-                        for (int i = 0; i < 2; i++)
+                        for (int i = 0; i < 1; i++)
                         {
                             rows[0] = reader["First Name"].ToString();
                             table.Add(rows);
