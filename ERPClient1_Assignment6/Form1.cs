@@ -41,18 +41,13 @@ namespace ERPClient1_Assignment6
             // Add rows.
             foreach (var array in list)
             {
-                string[] myList = new string[column];
+                
+               // string[] myList = new string[column];
                 foreach (string a in array)
                 {
-                    
-                    for (int i = 0; i < column; i++)
-                    {
-                        myList[i] = a;
-                        
-                    }
-                    
+                    table.Rows.Add(a);
                 }
-                table.Rows.Add(myList);
+                
             }
   
             return table;
