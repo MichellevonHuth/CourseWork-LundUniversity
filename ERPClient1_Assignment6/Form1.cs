@@ -161,10 +161,12 @@ namespace ERPClient1_Assignment6
         }
 
         private void buttonGetColumns1_Click(object sender, EventArgs e)
-        {/*/
+        {
             try
             {
-                DataTable dt = proxy.AllColumns1();
+                List<string> columns = new List<string>();
+                columns.Add("Columns");
+                DataTable dt = ConvertListToDataTable(proxy.AllColumns1(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -172,15 +174,17 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }/*/
+            }
 
         }
 
         private void buttonGetColumns2_Click(object sender, EventArgs e)
-        {/*/
+        {
             try
             {
-                DataTable dt = proxy.AllColumns2();
+                List<string> columns = new List<string>();
+                columns.Add("Columns");
+                DataTable dt = ConvertListToDataTable(proxy.AllColumns2(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -188,7 +192,7 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }/*/
+            }
 
         }
 
