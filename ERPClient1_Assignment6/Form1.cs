@@ -29,7 +29,7 @@ namespace ERPClient1_Assignment6
 
             // Get max columns.
             int column = columns.Count;
- 
+
 
             // Add columns.
             for (int i = 0; i < column; i++)
@@ -41,14 +41,19 @@ namespace ERPClient1_Assignment6
             // Add rows.
             foreach (var array in list)
             {
-                
-               // string[] myList = new string[column];
+
+                string[] myList = new string[column];
+                int i = 0;
+
                 foreach (string a in array)
                 {
-                    table.Rows.Add(a);
+                    myList[i] = a;
+                    i++;
                 }
-                
+
+                table.Rows.Add(myList);
             }
+
   
             return table;
             
@@ -72,6 +77,7 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -218,10 +224,12 @@ namespace ERPClient1_Assignment6
             try
             {
                 List<string> columns = new List<string>();
+                columns.Add("Employee No_");
                 columns.Add("Relative Code");
                 columns.Add("First Name");
                 columns.Add("Last Name");
                 columns.Add("Birth Date");
+                
                 DataTable dt = ConvertListToDataTable(proxy.EmployeeRelatives(), columns);
                 dataGridView.DataSource = dt;
             }

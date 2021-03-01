@@ -36,7 +36,7 @@ namespace WSAssignment6
 
         public static string AllKeys()
         {
-            string sqlCommand = "SELECT COLUMN_NAME as Column_name, CONSTRAINT_NAME as Constraint_name, type as Key_type, Type_desc, object_id as Object_id FROM INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ccu JOIN sys.objects kc ON ccu.CONSTRAINT_NAME = kc.name WHERE type_desc LIKE '%KEY%'";
+            string sqlCommand = "SELECT COLUMN_NAME as Column_name, CONSTRAINT_NAME as Constraint_name, type as Key_type, type_desc as Type_desc, object_id as Object_id FROM INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ccu JOIN sys.objects kc ON ccu.CONSTRAINT_NAME = kc.name WHERE type_desc LIKE '%KEY%'";
             return sqlCommand;
         }
 
