@@ -35,7 +35,13 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
-					proxy.allTables1();
+					String[][] table = proxy.metaDataForEmployeeTable();
+					for (int row = 0; row < table.length; row++) { 
+						for (int col = 0; col < table[row].length; col++) {
+							System.out.print(table[row][col] + "\t");
+							} 
+						} 
+
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
