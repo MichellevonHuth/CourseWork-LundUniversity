@@ -198,10 +198,15 @@ namespace ERPClient1_Assignment6
         }
 
         private void buttonEmployeeRelatives_Click(object sender, EventArgs e)
-        {/*/
+        {
             try
             {
-                DataTable dt = proxy.EmployeeRelatives();
+                List<string> columns = new List<string>();
+                columns.Add("Relative Code");
+                columns.Add("First Name");
+                columns.Add("Last Name");
+                columns.Add("Birth Date");
+                DataTable dt = ConvertListToDataTable(proxy.EmployeeRelatives(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -209,7 +214,7 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }/*/
+            }
         }
 
         private void buttonEmployeeAbsent2004_Click(object sender, EventArgs e)
