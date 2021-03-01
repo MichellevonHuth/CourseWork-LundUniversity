@@ -8,15 +8,15 @@
 package org.tempuri;
 
 public interface Assignment6ServiceSoap extends java.rmi.Remote {
-    public org.tempuri.MetaDataForEmployeeTableResponseMetaDataForEmployeeTableResult metaDataForEmployeeTable() throws java.rmi.RemoteException;
-    public org.tempuri.EmployeeRelativesResponseEmployeeRelativesResult employeeRelatives() throws java.rmi.RemoteException;
-    public org.tempuri.EmployeeAbsent2004ResponseEmployeeAbsent2004Result employeeAbsent2004() throws java.rmi.RemoteException;
-    public org.tempuri.EmployeeAbsentTheMostResponseEmployeeAbsentTheMostResult employeeAbsentTheMost() throws java.rmi.RemoteException;
-    public org.tempuri.AllKeysResponseAllKeysResult allKeys() throws java.rmi.RemoteException;
-    public org.tempuri.AllIndexesResponseAllIndexesResult allIndexes() throws java.rmi.RemoteException;
-    public org.tempuri.AllTableConstraintsResponseAllTableConstraintsResult allTableConstraints() throws java.rmi.RemoteException;
-    public org.tempuri.AllTables1ResponseAllTables1Result allTables1() throws java.rmi.RemoteException;
-    public org.tempuri.AllTables2ResponseAllTables2Result allTables2() throws java.rmi.RemoteException;
-    public org.tempuri.AllColumns1ResponseAllColumns1Result allColumns1() throws java.rmi.RemoteException;
-    public org.tempuri.AllColumns2ResponseAllColumns2Result allColumns2() throws java.rmi.RemoteException;
+    public java.lang.String[][] metaDataForEmployeeTable() throws java.rmi.RemoteException;
+    public java.lang.String[][] employeeRelatives() throws java.rmi.RemoteException;
+    public java.lang.String[][] employeeAbsent2004() throws java.rmi.RemoteException;
+    public java.lang.String[][] employeeAbsentTheMost() throws java.rmi.RemoteException;
+    public java.lang.String[][] allKeys() throws java.rmi.RemoteException;
+    public java.lang.String[][] allIndexes() throws java.rmi.RemoteException;
+    public java.lang.String[][] allTableConstraints() throws java.rmi.RemoteException;
+    public java.lang.String[][] allTables1() throws java.rmi.RemoteException;
+    public java.lang.String[][] allTables2() throws java.rmi.RemoteException;
+    public java.lang.String[][] allColumns1() throws java.rmi.RemoteException;
+    public java.lang.String[][] allColumns2() throws java.rmi.RemoteException;
 }

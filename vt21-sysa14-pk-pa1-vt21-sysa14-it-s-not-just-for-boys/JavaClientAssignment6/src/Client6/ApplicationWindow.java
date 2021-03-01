@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTable;
 
 public class ApplicationWindow {
 
@@ -21,8 +22,9 @@ public class ApplicationWindow {
 	private JButton btnAllTablesAlt2;
 	private JButton btnAllColumns1;
 	private JButton btnAllColumn2;
+	private Controller controller;
 
-	
+
 	public ApplicationWindow() {
 	
 		frame = new JFrame();
@@ -193,5 +195,15 @@ public class ApplicationWindow {
 	public void setBtnAllColumn2(JButton btnAllColumn2) {
 		this.btnAllColumn2 = btnAllColumn2;
 	}
+	
+
+	public Controller getController() {
+		return controller;
+	}
+
+	public void setController(Controller controller) {
+		this.controller = controller;
+	}
+	
 
 }

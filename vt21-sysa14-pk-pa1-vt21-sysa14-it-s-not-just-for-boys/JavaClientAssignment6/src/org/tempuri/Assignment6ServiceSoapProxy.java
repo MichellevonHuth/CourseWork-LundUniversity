@@ -44,67 +44,67 @@ public class Assignment6ServiceSoapProxy implements org.tempuri.Assignment6Servi
     return assignment6ServiceSoap;
   }
   
-  public org.tempuri.MetaDataForEmployeeTableResponseMetaDataForEmployeeTableResult metaDataForEmployeeTable() throws java.rmi.RemoteException{
+  public java.lang.String[][] metaDataForEmployeeTable() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.metaDataForEmployeeTable();
   }
   
-  public org.tempuri.EmployeeRelativesResponseEmployeeRelativesResult employeeRelatives() throws java.rmi.RemoteException{
+  public java.lang.String[][] employeeRelatives() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.employeeRelatives();
   }
   
-  public org.tempuri.EmployeeAbsent2004ResponseEmployeeAbsent2004Result employeeAbsent2004() throws java.rmi.RemoteException{
+  public java.lang.String[][] employeeAbsent2004() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.employeeAbsent2004();
   }
   
-  public org.tempuri.EmployeeAbsentTheMostResponseEmployeeAbsentTheMostResult employeeAbsentTheMost() throws java.rmi.RemoteException{
+  public java.lang.String[][] employeeAbsentTheMost() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.employeeAbsentTheMost();
   }
   
-  public org.tempuri.AllKeysResponseAllKeysResult allKeys() throws java.rmi.RemoteException{
+  public java.lang.String[][] allKeys() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.allKeys();
   }
   
-  public org.tempuri.AllIndexesResponseAllIndexesResult allIndexes() throws java.rmi.RemoteException{
+  public java.lang.String[][] allIndexes() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.allIndexes();
   }
   
-  public org.tempuri.AllTableConstraintsResponseAllTableConstraintsResult allTableConstraints() throws java.rmi.RemoteException{
+  public java.lang.String[][] allTableConstraints() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.allTableConstraints();
   }
   
-  public org.tempuri.AllTables1ResponseAllTables1Result allTables1() throws java.rmi.RemoteException{
+  public java.lang.String[][] allTables1() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.allTables1();
   }
   
-  public org.tempuri.AllTables2ResponseAllTables2Result allTables2() throws java.rmi.RemoteException{
+  public java.lang.String[][] allTables2() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.allTables2();
   }
   
-  public org.tempuri.AllColumns1ResponseAllColumns1Result allColumns1() throws java.rmi.RemoteException{
+  public java.lang.String[][] allColumns1() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.allColumns1();
   }
   
-  public org.tempuri.AllColumns2ResponseAllColumns2Result allColumns2() throws java.rmi.RemoteException{
+  public java.lang.String[][] allColumns2() throws java.rmi.RemoteException{
     if (assignment6ServiceSoap == null)
       _initAssignment6ServiceSoapProxy();
     return assignment6ServiceSoap.allColumns2();

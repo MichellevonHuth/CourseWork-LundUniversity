@@ -2,6 +2,7 @@ package Client6;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 
 import org.tempuri.Assignment6ServiceSoap;
 import org.tempuri.Assignment6ServiceSoapProxy;
@@ -32,6 +33,13 @@ public class Controller {
 	
 		aw.getBtnEmployeeTables().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					proxy.allTables1();
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		
