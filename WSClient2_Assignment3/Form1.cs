@@ -30,11 +30,15 @@ namespace WSClient2_Assignment3
             }
             catch(Exception ex)
             {
-                throw ex; 
+                string message = Errorhandler.HandleException(ex);
+                errorMessageLbl.Text = message;
             }
         }
 
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 // denna följer MVC kolla föreläsningen om detta!!
