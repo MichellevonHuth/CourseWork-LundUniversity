@@ -103,10 +103,14 @@ namespace ERPClient1_Assignment6
         }
 
         private void buttonAllConstraints_Click(object sender, EventArgs e)
-        {/*/
+        {
             try
             {
-                DataTable dt = proxy.AllTableConstraints();
+                List<string> columns = new List<string>();
+                columns.Add("Table_Name";
+                columns.Add("Column_Name");
+                columns.Add("Constraint_Type");
+                DataTable dt = ConvertListToDataTable(proxy.AllTableConstraints(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -114,7 +118,7 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }/*/
+            }
         }
 
         private void buttonAllTables1_Click(object sender, EventArgs e)
