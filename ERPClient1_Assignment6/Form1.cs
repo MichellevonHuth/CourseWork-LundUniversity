@@ -87,10 +87,14 @@ namespace ERPClient1_Assignment6
 
 
         private void buttonAllIndexes_Click(object sender, EventArgs e)
-        {/*/
+        {
             try
             {
-                DataTable dt = proxy.AllIndexes();
+                List<string> columns = new List<string>();
+                columns.Add("object_id");
+                columns.Add("name");
+                columns.Add("index_id");
+                DataTable dt = ConvertListToDataTable(proxy.AllIndexes(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -99,7 +103,8 @@ namespace ERPClient1_Assignment6
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
             }
-            /*/
+            
+             
         }
 
         private void buttonAllConstraints_Click(object sender, EventArgs e)
@@ -107,7 +112,7 @@ namespace ERPClient1_Assignment6
             try
             {
                 List<string> columns = new List<string>();
-                columns.Add("Table_Name";
+                columns.Add("Table_Name");
                 columns.Add("Column_Name");
                 columns.Add("Constraint_Type");
                 DataTable dt = ConvertListToDataTable(proxy.AllTableConstraints(), columns);
