@@ -250,10 +250,12 @@ namespace ERPClient1_Assignment6
         }
 
         private void buttonEmployeeAbsentMost_Click(object sender, EventArgs e)
-        {/*/
+        {
             try
             {
-                DataTable dt = proxy.EmployeeAbsentTheMost();
+                List<string> columns = new List<string>();
+                columns.Add("First Name");
+                DataTable dt = ConvertListToDataTable(proxy.EmployeeAbsentTheMost(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -261,7 +263,7 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }/*/
+            }
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
