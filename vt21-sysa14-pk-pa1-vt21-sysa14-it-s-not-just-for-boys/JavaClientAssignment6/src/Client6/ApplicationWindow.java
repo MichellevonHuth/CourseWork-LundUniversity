@@ -22,6 +22,7 @@ public class ApplicationWindow {
 	private JButton btnAllTablesAlt2;
 	private JButton btnAllColumns1;
 	private JButton btnAllColumn2;
+	private Controller controller;
 
 
 	public ApplicationWindow() {
@@ -195,14 +196,14 @@ public class ApplicationWindow {
 		this.btnAllColumn2 = btnAllColumn2;
 	}
 	
-	
-	public JTable getTable() {
-		return table;
+
+	public Controller getController() {
+		return controller;
 	}
 
-	
-	public void setTable(JTable table) {
-		this.table = table;
+	public void setController(Controller controller) {
+		this.controller = controller;
 	}
+	
 
 }

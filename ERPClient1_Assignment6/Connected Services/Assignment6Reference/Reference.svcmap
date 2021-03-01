@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dfa54c9e-a543-4a49-836a-02a3a9ebaba6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f897f7c8-e27d-433d-8e7c-168b5c5359a8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,7 +24,7 @@
     <MetadataSource Address="http://localhost/WSAssignment6/Assignment6Service.asmx?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Assignment6Service.wsdl" MetadataType="Wsdl" ID="4f4fe360-6a9c-4f4d-97f2-a23179e3695c" SourceId="1" SourceUrl="http://localhost/WSAssignment6/Assignment6Service.asmx?WSDL" />
+    <MetadataFile FileName="Assignment6Service.wsdl" MetadataType="Wsdl" ID="c4f20ec2-54f5-4b8f-ae44-a81d55e77272" SourceId="1" SourceUrl="http://localhost/WSAssignment6/Assignment6Service.asmx?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
