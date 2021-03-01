@@ -52,16 +52,16 @@
             // 
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(253, 50);
+            this.dataGridView.Location = new System.Drawing.Point(219, 50);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(286, 366);
+            this.dataGridView.Size = new System.Drawing.Size(574, 366);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // labelGetInformation
             // 
             this.labelGetInformation.AutoSize = true;
-            this.labelGetInformation.Location = new System.Drawing.Point(83, 60);
+            this.labelGetInformation.Location = new System.Drawing.Point(59, 64);
             this.labelGetInformation.Name = "labelGetInformation";
             this.labelGetInformation.Size = new System.Drawing.Size(108, 13);
             this.labelGetInformation.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             // buttonEmployeeMetadata
             // 
-            this.buttonEmployeeMetadata.Location = new System.Drawing.Point(29, 90);
+            this.buttonEmployeeMetadata.Location = new System.Drawing.Point(12, 96);
             this.buttonEmployeeMetadata.Name = "buttonEmployeeMetadata";
             this.buttonEmployeeMetadata.Size = new System.Drawing.Size(201, 23);
             this.buttonEmployeeMetadata.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             // buttonEmployeeRelatives
             // 
-            this.buttonEmployeeRelatives.Location = new System.Drawing.Point(29, 146);
+            this.buttonEmployeeRelatives.Location = new System.Drawing.Point(12, 137);
             this.buttonEmployeeRelatives.Name = "buttonEmployeeRelatives";
             this.buttonEmployeeRelatives.Size = new System.Drawing.Size(201, 23);
             this.buttonEmployeeRelatives.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             // buttonEmployeeAbsent2004
             // 
-            this.buttonEmployeeAbsent2004.Location = new System.Drawing.Point(29, 200);
+            this.buttonEmployeeAbsent2004.Location = new System.Drawing.Point(12, 177);
             this.buttonEmployeeAbsent2004.Name = "buttonEmployeeAbsent2004";
             this.buttonEmployeeAbsent2004.Size = new System.Drawing.Size(201, 23);
             this.buttonEmployeeAbsent2004.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             // buttonEmployeeAbsentMost
             // 
-            this.buttonEmployeeAbsentMost.Location = new System.Drawing.Point(29, 254);
+            this.buttonEmployeeAbsentMost.Location = new System.Drawing.Point(12, 220);
             this.buttonEmployeeAbsentMost.Name = "buttonEmployeeAbsentMost";
             this.buttonEmployeeAbsentMost.Size = new System.Drawing.Size(201, 23);
             this.buttonEmployeeAbsentMost.TabIndex = 5;
@@ -111,7 +111,7 @@
             // labelMetadata
             // 
             this.labelMetadata.AutoSize = true;
-            this.labelMetadata.Location = new System.Drawing.Point(630, 50);
+            this.labelMetadata.Location = new System.Drawing.Point(852, 50);
             this.labelMetadata.Name = "labelMetadata";
             this.labelMetadata.Size = new System.Drawing.Size(101, 13);
             this.labelMetadata.TabIndex = 6;
@@ -120,7 +120,7 @@
             // 
             // buttonAllKeys
             // 
-            this.buttonAllKeys.Location = new System.Drawing.Point(587, 90);
+            this.buttonAllKeys.Location = new System.Drawing.Point(799, 79);
             this.buttonAllKeys.Name = "buttonAllKeys";
             this.buttonAllKeys.Size = new System.Drawing.Size(201, 23);
             this.buttonAllKeys.TabIndex = 7;
@@ -130,7 +130,7 @@
             // 
             // buttonAllIndexes
             // 
-            this.buttonAllIndexes.Location = new System.Drawing.Point(587, 132);
+            this.buttonAllIndexes.Location = new System.Drawing.Point(799, 123);
             this.buttonAllIndexes.Name = "buttonAllIndexes";
             this.buttonAllIndexes.Size = new System.Drawing.Size(201, 23);
             this.buttonAllIndexes.TabIndex = 8;
@@ -140,7 +140,7 @@
             // 
             // buttonAllConstraints
             // 
-            this.buttonAllConstraints.Location = new System.Drawing.Point(587, 180);
+            this.buttonAllConstraints.Location = new System.Drawing.Point(799, 162);
             this.buttonAllConstraints.Name = "buttonAllConstraints";
             this.buttonAllConstraints.Size = new System.Drawing.Size(201, 23);
             this.buttonAllConstraints.TabIndex = 9;
@@ -151,7 +151,7 @@
             // labelGetTables
             // 
             this.labelGetTables.AutoSize = true;
-            this.labelGetTables.Location = new System.Drawing.Point(630, 227);
+            this.labelGetTables.Location = new System.Drawing.Point(863, 225);
             this.labelGetTables.Name = "labelGetTables";
             this.labelGetTables.Size = new System.Drawing.Size(68, 13);
             this.labelGetTables.TabIndex = 10;
@@ -159,7 +159,7 @@
             // 
             // buttonAllTables1
             // 
-            this.buttonAllTables1.Location = new System.Drawing.Point(587, 254);
+            this.buttonAllTables1.Location = new System.Drawing.Point(799, 247);
             this.buttonAllTables1.Name = "buttonAllTables1";
             this.buttonAllTables1.Size = new System.Drawing.Size(201, 23);
             this.buttonAllTables1.TabIndex = 11;
@@ -169,7 +169,7 @@
             // 
             // buttonAllTables2
             // 
-            this.buttonAllTables2.Location = new System.Drawing.Point(587, 294);
+            this.buttonAllTables2.Location = new System.Drawing.Point(799, 287);
             this.buttonAllTables2.Name = "buttonAllTables2";
             this.buttonAllTables2.Size = new System.Drawing.Size(201, 23);
             this.buttonAllTables2.TabIndex = 12;
@@ -180,7 +180,7 @@
             // labelEmployeeTables
             // 
             this.labelEmployeeTables.AutoSize = true;
-            this.labelEmployeeTables.Location = new System.Drawing.Point(605, 333);
+            this.labelEmployeeTables.Location = new System.Drawing.Point(808, 348);
             this.labelEmployeeTables.Name = "labelEmployeeTables";
             this.labelEmployeeTables.Size = new System.Drawing.Size(183, 13);
             this.labelEmployeeTables.TabIndex = 13;
@@ -188,7 +188,7 @@
             // 
             // buttonGetColumns1
             // 
-            this.buttonGetColumns1.Location = new System.Drawing.Point(587, 360);
+            this.buttonGetColumns1.Location = new System.Drawing.Point(799, 373);
             this.buttonGetColumns1.Name = "buttonGetColumns1";
             this.buttonGetColumns1.Size = new System.Drawing.Size(201, 23);
             this.buttonGetColumns1.TabIndex = 14;
@@ -198,7 +198,7 @@
             // 
             // buttonGetColumns2
             // 
-            this.buttonGetColumns2.Location = new System.Drawing.Point(587, 402);
+            this.buttonGetColumns2.Location = new System.Drawing.Point(799, 415);
             this.buttonGetColumns2.Name = "buttonGetColumns2";
             this.buttonGetColumns2.Size = new System.Drawing.Size(201, 23);
             this.buttonGetColumns2.TabIndex = 15;
@@ -219,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1012, 450);
             this.Controls.Add(this.errorMessageLbl);
             this.Controls.Add(this.buttonGetColumns2);
             this.Controls.Add(this.buttonGetColumns1);
