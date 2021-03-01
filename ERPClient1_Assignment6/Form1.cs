@@ -189,11 +189,17 @@ namespace ERPClient1_Assignment6
         }
 
         private void buttonEmployeeMetadata_Click(object sender, EventArgs e)
-        {/*/
+        {
             try
             {
-                
-                DataTable dt = proxy.MetaDataForEmployeeTable();
+                List<string> columns = new List<string>();
+                columns.Add("table_catalog");
+                columns.Add("table_name");
+                columns.Add("column_name");
+                columns.Add("ordinal_position");
+                columns.Add("is_nullable");
+                columns.Add("data_type");
+                DataTable dt = ConvertListToDataTable(proxy.MetaDataForEmployeeTable(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -202,7 +208,7 @@ namespace ERPClient1_Assignment6
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
 
-            }/*/
+            }
 
         }
 
