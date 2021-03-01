@@ -28,9 +28,6 @@ namespace WSAssignment6
                     while (reader.Read())
                     {
 
-                        for (int i = 0; i < 50; i++)
-                        {
-
                             rows[0] = reader["table_catalog"].ToString();
                             rows[1] = reader["table_name"].ToString();
                             rows[2] = reader["column_name"].ToString();
@@ -38,7 +35,7 @@ namespace WSAssignment6
                             rows[4] = reader["is_nullable"].ToString();
                             rows[5] = reader["data_type"].ToString();
                             table.Add(rows);
-                        }
+
 
                     }
                     return table;
@@ -71,9 +68,6 @@ namespace WSAssignment6
                     while (reader.Read())
                     {
 
-                        for (int i = 0; i < 12; i++)
-                        {
-
                             rows[0] = reader["Employee No_"].ToString();
                             rows[1] = reader["Relative Code"].ToString();
                             rows[2] = reader["First Name"].ToString();
@@ -81,7 +75,7 @@ namespace WSAssignment6
                             rows[4] = reader["Birth Date"].ToString();
 
                             table.Add(rows);
-                        }
+
 
                     }
                     return table;
@@ -100,7 +94,6 @@ namespace WSAssignment6
         public List<string[]> EmployeeAbsent2004()
         {
            
-
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
                 SqlCommand sqlCommand = new SqlCommand(SqlQueries.EmployeeAbsent2004(), sqlConnection);
@@ -115,13 +108,9 @@ namespace WSAssignment6
                     while (reader.Read())
                     {
 
-                        for (int i = 0; i < 1; i++)
-                        {
-
                             rows[0] = reader["Employee_Number"].ToString();
-
                             table.Add(rows);
-                        }
+                        
 
                     }
                     return table;
@@ -154,11 +143,9 @@ namespace WSAssignment6
                     while (reader.Read())
                     {
 
-                        for (int i = 0; i < 1; i++)
-                        {
                             rows[0] = reader["First Name"].ToString();
                             table.Add(rows);
-                        }
+                        
 
                     }
                     return table;
@@ -188,16 +175,13 @@ namespace WSAssignment6
 
                     while (reader.Read())
                     {
-
-                        for (int i = 0; i < 1000; i++)
-                        {
                             rows[0] = reader["Column_name"].ToString();
                             rows[1] = reader["Constraint_name"].ToString();
                             rows[2] = reader["Key_type"].ToString();
                             rows[3] = reader["Type_desc"].ToString();
                             rows[4] = reader["Object_id"].ToString();
                             table.Add(rows);
-                        }
+                        
 
                     }
                     return table;
@@ -233,13 +217,11 @@ namespace WSAssignment6
                         while (reader.Read())
                         {
 
-                            for (int i = 0; i < 1000; i++)
-                            {
                                 rows[0] = reader["object_id"].ToString();
                                 rows[0] = reader["name"].ToString();
                                 rows[0] = reader["index_id"].ToString();
                                 table.Add(rows);
-                            }
+                            
 
                         }
                         return table;
@@ -272,14 +254,12 @@ namespace WSAssignment6
                         while (reader.Read())
                         {
 
-                            for (int i = 0; i < 1000; i++)
-                            {
                                 rows[0] = reader["Table_Name"].ToString();
                                 rows[1] = reader["Column_Name"].ToString();
                                 rows[2] = reader["Constraint_Type"].ToString();
 
-                            table.Add(rows);
-                            }
+                                table.Add(rows);
+                            
 
                         }
                         return table;
@@ -313,12 +293,10 @@ namespace WSAssignment6
                         while (reader.Read())
                         {
 
-                            for (int i = 0; i < 1000; i++)
-                            {
                                 rows[0] = reader["Tables"].ToString();
 
                                 table.Add(rows);
-                            }
+                            
 
                         }
                         return table;
@@ -350,12 +328,11 @@ namespace WSAssignment6
                         while (reader.Read())
                         {
 
-                            for (int i = 0; i < 1000; i++)
-                            {
+      
                                 rows[0] = reader["Tables"].ToString();
 
                                 table.Add(rows);
-                            }
+                            
 
                         }
                         return table;
@@ -387,12 +364,10 @@ namespace WSAssignment6
                         while (reader.Read())
                         {
 
-                            for (int i = 0; i < 45; i++)
-                            {
                                 rows[0] = reader["Columns"].ToString();
 
                                 table.Add(rows);
-                            }
+                            
 
                         }
                         return table;
@@ -424,12 +399,10 @@ namespace WSAssignment6
                         while (reader.Read())
                         {
 
-                            for (int i = 0; i < 45; i++)
-                            {
                                 rows[0] = reader["Columns"].ToString();
 
                                 table.Add(rows);
-                            }
+                            
 
                         }
                         return table;

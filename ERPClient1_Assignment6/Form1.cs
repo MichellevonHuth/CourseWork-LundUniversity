@@ -213,8 +213,10 @@ namespace ERPClient1_Assignment6
 
             catch (Exception ex)
             {
+    
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
+                MessageBox.Show(ex.Message);
 
             }
 
@@ -237,6 +239,7 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
+                MessageBox.Show(ex.Message);
             }
         }
 
