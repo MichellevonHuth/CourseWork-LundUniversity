@@ -70,9 +70,9 @@ namespace ERPClient1_Assignment6
                 List<string> columns = new List<string>();
                 columns.Add("Column_name");
                 columns.Add("Constraint_name");
-                columns.Add("Key_tape");
+                columns.Add("Key_type");
                 columns.Add("Type_desc");
-                columns.Add("");
+                columns.Add("Object_id");
                 DataTable dt = ConvertListToDataTable(proxy.AllKeys(), columns);
                 dataGridView.DataSource = dt;
             }

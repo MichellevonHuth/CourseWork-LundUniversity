@@ -27,7 +27,7 @@ namespace WSAssignment6
         [WebMethod]
         public List<string[]> MetaDataForEmployeeTable()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.MetaDataForEmployeeTable();
             return list;
             
         }
@@ -42,63 +42,63 @@ namespace WSAssignment6
         [WebMethod]
         public List<string[]> EmployeeAbsent2004()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.EmployeeAbsent2004();
             return list;
         }
 
         [WebMethod]
         public List<string[]> EmployeeAbsentTheMost()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.EmployeeAbsentTheMost();
             return list;
         }
 
         [WebMethod]
         public List<string[]> AllKeys()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.AllKeys();
             return list;
         }
 
         [WebMethod]
         public List<string[]> AllIndexes()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.AllIndexes();
             return list;
         }
 
         [WebMethod]
         public List<string[]> AllTableConstraints()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.AllTableConstraints();
             return list;
         }
 
         [WebMethod]
         public List<string[]> AllTables1()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.AllTables1();
             return list;
         }
 
         [WebMethod]
         public List<string[]> AllTables2()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.AllTables2();
             return list;
         }
 
         [WebMethod]
         public List<string[]> AllColumns1()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.AllColumns1();
             return list;
         }
 
         [WebMethod]
         public List<string[]> AllColumns2()
         {
-            List<string[]> list = dal.EmployeeRelatives();
+            List<string[]> list = dal.AllColumns2();
             return list;
         }
     }

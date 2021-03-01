@@ -193,9 +193,9 @@ namespace WSAssignment6
                         {
                             rows[0] = reader["Column_name"].ToString();
                             rows[1] = reader["Constraint_name"].ToString();
-                            rows[2] = reader["Key_tape"].ToString();
+                            rows[2] = reader["Key_type"].ToString();
                             rows[3] = reader["Type_desc"].ToString();
-                            rows[4] = reader[""].ToString();
+                            rows[4] = reader["Object_id"].ToString();
                             table.Add(rows);
                         }
 
