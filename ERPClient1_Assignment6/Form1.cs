@@ -28,14 +28,8 @@ namespace ERPClient1_Assignment6
             DataTable table = new DataTable();
 
             // Get max columns.
-            int column = 0;
-            foreach (var array in list)
-            {
-                if (array.Count > column)
-                {
-                    column = array.Count;
-                }
-            }
+            int column = columns.Count;
+ 
 
             // Add columns.
             for (int i = 0; i < column; i++)
@@ -43,24 +37,26 @@ namespace ERPClient1_Assignment6
                 table.Columns.Add(columns[i]);
             }
 
+
             // Add rows.
             foreach (var array in list)
             {
                 string[] myList = new string[column];
-
                 foreach (string a in array)
                 {
+                    
                     for (int i = 0; i < column; i++)
                     {
                         myList[i] = a;
+                        
                     }
-
+                    
                 }
                 table.Rows.Add(myList);
-                
             }
-
+  
             return table;
+            
         }
 
         private void buttonAllKeys_Click(object sender, EventArgs e)
