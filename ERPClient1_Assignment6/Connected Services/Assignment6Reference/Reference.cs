@@ -153,12 +153,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class MetaDataForEmployeeTableResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] MetaDataForEmployeeTableResult;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> MetaDataForEmployeeTableResult;
         
         public MetaDataForEmployeeTableResponseBody() {
         }
         
-        public MetaDataForEmployeeTableResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] MetaDataForEmployeeTableResult) {
+        public MetaDataForEmployeeTableResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> MetaDataForEmployeeTableResult) {
             this.MetaDataForEmployeeTableResult = MetaDataForEmployeeTableResult;
         }
     }
@@ -214,12 +214,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class EmployeeRelativesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeRelativesResult;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeRelativesResult;
         
         public EmployeeRelativesResponseBody() {
         }
         
-        public EmployeeRelativesResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeRelativesResult) {
+        public EmployeeRelativesResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeRelativesResult) {
             this.EmployeeRelativesResult = EmployeeRelativesResult;
         }
     }
@@ -275,12 +275,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class EmployeeAbsent2004ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeAbsent2004Result;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeAbsent2004Result;
         
         public EmployeeAbsent2004ResponseBody() {
         }
         
-        public EmployeeAbsent2004ResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeAbsent2004Result) {
+        public EmployeeAbsent2004ResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeAbsent2004Result) {
             this.EmployeeAbsent2004Result = EmployeeAbsent2004Result;
         }
     }
@@ -336,12 +336,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class EmployeeAbsentTheMostResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeAbsentTheMostResult;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeAbsentTheMostResult;
         
         public EmployeeAbsentTheMostResponseBody() {
         }
         
-        public EmployeeAbsentTheMostResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeAbsentTheMostResult) {
+        public EmployeeAbsentTheMostResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeAbsentTheMostResult) {
             this.EmployeeAbsentTheMostResult = EmployeeAbsentTheMostResult;
         }
     }
@@ -397,12 +397,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class AllKeysResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllKeysResult;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllKeysResult;
         
         public AllKeysResponseBody() {
         }
         
-        public AllKeysResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllKeysResult) {
+        public AllKeysResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllKeysResult) {
             this.AllKeysResult = AllKeysResult;
         }
     }
@@ -458,12 +458,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class AllIndexesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllIndexesResult;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllIndexesResult;
         
         public AllIndexesResponseBody() {
         }
         
-        public AllIndexesResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllIndexesResult) {
+        public AllIndexesResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllIndexesResult) {
             this.AllIndexesResult = AllIndexesResult;
         }
     }
@@ -519,12 +519,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class AllTableConstraintsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTableConstraintsResult;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTableConstraintsResult;
         
         public AllTableConstraintsResponseBody() {
         }
         
-        public AllTableConstraintsResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTableConstraintsResult) {
+        public AllTableConstraintsResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTableConstraintsResult) {
             this.AllTableConstraintsResult = AllTableConstraintsResult;
         }
     }
@@ -580,12 +580,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class AllTables1ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTables1Result;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTables1Result;
         
         public AllTables1ResponseBody() {
         }
         
-        public AllTables1ResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTables1Result) {
+        public AllTables1ResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTables1Result) {
             this.AllTables1Result = AllTables1Result;
         }
     }
@@ -641,12 +641,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class AllTables2ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTables2Result;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTables2Result;
         
         public AllTables2ResponseBody() {
         }
         
-        public AllTables2ResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTables2Result) {
+        public AllTables2ResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTables2Result) {
             this.AllTables2Result = AllTables2Result;
         }
     }
@@ -702,12 +702,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class AllColumns1ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllColumns1Result;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllColumns1Result;
         
         public AllColumns1ResponseBody() {
         }
         
-        public AllColumns1ResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllColumns1Result) {
+        public AllColumns1ResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllColumns1Result) {
             this.AllColumns1Result = AllColumns1Result;
         }
     }
@@ -763,12 +763,12 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
     public partial class AllColumns2ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllColumns2Result;
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllColumns2Result;
         
         public AllColumns2ResponseBody() {
         }
         
-        public AllColumns2ResponseBody(ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllColumns2Result) {
+        public AllColumns2ResponseBody(System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllColumns2Result) {
             this.AllColumns2Result = AllColumns2Result;
         }
     }
@@ -805,7 +805,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.MetaDataForEmployeeTable(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] MetaDataForEmployeeTable() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> MetaDataForEmployeeTable() {
             ERPClient1_Assignment6.Assignment6Reference.MetaDataForEmployeeTableRequest inValue = new ERPClient1_Assignment6.Assignment6Reference.MetaDataForEmployeeTableRequest();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.MetaDataForEmployeeTableRequestBody();
             ERPClient1_Assignment6.Assignment6Reference.MetaDataForEmployeeTableResponse retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).MetaDataForEmployeeTable(inValue);
@@ -828,7 +828,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.EmployeeRelatives(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeRelatives() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeRelatives() {
             ERPClient1_Assignment6.Assignment6Reference.EmployeeRelativesRequest inValue = new ERPClient1_Assignment6.Assignment6Reference.EmployeeRelativesRequest();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.EmployeeRelativesRequestBody();
             ERPClient1_Assignment6.Assignment6Reference.EmployeeRelativesResponse retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).EmployeeRelatives(inValue);
@@ -851,7 +851,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.EmployeeAbsent2004(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeAbsent2004() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeAbsent2004() {
             ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsent2004Request inValue = new ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsent2004Request();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsent2004RequestBody();
             ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsent2004Response retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).EmployeeAbsent2004(inValue);
@@ -874,7 +874,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.EmployeeAbsentTheMost(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] EmployeeAbsentTheMost() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> EmployeeAbsentTheMost() {
             ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsentTheMostRequest inValue = new ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsentTheMostRequest();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsentTheMostRequestBody();
             ERPClient1_Assignment6.Assignment6Reference.EmployeeAbsentTheMostResponse retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).EmployeeAbsentTheMost(inValue);
@@ -897,7 +897,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.AllKeys(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllKeys() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllKeys() {
             ERPClient1_Assignment6.Assignment6Reference.AllKeysRequest inValue = new ERPClient1_Assignment6.Assignment6Reference.AllKeysRequest();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.AllKeysRequestBody();
             ERPClient1_Assignment6.Assignment6Reference.AllKeysResponse retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).AllKeys(inValue);
@@ -920,7 +920,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.AllIndexes(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllIndexes() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllIndexes() {
             ERPClient1_Assignment6.Assignment6Reference.AllIndexesRequest inValue = new ERPClient1_Assignment6.Assignment6Reference.AllIndexesRequest();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.AllIndexesRequestBody();
             ERPClient1_Assignment6.Assignment6Reference.AllIndexesResponse retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).AllIndexes(inValue);
@@ -943,7 +943,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.AllTableConstraints(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTableConstraints() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTableConstraints() {
             ERPClient1_Assignment6.Assignment6Reference.AllTableConstraintsRequest inValue = new ERPClient1_Assignment6.Assignment6Reference.AllTableConstraintsRequest();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.AllTableConstraintsRequestBody();
             ERPClient1_Assignment6.Assignment6Reference.AllTableConstraintsResponse retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).AllTableConstraints(inValue);
@@ -966,7 +966,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.AllTables1(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTables1() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTables1() {
             ERPClient1_Assignment6.Assignment6Reference.AllTables1Request inValue = new ERPClient1_Assignment6.Assignment6Reference.AllTables1Request();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.AllTables1RequestBody();
             ERPClient1_Assignment6.Assignment6Reference.AllTables1Response retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).AllTables1(inValue);
@@ -989,7 +989,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.AllTables2(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllTables2() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllTables2() {
             ERPClient1_Assignment6.Assignment6Reference.AllTables2Request inValue = new ERPClient1_Assignment6.Assignment6Reference.AllTables2Request();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.AllTables2RequestBody();
             ERPClient1_Assignment6.Assignment6Reference.AllTables2Response retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).AllTables2(inValue);
@@ -1012,7 +1012,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.AllColumns1(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllColumns1() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllColumns1() {
             ERPClient1_Assignment6.Assignment6Reference.AllColumns1Request inValue = new ERPClient1_Assignment6.Assignment6Reference.AllColumns1Request();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.AllColumns1RequestBody();
             ERPClient1_Assignment6.Assignment6Reference.AllColumns1Response retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).AllColumns1(inValue);
@@ -1035,7 +1035,7 @@ namespace ERPClient1_Assignment6.Assignment6Reference {
             return base.Channel.AllColumns2(request);
         }
         
-        public ERPClient1_Assignment6.Assignment6Reference.ArrayOfString[] AllColumns2() {
+        public System.Collections.Generic.List<ERPClient1_Assignment6.Assignment6Reference.ArrayOfString> AllColumns2() {
             ERPClient1_Assignment6.Assignment6Reference.AllColumns2Request inValue = new ERPClient1_Assignment6.Assignment6Reference.AllColumns2Request();
             inValue.Body = new ERPClient1_Assignment6.Assignment6Reference.AllColumns2RequestBody();
             ERPClient1_Assignment6.Assignment6Reference.AllColumns2Response retVal = ((ERPClient1_Assignment6.Assignment6Reference.Assignment6ServiceSoap)(this)).AllColumns2(inValue);

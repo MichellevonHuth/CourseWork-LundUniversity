@@ -22,31 +22,42 @@ namespace ERPClient1_Assignment6
             InitializeComponent();
         }
 
-        static DataTable ConvertListToDataTable(List<ArrayOfString> list)
+        static DataTable ConvertListToDataTable(List<ArrayOfString> list, List<string> columns)
         {
             // New table.
             DataTable table = new DataTable();
 
             // Get max columns.
-            int columns = 0;
+            int column = 0;
             foreach (var array in list)
             {
-                if (array.Length > columns)
+                if (array.Count > column)
                 {
-                    columns = array.Length;
+                    column = array.Count;
                 }
             }
 
             // Add columns.
-            for (int i = 0; i < columns; i++)
+            for (int i = 0; i < column; i++)
             {
-                table.Columns.Add();
+                table.Columns.Add(columns[i]);
             }
 
             // Add rows.
             foreach (var array in list)
             {
-                table.Rows.Add(array);
+                string[] myList = new string[column];
+
+                foreach (string a in array)
+                {
+                    for (int i = 0; i < column; i++)
+                    {
+                        myList[i] = a;
+                    }
+
+                }
+                table.Rows.Add(myList);
+                
             }
 
             return table;
@@ -55,8 +66,14 @@ namespace ERPClient1_Assignment6
         private void buttonAllKeys_Click(object sender, EventArgs e)
         {
             try
-            {
-                DataTable dt = this.ConvertListToDataTable(proxy.AllKeys());
+            { 
+                List<string> columns = new List<string>();
+                columns.Add("Column_name");
+                columns.Add("Constraint_name");
+                columns.Add("Key_tape");
+                columns.Add("Type_desc");
+                columns.Add("");
+                DataTable dt = ConvertListToDataTable(proxy.AllKeys(), columns);
                 dataGridView.DataSource = dt;
             }
 
@@ -68,13 +85,9 @@ namespace ERPClient1_Assignment6
 
         }
 
-        private DataTable ConvertListToDataTable(ArrayOfString[] arrayOfString)
-        {
-            throw new NotImplementedException();
-        }
 
         private void buttonAllIndexes_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.AllIndexes();
@@ -86,10 +99,11 @@ namespace ERPClient1_Assignment6
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
             }
+            /*/
         }
 
         private void buttonAllConstraints_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.AllTableConstraints();
@@ -100,11 +114,11 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
         }
 
         private void buttonAllTables1_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.AllTables1();
@@ -115,11 +129,11 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
         }
 
         private void buttonAllTables2_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.AllTables2();
@@ -130,11 +144,11 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
         }
 
         private void buttonGetColumns1_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.AllColumns1();
@@ -145,12 +159,12 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
 
         }
 
         private void buttonGetColumns2_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.AllColumns2();
@@ -161,12 +175,12 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
 
         }
 
         private void buttonEmployeeMetadata_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 
@@ -179,12 +193,12 @@ namespace ERPClient1_Assignment6
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
 
-            }
+            }/*/
 
         }
 
         private void buttonEmployeeRelatives_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.EmployeeRelatives();
@@ -195,11 +209,11 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
         }
 
         private void buttonEmployeeAbsent2004_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.EmployeeAbsent2004();
@@ -210,11 +224,11 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
         }
 
         private void buttonEmployeeAbsentMost_Click(object sender, EventArgs e)
-        {
+        {/*/
             try
             {
                 DataTable dt = proxy.EmployeeAbsentTheMost();
@@ -225,7 +239,7 @@ namespace ERPClient1_Assignment6
             {
                 string message = Errorhandler.HandleException(ex);
                 errorMessageLbl.Text = message;
-            }
+            }/*/
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
