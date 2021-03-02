@@ -7,6 +7,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class ApplicationWindow {
 
@@ -23,60 +27,120 @@ public class ApplicationWindow {
 	private JButton btnAllColumns1;
 	private JButton btnAllColumn2;
 	private Controller controller;
+	private JTable table;
+	private JScrollPane scrollPane;
+	private JLabel getMetaDataAboutlbl;
+	private JLabel getAllTablesLbl;
+	private JLabel getAllColumnsLbl;
+	private JLabel headerLbl;
 
 
 	public ApplicationWindow() {
 	
 		frame = new JFrame();
-		frame.setBounds(200, 200, 850, 400);
+		frame.setBounds(50, 70, 950, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		btnEmployeeTables = new JButton("Employee tables");
-		btnEmployeeTables.setBounds(10, 134, 191, 23);
+		btnEmployeeTables.setBounds(29, 77, 191, 23);
 		frame.getContentPane().add(btnEmployeeTables);
 		
 		btnEmployeesRelatives = new JButton("Employees relatives");
-		btnEmployeesRelatives.setBounds(10, 168, 191, 23);
+		btnEmployeesRelatives.setBounds(29, 102, 191, 23);
 		frame.getContentPane().add(btnEmployeesRelatives);
 		
 		btnEmpAbs = new JButton("Employee absent due to sickness");
-		btnEmpAbs.setBounds(10, 202, 191, 23);
+		btnEmpAbs.setBounds(29, 127, 191, 23);
 		frame.getContentPane().add(btnEmpAbs);
 		
 		btnMostAbsEmp = new JButton("Most absent employee");
-		btnMostAbsEmp.setBounds(10, 236, 191, 23);
+		btnMostAbsEmp.setBounds(29, 152, 191, 23);
 		frame.getContentPane().add(btnMostAbsEmp);
 		
 		btnAllKeys = new JButton("All keys");
-		btnAllKeys.setBounds(570, 41, 191, 23);
+		btnAllKeys.setBounds(29, 230, 191, 23);
 		frame.getContentPane().add(btnAllKeys);
 		
 		btnAllIndexes = new JButton("All indexes");
-		btnAllIndexes.setBounds(570, 75, 191, 23);
+		btnAllIndexes.setBounds(29, 255, 191, 23);
 		frame.getContentPane().add(btnAllIndexes);
 		
 		btnAllTablesConstraint = new JButton("All tables constraint");
-		btnAllTablesConstraint.setBounds(570, 108, 191, 23);
+		btnAllTablesConstraint.setBounds(29, 280, 191, 23);
 		frame.getContentPane().add(btnAllTablesConstraint);
 		
-		btnAllTablesAlt1 = new JButton("All tables alt. 1");
-		btnAllTablesAlt1.setBounds(570, 179, 191, 23);
+		btnAllTablesAlt1 = new JButton("Alternative 1");
+		btnAllTablesAlt1.setBounds(29, 362, 191, 23);
 		frame.getContentPane().add(btnAllTablesAlt1);
 		
-		btnAllTablesAlt2 = new JButton("All tables alt. 2");
-		btnAllTablesAlt2.setBounds(570, 213, 191, 23);
+		btnAllTablesAlt2 = new JButton("Alternative 2");
+		btnAllTablesAlt2.setBounds(29, 387, 191, 23);
 		frame.getContentPane().add(btnAllTablesAlt2);
 		
-		btnAllColumns1 = new JButton("All columns of emp. table alt. 1");
-		btnAllColumns1.setBounds(568, 278, 193, 23);
+		btnAllColumns1 = new JButton("Alternative 1");
+		btnAllColumns1.setBounds(29, 470, 193, 23);
 		frame.getContentPane().add(btnAllColumns1);
 		
-		btnAllColumn2 = new JButton("All column of the emp. table alt. 2");
-		btnAllColumn2.setBounds(568, 312, 193, 23);
+		btnAllColumn2 = new JButton("Alternative 2");
+		btnAllColumn2.setBounds(29, 495, 193, 23);
 		frame.getContentPane().add(btnAllColumn2);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(254, 55, 642, 485);
+		frame.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JLabel getInformationAboutLbl = new JLabel("Get information about");
+		getInformationAboutLbl.setFont(new Font("Malgun Gothic", Font.BOLD, 11));
+		getInformationAboutLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		getInformationAboutLbl.setBounds(29, 55, 191, 14);
+		frame.getContentPane().add(getInformationAboutLbl);
+		
+		getMetaDataAboutlbl = new JLabel("Get metadata about");
+		getMetaDataAboutlbl.setHorizontalAlignment(SwingConstants.CENTER);
+		getMetaDataAboutlbl.setFont(new Font("Malgun Gothic", Font.BOLD, 11));
+		getMetaDataAboutlbl.setBounds(51, 210, 146, 14);
+		frame.getContentPane().add(getMetaDataAboutlbl);
+		
+		getAllTablesLbl = new JLabel("Get all tables");
+		getAllTablesLbl.setFont(new Font("Malgun Gothic", Font.BOLD, 11));
+		getAllTablesLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		getAllTablesLbl.setBounds(72, 337, 107, 14);
+		frame.getContentPane().add(getAllTablesLbl);
+		
+		getAllColumnsLbl = new JLabel("Get all columns of the Employee table");
+		getAllColumnsLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		getAllColumnsLbl.setFont(new Font("Malgun Gothic", Font.BOLD, 11));
+		getAllColumnsLbl.setBounds(10, 447, 228, 14);
+		frame.getContentPane().add(getAllColumnsLbl);
+		
+		headerLbl = new JLabel("CRONUS DATABASE");
+		headerLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		headerLbl.setFont(new Font("Malgun Gothic", Font.BOLD, 18));
+		headerLbl.setBounds(264, 0, 628, 51);
+		frame.getContentPane().add(headerLbl);
 	}
 	
+
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+	public JScrollPane getScrollPane() {
+		return scrollPane;
+	}
+
+	public void setScrollPane(JScrollPane scrollPane) {
+		this.scrollPane = scrollPane;
+	}
+
 	public JFrame getFrame() {
 		return frame;
 	}
@@ -204,6 +268,4 @@ public class ApplicationWindow {
 	public void setController(Controller controller) {
 		this.controller = controller;
 	}
-	
-
 }
