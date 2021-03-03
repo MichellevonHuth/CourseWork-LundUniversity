@@ -12,7 +12,7 @@ namespace ERPClient1_Assignment5
 {
     public partial class Form1 : Form
     {
-        Assignment5Service proxy = new Assignment5Service();
+        Assignment5Reference.Assignment5ServiceSoapClient proxy = new Assignment5Reference.Assignment5ServiceSoapClient();
 
         public Form1()
         {
@@ -132,7 +132,7 @@ namespace ERPClient1_Assignment5
 
         private void buttonRead_Click(object sender, EventArgs e)
         {
-            string[] allEmployees = proxy.ReadEmployees();
+           List<string> allEmployees = proxy.ReadEmployees();
             string message = "";
 
             {   
