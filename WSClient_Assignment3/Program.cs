@@ -12,10 +12,18 @@ namespace WSClient_Assignment3
         {
             Assignment3Service proxy = new Assignment3Service();
 
-            Console.WriteLine(proxy.HelloWorld());
-            Console.WriteLine(proxy.Add(5, 6));
-            Console.WriteLine(proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt"));
-            Console.ReadLine();
+            try
+            {
+                Console.WriteLine(proxy.HelloWorld());
+                Console.WriteLine(proxy.Add(5, 6));
+                Console.WriteLine(proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt"));
+                Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ErrorHandler.HandleException(ex));
+            }
+          
         }
     }
 }
