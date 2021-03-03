@@ -6,28 +6,9 @@ using System.Web;
 
 namespace WSAssignment4
 {
-        public class DataAccessLayer
-        {
-            private static string connectionString = "User Id=IS12;Password=Grupp12.fmmi;Server=localhost;Database=DB_Grupp12";
-
-            public void InsertAccount(string username, string name, string surename)
-            {
-                using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-                {
-                    using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO Account VALUES(@username, @name, @surename)"))
-                    {
-                        sqlCommand.Parameters.AddWithValue("@username", username);
-                        sqlCommand.Parameters.AddWithValue("@name", name);
-                        sqlCommand.Parameters.AddWithValue("@surename", surename);
-
-                        sqlCommand.Connection = sqlConnection;
-
-                        sqlConnection.Open();
-                        sqlCommand.ExecuteNonQuery();
-
-                    }
-                }
-            }
+    public class DataAccessLayer
+   {
+        private static string connectionString = "User Id=IS12;Password=Grupp12.fmmi;Server=localhost;Database=DB_Grupp12";
 
         public List<Account> GetAllAccounts()
         {
@@ -39,9 +20,7 @@ namespace WSAssignment4
             sqlConnection.Open();
 
             List<Account> accounts = new List<Account>(); 
-            
-         
-
+      
             SqlDataReader reader = sqlCommand.ExecuteReader();
 
             while (reader.Read())
@@ -99,11 +78,25 @@ namespace WSAssignment4
             return schedules;
         }
 
+        public void InsertAccount(string username, string name, string surename)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO Account VALUES(@username, @name, @surename)"))
+                {
+                    sqlCommand.Parameters.AddWithValue("@username", username);
+                    sqlCommand.Parameters.AddWithValue("@name", name);
+                    sqlCommand.Parameters.AddWithValue("@surename", surename);
+
+                    sqlCommand.Connection = sqlConnection;
+
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteNonQuery();
+
+                }
+            }
+        }
+
     }
-
-
-   
-
-
 }
 

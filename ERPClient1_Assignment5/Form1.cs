@@ -25,8 +25,7 @@ namespace ERPClient1_Assignment5
             if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "" )
 
             {
-
-                MessageBox.Show("Please fill in all the fields");
+                MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
             }
 
             else
@@ -45,7 +44,7 @@ namespace ERPClient1_Assignment5
 
                 else
                 {
-                    MessageBox.Show(no_ + " already exists, please use another employee number.");
+                    MessageBox.Show(ErrorHandler.Exists(no_));
                 }
                
                 textBoxJobTitle.Clear();
@@ -64,7 +63,7 @@ namespace ERPClient1_Assignment5
 
             {
 
-                MessageBox.Show("Please fill in all the fields");
+                MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
             }
 
             else
@@ -83,7 +82,7 @@ namespace ERPClient1_Assignment5
 
                 else
                 {
-                    MessageBox.Show(no_ + " does not exists, please use another employee number.");
+                    MessageBox.Show(ErrorHandler.DoesNotExists(no_));
                 }
 
                
@@ -119,7 +118,7 @@ namespace ERPClient1_Assignment5
 
                 else
                 {
-                    MessageBox.Show(no_ + " does not exists, please use another employee number.");
+                    MessageBox.Show(ErrorHandler.DoesNotExists(no_));
                 }
             
                 textBoxJobTitle.Clear();
@@ -133,7 +132,7 @@ namespace ERPClient1_Assignment5
         private void buttonRead_Click(object sender, EventArgs e)
         {
            List<string> allEmployees = proxy.ReadEmployees();
-            //string message = "";
+           string message = "";
 
             {   
                 foreach(string a in allEmployees)
@@ -192,6 +191,5 @@ namespace ERPClient1_Assignment5
 
         }
 
-       
     }
 }
