@@ -17,6 +17,7 @@ public class Controller {
 
 	private Assignment6ServiceSoap proxy;
 	private ApplicationWindow aw;
+	Errorhandler errorhandler = new Errorhandler();
 
 
 	public ApplicationWindow getAw() {
@@ -57,9 +58,8 @@ public class Controller {
 					columnNames[5] = "data_type";
 					displayData(table, columnNames);
 
-				} catch (RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				} catch (Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -77,9 +77,8 @@ public class Controller {
 	                columnNames[4] = "Birth Date";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -94,9 +93,8 @@ public class Controller {
                 columnNames[0] ="Employee_Number";
                 displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -130,9 +128,8 @@ public class Controller {
 	                columnNames[4] = "Object_id";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));;
 				}
 			}
 		});
@@ -147,9 +144,8 @@ public class Controller {
 	                columnNames[2] = "index_id";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -164,9 +160,8 @@ public class Controller {
 	                columnNames[2] = "Constraint_Type";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -181,9 +176,8 @@ public class Controller {
 	                columnNames[0] = "Tables";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -196,9 +190,8 @@ public class Controller {
 	                columnNames[0] = "Tables";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -211,9 +204,8 @@ public class Controller {
 	                columnNames[0] = "Columns";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});
@@ -227,9 +219,8 @@ public class Controller {
 	                columnNames[0] = "Columns";
 	                displayData(table, columnNames);
 				}
-				catch(RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch(Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		});

@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Color;
 
 public class ApplicationWindow {
 
@@ -33,6 +34,9 @@ public class ApplicationWindow {
 	private JLabel getAllTablesLbl;
 	private JLabel getAllColumnsLbl;
 	private JLabel headerLbl;
+	private JLabel errorLbl;
+	private JLabel getInformationAboutLbl;
+
 
 
 	public ApplicationWindow() {
@@ -87,13 +91,13 @@ public class ApplicationWindow {
 		frame.getContentPane().add(btnAllColumn2);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(254, 55, 642, 485);
+		scrollPane.setBounds(254, 55, 642, 463);
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		
-		JLabel getInformationAboutLbl = new JLabel("Get information about");
+		getInformationAboutLbl = new JLabel("Get information about");
 		getInformationAboutLbl.setFont(new Font("Malgun Gothic", Font.BOLD, 11));
 		getInformationAboutLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		getInformationAboutLbl.setBounds(29, 55, 191, 14);
@@ -122,6 +126,11 @@ public class ApplicationWindow {
 		headerLbl.setFont(new Font("Malgun Gothic", Font.BOLD, 18));
 		headerLbl.setBounds(264, 0, 628, 51);
 		frame.getContentPane().add(headerLbl);
+		
+		errorLbl = new JLabel("");
+		errorLbl.setForeground(Color.RED);
+		errorLbl.setBounds(254, 529, 551, 14);
+		frame.getContentPane().add(errorLbl);
 	}
 	
 
@@ -145,121 +154,97 @@ public class ApplicationWindow {
 		return frame;
 	}
 
-
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}
-
 
 	public JButton getBtnEmployeeTables() {
 		return btnEmployeeTables;
 	}
 
-
 	public void setBtnEmployeeTables(JButton btnEmployeeTables) {
 		this.btnEmployeeTables = btnEmployeeTables;
 	}
-
 
 	public JButton getBtnEmployeesRelatives() {
 		return btnEmployeesRelatives;
 	}
 
-
 	public void setBtnEmployeesRelatives(JButton btnEmployeesRelatives) {
 		this.btnEmployeesRelatives = btnEmployeesRelatives;
 	}
-
 
 	public JButton getBtnEmpAbs() {
 		return btnEmpAbs;
 	}
 
-
 	public void setBtnEmpAbs(JButton btnEmpAbs) {
 		this.btnEmpAbs = btnEmpAbs;
 	}
-
 
 	public JButton getBtnMostAbsEmp() {
 		return btnMostAbsEmp;
 	}
 
-
 	public void setBtnMostAbsEmp(JButton btnMostAbsEmp) {
 		this.btnMostAbsEmp = btnMostAbsEmp;
 	}
-
 
 	public JButton getBtnAllKeys() {
 		return btnAllKeys;
 	}
 
-
 	public void setBtnAllKeys(JButton btnAllKeys) {
 		this.btnAllKeys = btnAllKeys;
 	}
-
 
 	public JButton getBtnAllIndexes() {
 		return btnAllIndexes;
 	}
 
-
 	public void setBtnAllIndexes(JButton btnAllIndexes) {
 		this.btnAllIndexes = btnAllIndexes;
 	}
-
 
 	public JButton getBtnAllTablesConstraint() {
 		return btnAllTablesConstraint;
 	}
 
-
 	public void setBtnAllTablesConstraint(JButton btnAllTablesConstraint) {
 		this.btnAllTablesConstraint = btnAllTablesConstraint;
 	}
-
 
 	public JButton getBtnAllTablesAlt1() {
 		return btnAllTablesAlt1;
 	}
 
-
 	public void setBtnAllTablesAlt1(JButton btnAllTablesAlt1) {
 		this.btnAllTablesAlt1 = btnAllTablesAlt1;
 	}
-
 
 	public JButton getBtnAllTablesAlt2() {
 		return btnAllTablesAlt2;
 	}
 
-
 	public void setBtnAllTablesAlt2(JButton btnAllTablesAlt2) {
 		this.btnAllTablesAlt2 = btnAllTablesAlt2;
 	}
-
 
 	public JButton getBtnAllColumns1() {
 		return btnAllColumns1;
 	}
 
-
 	public void setBtnAllColumns1(JButton btnAllColumns1) {
 		this.btnAllColumns1 = btnAllColumns1;
 	}
-
 
 	public JButton getBtnAllColumn2() {
 		return btnAllColumn2;
 	}
 
-
 	public void setBtnAllColumn2(JButton btnAllColumn2) {
 		this.btnAllColumn2 = btnAllColumn2;
 	}
-	
 
 	public Controller getController() {
 		return controller;
@@ -268,4 +253,54 @@ public class ApplicationWindow {
 	public void setController(Controller controller) {
 		this.controller = controller;
 	}
+	
+	public JLabel getGetMetaDataAboutlbl() {
+		return getMetaDataAboutlbl;
+	}
+
+	public void setGetMetaDataAboutlbl(JLabel getMetaDataAboutlbl) {
+		this.getMetaDataAboutlbl = getMetaDataAboutlbl;
+	}
+
+	public JLabel getGetAllTablesLbl() {
+		return getAllTablesLbl;
+	}
+
+	public void setGetAllTablesLbl(JLabel getAllTablesLbl) {
+		this.getAllTablesLbl = getAllTablesLbl;
+	}
+
+	public JLabel getGetAllColumnsLbl() {
+		return getAllColumnsLbl;
+	}
+
+	public void setGetAllColumnsLbl(JLabel getAllColumnsLbl) {
+		this.getAllColumnsLbl = getAllColumnsLbl;
+	}
+
+	public JLabel getHeaderLbl() {
+		return headerLbl;
+	}
+
+	public void setHeaderLbl(JLabel headerLbl) {
+		this.headerLbl = headerLbl;
+	}
+
+	public JLabel getErrorLbl() {
+		return errorLbl;
+	}
+
+	public void setErrorLbl(JLabel errorLbl) {
+		this.errorLbl = errorLbl;
+	}
+
+	public JLabel getGetInformationAboutLbl() {
+		return getInformationAboutLbl;
+	}
+
+	public void setGetInformationAboutLbl(JLabel getInformationAboutLbl) {
+		this.getInformationAboutLbl = getInformationAboutLbl;
+	}
+
+
 }
