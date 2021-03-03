@@ -31,6 +31,7 @@
             this.getAllAccountsButton = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.getAllSchedulesButton = new System.Windows.Forms.Button();
+            this.errorMessageLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // getAllAccountsButton
@@ -61,11 +62,21 @@
             this.getAllSchedulesButton.UseVisualStyleBackColor = true;
             this.getAllSchedulesButton.Click += new System.EventHandler(this.getAllSchedulesButton_Click);
             // 
+            // errorMessageLbl
+            // 
+            this.errorMessageLbl.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.errorMessageLbl.Location = new System.Drawing.Point(137, 327);
+            this.errorMessageLbl.Name = "errorMessageLbl";
+            this.errorMessageLbl.Size = new System.Drawing.Size(431, 23);
+            this.errorMessageLbl.TabIndex = 3;
+            this.errorMessageLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 359);
+            this.Controls.Add(this.errorMessageLbl);
             this.Controls.Add(this.getAllSchedulesButton);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.getAllAccountsButton);
@@ -81,6 +92,7 @@
         private System.Windows.Forms.Button getAllAccountsButton;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button getAllSchedulesButton;
+        private System.Windows.Forms.Label errorMessageLbl;
     }
 }
 
