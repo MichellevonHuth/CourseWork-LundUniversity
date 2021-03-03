@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Services.Protocols;
 
-namespace WSClient2_Assignment4
+namespace WSClient1_Assignment4
 {
     public class Errorhandler
     {

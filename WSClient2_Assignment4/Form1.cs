@@ -13,24 +13,34 @@ namespace WSClient2_Assignment4
     public partial class Form1 : Form
     {
         Assignment4Service proxy = new Assignment4Service();
+        Errorhandler errorhandler = new Errorhandler();
 
         public Form1()
         {
             InitializeComponent();
-            
-            
+                  
         }
 
 
         private void getAllAccountsButton_Click(object sender, EventArgs e)
         {
             textBox.Clear();
+            errorMessageLbl.Text = "";
 
-            Account[] list = proxy.GetAccounts(); 
-
-            foreach(Account a in list)
+            try
             {
-                textBox.Text += ("Username: " + a.Username + " Name: " + a.Name + " Surname: " + a.Surename + "\r\n"); 
+                Account[] list = proxy.GetAccounts();
+
+                foreach (Account a in list)
+                {
+                    textBox.Text += ("Username: " + a.Username + " Name: " + a.Name + " Surname: " + a.Surename + "\r\n");
+                }
+            }
+            catch(Exception ex)
+            {
+                string message = errorhandler.HandleException(ex);
+                errorMessageLbl.Text = message;
+
             }
             
         }
@@ -38,12 +48,23 @@ namespace WSClient2_Assignment4
         private void getAllSchedulesButton_Click(object sender, EventArgs e)
         {
             textBox.Clear();
+            errorMessageLbl.Text = "";
 
-            SavingSchedule[] list = proxy.GetSavingSchedules();
-
-            foreach (SavingSchedule a in list)
+            try
             {
-                textBox.Text += ("Username: " + a.AccountUsername + " Total Income: " + a.TotalIncome + " Fixed Cost: " + a.FixedCost + " Variable Cost: " + a.VariableCost + " Saving Goal: " + a.SavingGoal + " Saving Duration: " + a.SavingDuration + "\r\n");
+                SavingSchedule[] list = proxy.GetSavingSchedules();
+
+                foreach (SavingSchedule a in list)
+                {
+                    textBox.Text += ("Username: " + a.AccountUsername + " Total Income: " + a.TotalIncome + " Fixed Cost: " + a.FixedCost + " Variable Cost: " + a.VariableCost + " Saving Goal: " + a.SavingGoal + " Saving Duration: " + a.SavingDuration + "\r\n");
+                }
+            }
+
+            catch (Exception ex)
+            {
+                string message = errorhandler.HandleException(ex);
+                errorMessageLbl.Text = message;
+
             }
         }
     }

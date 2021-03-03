@@ -11,23 +11,34 @@ namespace WSClient1_Assignment4
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
-
+            Errorhandler errorhandler = new Errorhandler();
             Assignment4Service proxy = new Assignment4Service();
 
-            Account[] list = proxy.GetAccounts();
-
-            foreach(Account a in list)
+            try
             {
-                Console.WriteLine("Username: " +  a.Username + " " + "Name: " + a.Name + " " + "Surname: " + a.Surename);
+                Account[] list = proxy.GetAccounts();
+
+                foreach (Account a in list)
+                {
+                    Console.WriteLine("Username: " + a.Username + " " + "Name: " + a.Name + " " + "Surname: " + a.Surename);
+                }
+
+                SavingSchedule[] alist = proxy.GetSavingSchedules();
+
+                foreach (SavingSchedule a in alist)
+                {
+                    Console.WriteLine("Username: " + a.AccountUsername + " Total Income: " + a.TotalIncome + " Fixed Cost: " + a.FixedCost + " Variable Cost: " + a.VariableCost + " Saving Goal: " + a.SavingGoal + " Saving Duration: " + a.SavingDuration);
+                }
+
             }
-
-            SavingSchedule[] alist = proxy.GetSavingSchedules();
-
-            foreach (SavingSchedule a in alist)
+            catch(Exception ex)
             {
-                Console.WriteLine("Username: " + a.AccountUsername +  " Total Income: " + a.TotalIncome +  " Fixed Cost: " + a.FixedCost + " Variable Cost: " + a.VariableCost + " Saving Goal: " + a.SavingGoal + " Saving Duration: " + a.SavingDuration);
+
+                Console.WriteLine(errorhandler.HandleException(ex));
             }
 
           
