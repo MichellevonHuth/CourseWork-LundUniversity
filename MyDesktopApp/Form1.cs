@@ -60,7 +60,7 @@ namespace MyDesktopApp
 
             catch (Exception ex)
             {
-                ErrorHandler.HandleException(ex);
+                MessageBox.Show(ErrorHandler.HandleException(ex));
             }
 
         }
@@ -92,7 +92,7 @@ namespace MyDesktopApp
 
             catch (Exception ex)
             {
-                ErrorHandler.HandleException(ex);
+                MessageBox.Show(ErrorHandler.HandleException(ex));
             }
         }
 
@@ -164,7 +164,7 @@ namespace MyDesktopApp
 
             catch (Exception ex)
             {
-                ErrorHandler.HandleException(ex);
+               MessageBox.Show(ErrorHandler.HandleException(ex));
             }
         }
 

@@ -43,7 +43,7 @@ namespace MyDesktopApp
 
             catch (SqlException ex)
             {
-                MessageBox.Show(ErrorHandler.HandleException(ex));
+                throw ex;
             }
 
             return createSchedule;
@@ -66,7 +66,7 @@ namespace MyDesktopApp
             }
             catch (SystemException ex)
             {
-                ErrorHandler.HandleException(ex);
+                throw ex;
             }
 
         }
@@ -95,7 +95,7 @@ namespace MyDesktopApp
             }
             catch (SystemException ex)
             {
-                ErrorHandler.HandleException(ex);
+                throw ex;
             }
 
         }
