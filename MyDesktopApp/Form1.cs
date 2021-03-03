@@ -20,58 +20,49 @@ namespace MyDesktopApp
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-      
             try
             {
-                if (UsernameTextbox.Text == "" || NameTextbox.Text == "" || SurenameTextbox.Text == "" || TotalIncomeTextbox.Text == "" || FixedCostTextbox.Text == "" || VariableCostsTextbox.Text == "" || SavingGoalTextbox.Text == "" || AmountTextbox.Text == "" )
+                if (UsernameTextbox.Text == "" || NameTextbox.Text == "" || SurenameTextbox.Text == "" || TotalIncomeTextbox.Text == "" || FixedCostTextbox.Text == "" || VariableCostsTextbox.Text == "" || SavingGoalTextbox.Text == "" || AmountTextbox.Text == "")
                 {
 
-                    MessageBox.Show("Please fill all the fields");
+                    MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
                 }
 
                 else
-                {                 
+                {
                     string username = UsernameTextbox.Text;
                     string name = NameTextbox.Text;
                     string surename = SurenameTextbox.Text;
-
                     int totalIncome = Int32.Parse(TotalIncomeTextbox.Text);
                     int fixedCost = Int32.Parse(FixedCostTextbox.Text);
                     int variableCost = Int32.Parse(VariableCostsTextbox.Text);
                     int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
                     int savingDuration = Int32.Parse(AmountTextbox.Text);
 
-                  
-                    int checkIfUserExists = DataAccessLayer.CheckIfUserExists(username); 
-                    
-                    if(checkIfUserExists == 0)
+
+                    int[] createSchedule = DataAccessLayer.Add(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
+
+                    if (createSchedule[2] == 0)
                     {
-                        int[] createSchedule = DataAccessLayer.AddUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
 
-                        if (createSchedule[2] == 0)
-                        {
-
-                            outputBOX.Text = "\r\n" + "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months.";
-                        }
-
-                        else
-                        {
-
-                            outputBOX.Text = "\r\n" + "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
-                        }
-
+                        outputBOX.Text = "\r\n" + "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n Your saving goal is not possible within the timeframe you decided. To make this work, you need to save " + createSchedule[1] + "kr every month for " + createSchedule[0] + " months.";
                     }
+
                     else
                     {
-                        outputBOX.Text = "\r\n" + username + " is already taken, try a new one!"; 
-                    }               
-                               
+
+                        outputBOX.Text = "\r\n" + "Username: " + username + "\r\n Name: " + name + "\r\n Surename:" + surename + "\r\n\r\n You need to save " + createSchedule[2] + "kr every month for " + savingDuration + " months to achieve your saving goal: " + savingGoal + "kr.";
+                    }
+
                 }
+
             }
+
             catch (Exception ex)
             {
                 ErrorHandler.HandleException(ex);
             }
+
         }
 
 
@@ -80,57 +71,45 @@ namespace MyDesktopApp
             try
             {
                 string username = FindTextbox.Text;
-                int chechIfUserExists = DataAccessLayer.CheckIfUserExists(username);
+                string[] databaseValues = DataAccessLayer.Find(username);
 
                 if (FindTextbox.Text == "")
                 {
                     MessageBox.Show("Please fill in your username");
                 }
 
-                else if (chechIfUserExists == 1)
+                else if (databaseValues[0] == null)
                 {
-                    
-                    string[] databaseValues = DataAccessLayer.FindUserAccounts(username);
-                    outputBOX.Text = "\r\n" + "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving duration: " + databaseValues[7];
-                                 
+                    MessageBox.Show(ErrorHandler.DoesNotExists(username));
                 }
 
                 else
                 {
+                    outputBOX.Text = "\r\n" + "Username: " + databaseValues[0] + "\r\nName: " + databaseValues[1] + "\r\n Surename: " + databaseValues[2] + "\r\n\r\nTotal income: " + databaseValues[3] + "\r\n Fixed costs: " + databaseValues[4] + "\r\n Variable costs: " + databaseValues[5] + "\r\n Saving goal: " + databaseValues[6] + "\r\n Saving duration: " + databaseValues[7];
 
-                    outputBOX.Text = "\r\n" + username + " is not registred in the database.";
                 }
-
             }
 
             catch (Exception ex)
             {
                 ErrorHandler.HandleException(ex);
             }
-        }  
+        }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             string username = FindTextbox.Text;
+            string[] findUser = DataAccessLayer.Find(username);
 
-            int chechIfUserExists = DataAccessLayer.CheckIfUserExists(username); 
-
-            if(chechIfUserExists == 1)
+            if (findUser[0] != null)
             {
-                DataAccessLayer.DeleteSchedule(username);
-                DataAccessLayer.DeleteUser(username);
-
-                string[] findUser = DataAccessLayer.FindUserAccounts(username);
-
-                if (findUser[0] == null)
-                {
-                    outputBOX.Text = "\r\n" + username + " is deleted!";
-                }
-
+                DataAccessLayer.Delete(username);
+                outputBOX.Text = "\r\n" + username + " is deleted!";
             }
+
             else
             {
-                outputBOX.Text = "\r\n" + username + " is not registred in the database.";
+                MessageBox.Show(ErrorHandler.DoesNotExists(username));
             }
         }
 
@@ -141,7 +120,7 @@ namespace MyDesktopApp
                 if (UsernameTextbox.Text == "" || NameTextbox.Text == "" || SurenameTextbox.Text == "" || TotalIncomeTextbox.Text == "" || FixedCostTextbox.Text == "" || VariableCostsTextbox.Text == "" || SavingGoalTextbox.Text == "" || AmountTextbox.Text == "")
                 {
 
-                    MessageBox.Show("Please fill all the fields");
+                    MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
                 }
 
                 else
@@ -149,18 +128,17 @@ namespace MyDesktopApp
                     string username = UsernameTextbox.Text;
                     string name = NameTextbox.Text;
                     string surename = SurenameTextbox.Text;
-
                     int totalIncome = Int32.Parse(TotalIncomeTextbox.Text);
                     int fixedCost = Int32.Parse(FixedCostTextbox.Text);
                     int variableCost = Int32.Parse(VariableCostsTextbox.Text);
                     int savingGoal = Int32.Parse(SavingGoalTextbox.Text);
                     int savingDuration = Int32.Parse(AmountTextbox.Text);
 
-                    int chechIfUserExists = DataAccessLayer.CheckIfUserExists(username);
-                    
-                    if(chechIfUserExists == 1)
+                    string[] findUser = DataAccessLayer.Find(username);
+
+                    if (findUser[0] != null)
                     {
-                        DataAccessLayer.UpdateUser(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
+                        DataAccessLayer.Update(username, name, surename, totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
 
                         int[] createSchedule = DataAccessLayer.CreateSchedule(totalIncome, fixedCost, variableCost, savingGoal, savingDuration);
 
@@ -179,7 +157,7 @@ namespace MyDesktopApp
 
                     else
                     {
-                        outputBOX.Text = "\r\n" + username + " is not registred in the database.";
+                        MessageBox.Show(ErrorHandler.DoesNotExists(username));
                     }
                 }
             }
@@ -194,8 +172,8 @@ namespace MyDesktopApp
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(NameTextbox.Text, "^[a-zA-Z]"))
             {
-                MessageBox.Show("This textbox accepts only alphabetical characters");
-             
+                MessageBox.Show(ErrorHandler.OnlyCharacters());
+
             }
 
         }
@@ -204,7 +182,7 @@ namespace MyDesktopApp
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(SurenameTextbox.Text, "^[a-zA-Z]"))
             {
-                MessageBox.Show("This textbox accepts only alphabetical characters");
+                MessageBox.Show(ErrorHandler.OnlyCharacters());
             }
 
         }
@@ -215,7 +193,7 @@ namespace MyDesktopApp
 
             if (!Int32.TryParse(FixedCostTextbox.Text, out outParse))
             {
-                MessageBox.Show("This textbox accepts only numbers");
+                MessageBox.Show(ErrorHandler.OnlyNumbers());
             }
 
         }
@@ -223,10 +201,11 @@ namespace MyDesktopApp
         private void TotalIncomeTextbox_TextChanged(object sender, EventArgs e)
         {
             int outParse;
-           
+
             if (!Int32.TryParse(TotalIncomeTextbox.Text, out outParse))
             {
-                MessageBox.Show("This textbox accepts only numbers");
+
+                MessageBox.Show(ErrorHandler.OnlyNumbers());
             }
 
         }
@@ -237,7 +216,8 @@ namespace MyDesktopApp
 
             if (!Int32.TryParse(VariableCostsTextbox.Text, out outParse))
             {
-                MessageBox.Show("This textbox accepts only numbers");
+
+                MessageBox.Show(ErrorHandler.OnlyNumbers());
             }
         }
 
@@ -247,7 +227,8 @@ namespace MyDesktopApp
 
             if (!Int32.TryParse(SavingGoalTextbox.Text, out outParse))
             {
-                MessageBox.Show("This textbox accepts only numbers");
+
+                MessageBox.Show(ErrorHandler.OnlyNumbers());
             }
 
         }
@@ -258,7 +239,8 @@ namespace MyDesktopApp
 
             if (!Int32.TryParse(AmountTextbox.Text, out outParse))
             {
-                MessageBox.Show("This textbox accepts only numbers");
+
+                MessageBox.Show(ErrorHandler.OnlyNumbers());
             }
 
         }
@@ -355,9 +337,9 @@ namespace MyDesktopApp
         }
 
 
-      private void outputBOX_TextChanged(object sender, EventArgs e)
+        private void outputBOX_TextChanged(object sender, EventArgs e)
         {
-          
+
         }
     }
 }

@@ -25,7 +25,6 @@ namespace WSClient2_Assignment3
         {
             try
             {
-              
                 textBox.Text = proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
             }
             catch(Exception ex)

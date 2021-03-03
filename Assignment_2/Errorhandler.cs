@@ -31,7 +31,7 @@ namespace Assignment_2
                             break;
 
                         case 0:
-                            errorMessage = "Anslutningen misslyckades, tidsgräns uppnåd";
+                            errorMessage = "Connection failed, timelimit reached";
                             break;
                         default:
                             errorMessage = "An unexpected error has occured";

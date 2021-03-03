@@ -13,23 +13,27 @@ namespace MyDesktopApp
         {
             string errorMessage;
 
-            if (ex.GetType() == typeof(NullReferenceException)) {
+            if (ex.GetType() == typeof(NullReferenceException))
+            {
 
                 errorMessage = "This object doesn't exist";
             }
 
-		    else if (ex.GetType() == typeof(IndexOutOfRangeException)) {
+            else if (ex.GetType() == typeof(IndexOutOfRangeException))
+            {
                 errorMessage = "Coudn't find what you are looking for";
             }
 
-		    else if (ex.GetType() == typeof(FormatException)) {
+            else if (ex.GetType() == typeof(FormatException))
+            {
                 errorMessage = "Wrong format on input value";
             }
 
-		    else if (ex.GetType() == typeof(SqlException)) {
+            else if (ex.GetType() == typeof(SqlException))
+            {
 
-       
-                SqlException e  = ((SqlException)ex);
+
+                SqlException e = ((SqlException)ex);
 
                 switch (e.Number)
                 {
@@ -43,15 +47,15 @@ namespace MyDesktopApp
                         break;
 
                     case 0:
-                        errorMessage = "Anslutningen misslyckades, tidsgräns uppnåd";
+                        errorMessage = "Connection failed, timelimit reached";
                         break;
                     default:
                         errorMessage = "An unexpected error has occured";
                         break;
                 }
-            } 
-            
-            else 
+            }
+
+            else
             {
                 errorMessage = "An unexpected error has occured";
             }
@@ -61,20 +65,27 @@ namespace MyDesktopApp
 
         public static String ErrorMessageEmptyFields()
         {
-            String errorMessage = "Fill in all the fields";
+            string errorMessage = "Fill in all the fields";
             return errorMessage;
         }
 
-        public static String OnlyCharacters ()
+        public static String OnlyCharacters()
         {
-            String errorMessage = "This textbox accepts only alphabetical characters";
+            string errorMessage = "This textbox accepts only alphabetical characters";
             return errorMessage;
         }
 
         public static String OnlyNumbers()
         {
-            String errorMessage = "This textbox accepts only numbers";
+            string errorMessage = "This textbox accepts only numbers";
             return errorMessage;
+        }
+
+        public static string DoesNotExists(string username)
+        {
+            string errorMessage = "\r\n" + username + " is not registred in the database.";
+            return errorMessage;
+
         }
 
     }
