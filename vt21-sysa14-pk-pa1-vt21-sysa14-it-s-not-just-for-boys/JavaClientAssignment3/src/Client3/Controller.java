@@ -47,7 +47,7 @@ public class Controller {
 					aw.getMessageTextField().setText(messageString);
 					}
 					
-					catch(RemoteException ex) {
+					catch(Exception ex) {
 						String errormessage = eh.handleException(ex);
 						aw.getErrorMessageLbl().setText(errormessage);
 					}
