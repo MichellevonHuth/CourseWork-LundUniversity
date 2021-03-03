@@ -133,7 +133,7 @@ namespace ERPClient1_Assignment5
         private void buttonRead_Click(object sender, EventArgs e)
         {
            List<string> allEmployees = proxy.ReadEmployees();
-            string message = "";
+            //string message = "";
 
             {   
                 foreach(string a in allEmployees)
