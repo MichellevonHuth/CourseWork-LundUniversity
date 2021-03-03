@@ -22,10 +22,6 @@ namespace Assignment_2
                     switch (e.Number)
                     {
 
-                        case 2627:
-                            errorMessage = "The object you are trying to add already exists";
-                            break;
-
                         case 17:
                             errorMessage = "Problem with the connection to the database";
                             break;
