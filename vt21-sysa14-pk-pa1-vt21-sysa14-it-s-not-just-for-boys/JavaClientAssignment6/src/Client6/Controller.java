@@ -48,6 +48,7 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.metaDataForEmployeeTable();
 					String[] columnNames = new String[6];
 					columnNames[0] = "table_catalog";
@@ -68,14 +69,15 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
-					String[][] table = proxy.employeeRelatives();
-	                String[] columnNames = new String[5];
-	                columnNames[0] = "Employee No_";
-	                columnNames[1] = "Relative Code";
-	                columnNames[2] = "First Name";
-	                columnNames[3] = "Last Name";
-	                columnNames[4] = "Birth Date";
-	                displayData(table, columnNames);
+						aw.getErrorLbl().setText("");
+						String[][] table = proxy.employeeRelatives();
+		                String[] columnNames = new String[5];
+		                columnNames[0] = "Employee No_";
+		                columnNames[1] = "Relative Code";
+		                columnNames[2] = "First Name";
+		                columnNames[3] = "Last Name";
+		                columnNames[4] = "Birth Date";
+		                displayData(table, columnNames);
 				}
 				catch(Exception e1) {
 					aw.getErrorLbl().setText(errorhandler.handleException(e1));
@@ -88,10 +90,11 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
-				String[][] table = proxy.employeeAbsent2004();
-                String[] columnNames = new String[1];
-                columnNames[0] ="Employee_Number";
-                displayData(table, columnNames);
+					aw.getErrorLbl().setText("");
+					String[][] table = proxy.employeeAbsent2004();
+	                String[] columnNames = new String[1];
+	                columnNames[0] ="Employee_Number";
+	                displayData(table, columnNames);
 				}
 				catch(Exception e1) {
 					aw.getErrorLbl().setText(errorhandler.handleException(e1));
@@ -103,10 +106,11 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
-				String[][] table = proxy.employeeAbsentTheMost();
-                String[] columnNames = new String[1];
-                columnNames[0] = "First Name";
-                displayData(table, columnNames);
+					aw.getErrorLbl().setText("");
+					String[][] table = proxy.employeeAbsentTheMost();
+	                String[] columnNames = new String[1];
+	                columnNames[0] = "First Name";
+	                displayData(table, columnNames);
 				}
 				catch(RemoteException e1) {
 					// TODO Auto-generated catch block
@@ -119,6 +123,7 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.allKeys();
 	                String[] columnNames = new String[5];
 	                columnNames[0] = "Column_name";
@@ -137,6 +142,7 @@ public class Controller {
 		aw.getBtnAllIndexes().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.allIndexes();
 	                String[] columnNames = new String[3];
 	                columnNames[0] = "object_id";
@@ -153,6 +159,7 @@ public class Controller {
 		aw.getBtnAllTablesConstraint().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.allTableConstraints();
 	                String[] columnNames = new String[3];
 	                columnNames[0] = "Table_Name";
@@ -171,6 +178,7 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.allTables1();
 	                String[] columnNames = new String[1];
 	                columnNames[0] = "Tables";
@@ -185,6 +193,7 @@ public class Controller {
 		aw.getBtnAllTablesAlt2().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.allTables2();
 	                String[] columnNames = new String[1];
 	                columnNames[0] = "Tables";
@@ -199,6 +208,7 @@ public class Controller {
 		aw.getBtnAllColumns1().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.allColumns1();
 	                String[] columnNames = new String[1];
 	                columnNames[0] = "Columns";
@@ -214,6 +224,7 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
+					aw.getErrorLbl().setText("");
 					String[][] table = proxy.allColumns2();
 	                String[] columnNames = new String[1];
 	                columnNames[0] = "Columns";

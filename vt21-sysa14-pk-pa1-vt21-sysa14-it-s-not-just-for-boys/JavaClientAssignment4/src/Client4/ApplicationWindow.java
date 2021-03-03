@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import java.awt.TextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class ApplicationWindow {
 
@@ -32,7 +33,8 @@ public class ApplicationWindow {
 		frame.getContentPane().add(showAllSavingSchedulesBtn);
 		
 		errorMessageLbl = new JLabel("");
-		errorMessageLbl.setBounds(143, 415, 354, 22);
+		errorMessageLbl.setForeground(Color.RED);
+		errorMessageLbl.setBounds(180, 428, 354, 22);
 		frame.getContentPane().add(errorMessageLbl);
 		
 		messageTextArea = new TextArea();
