@@ -42,6 +42,7 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					
+					aw.getErrorMessageLbl().setText("");
 					String messageString;
 					messageString = proxy.txtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
 					aw.getMessageTextField().setText(messageString);

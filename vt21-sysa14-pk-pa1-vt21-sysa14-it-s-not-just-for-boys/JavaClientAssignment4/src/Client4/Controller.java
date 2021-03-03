@@ -14,7 +14,7 @@ public class Controller {
 	
 	private Assignment4ServiceSoap proxy;
 	private ApplicationWindow aw;
-	private Errorhandler eh;
+	Errorhandler errorhandler = new Errorhandler();
 	
 	
 	public Controller(ApplicationWindow aw) {
@@ -22,14 +22,6 @@ public class Controller {
 		proxy = new Assignment4ServiceSoapProxy();
 		declareEvents();
 	} 
-	
-	public Errorhandler getEh() {
-		return eh;
-	}
-
-	public void setEh(Errorhandler eh) {
-		this.eh = eh;
-	}
 	
 	public ApplicationWindow getAw() {
 		return aw;
@@ -45,7 +37,8 @@ public class Controller {
 		aw.getShowAllAccounts().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					try {
-					
+						
+					aw.getErrorMessageLbl().setText("");
 					Account[] accounts = proxy.getAccounts();
 					String message = "";
 					
@@ -60,9 +53,8 @@ public class Controller {
 					
 					}
 					
-					catch(RemoteException ex) {
-						String errormessage = eh.handleException(ex);
-						aw.getErrorMessageLbl().setText(errormessage);
+					catch(Exception ex) {
+						aw.getErrorMessageLbl().setText(errorhandler.handleException(ex));
 					}
 			}
 		});
@@ -71,7 +63,8 @@ public class Controller {
 		aw.getShowAllSavingSchedulesBtn().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-				
+					
+				aw.getErrorMessageLbl().setText("");
 				SavingSchedule[] schedules = proxy.getSavingSchedules();
 				String message = "";
 				
@@ -86,9 +79,8 @@ public class Controller {
 				
 				}
 				
-				catch(RemoteException ex) {
-					String errormessage = eh.handleException(ex);
-					aw.getErrorMessageLbl().setText(errormessage);
+				catch(Exception ex) {
+					aw.getErrorMessageLbl().setText(errorhandler.handleException(ex));
 				}
 				
 				

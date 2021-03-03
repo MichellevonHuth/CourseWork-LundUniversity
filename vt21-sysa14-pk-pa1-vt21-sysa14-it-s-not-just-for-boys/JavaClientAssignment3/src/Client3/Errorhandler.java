@@ -12,8 +12,7 @@ public class Errorhandler {
 		}
 
 		else if (ex instanceof IndexOutOfBoundsException) {
-			errorMessage = "Coudn't find what you are looking for";
-			
+			errorMessage = "Coudn't find what you are looking for";	
 		}
 		
 		else if (ex instanceof RemoteException) {
