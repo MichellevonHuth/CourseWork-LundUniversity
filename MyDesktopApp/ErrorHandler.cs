@@ -59,21 +59,21 @@ namespace MyDesktopApp
             return errorMessage;
         }
 
-        public String ErrorMessageEmptyFields()
+        public static String ErrorMessageEmptyFields()
         {
             String errorMessage = "Fill in all the fields";
             return errorMessage;
         }
 
-        public String CreditsError()
+        public static String OnlyCharacters ()
         {
-            String errorMessage = "Student can't read more than 45 credits per semester";
+            String errorMessage = "This textbox accepts only alphabetical characters";
             return errorMessage;
         }
 
-        public String WrongInputName()
+        public static String OnlyNumbers()
         {
-            String errorMessage = "Wrong format on input value";
+            String errorMessage = "This textbox accepts only numbers";
             return errorMessage;
         }
 
