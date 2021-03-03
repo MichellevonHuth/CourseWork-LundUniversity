@@ -14,6 +14,7 @@ namespace WSClient2_Assignment3
 
     {
         Assignment3Service proxy = new Assignment3Service();
+ 
 
         public Form1()
         {
@@ -25,12 +26,12 @@ namespace WSClient2_Assignment3
         {
             try
             {
+                errorMessageLbl.Text = "";
                 textBox.Text = proxy.TxtFile("C:\\Users\\Administrator\\Desktop\\HelloWorld.txt");
             }
             catch(Exception ex)
             {
-                string message = Errorhandler.HandleException(ex);
-                errorMessageLbl.Text = message;
+                errorMessageLbl.Text = Errorhandler.HandleException(ex);            
             }
         }
 

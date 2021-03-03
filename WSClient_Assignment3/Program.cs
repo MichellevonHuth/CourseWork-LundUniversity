@@ -11,6 +11,7 @@ namespace WSClient_Assignment3
         static void Main(string[] args)
         {
             Assignment3Service proxy = new Assignment3Service();
+            ErrorHandler errorhandler = new ErrorHandler();
 
             try
             {
@@ -21,9 +22,12 @@ namespace WSClient_Assignment3
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ErrorHandler.HandleException(ex));
+                string errormessage = errorhandler.HandleException(ex);
+                Console.WriteLine(errormessage);
             }
-          
+
+            Console.ReadLine();
+
         }
     }
 }
