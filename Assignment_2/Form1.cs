@@ -52,7 +52,8 @@ namespace Assignment_2
 
                 foreach (string nbrOfRows in list)
                 {
-                    message += nbrOfRows + "\n";
+                    message += nbrOfRows + "\r\n";
+
                 }
 
                 textBox.Text = message;

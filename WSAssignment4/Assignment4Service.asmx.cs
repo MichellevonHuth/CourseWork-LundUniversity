@@ -25,22 +25,6 @@ namespace WSAssignment4
             dal = new DataAccessLayer();
         }
 
-
-        [WebMethod]
-        public void InsertUsers(string username, string name, string surename)
-        {
-            try
-            {
-                dal.InsertAccount(username, name, surename);
-            }
-            catch (SqlException ex)
-            {
-                throw new SoapException("User already exist", SoapException.ClientFaultCode, ex);
-            }
-
-        }
-
-        
         [WebMethod]
         public List<Account> GetAccounts()
         {
@@ -55,6 +39,19 @@ namespace WSAssignment4
             return schedules;
         }
 
+        [WebMethod]
+        public void InsertUsers(string username, string name, string surename)
+        {
+            try
+            {
+                dal.InsertAccount(username, name, surename);
+            }
+            catch (SqlException ex)
+            {
+                throw new SoapException("User already exist", SoapException.ClientFaultCode, ex);
+            }
+
+        }
 
     }
 }

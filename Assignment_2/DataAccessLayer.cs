@@ -155,8 +155,9 @@ namespace Assignment_2
 
                         while (dataReader.Read())
                         {
-                            numberOfRows.Add(a);
-                            numberOfRows.Add(dataReader["NbrOfRows"].ToString());
+
+                            string row = a +": "+ dataReader["NbrOfRows"].ToString();
+                            numberOfRows.Add(row);
 
                         }
 
