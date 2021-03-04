@@ -15,11 +15,11 @@ namespace Assignment_2
    
         private static string connectionString = "Server=uwdb18.srv.lu.se\\icssql001;Database=SYSA14_PK_ProgAssignment2;User=sysa14reader; Password=INFreader1";
 
-        public DataTable ColumnNames()
+        public List<string> ColumnNames()
         {
 
-            DataTable dataTable = new DataTable();
-            
+            List<string> columnNames = new List<string>();
+
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
 
@@ -39,14 +39,8 @@ namespace Assignment_2
                         
                         }
 
-                        foreach(string x in list)
-                        {
-                            Console.WriteLine(x);
-                            Console.ReadLine();
-                        }
-
                         sqlConnection.Close();
-                        dataTable = GetColumns(list);
+                        columnNames = GetColumns(list);
 
                     }
 
@@ -57,17 +51,17 @@ namespace Assignment_2
                 }
 
 
-               
-
             }
-            return dataTable;
+
+            return columnNames;
 
         }
 
-        public DataTable GetColumns(List<string> list)
+        public List<string> GetColumns(List<string> list)
         {
-            DataTable datatable = new DataTable();
-            using( SqlConnection sqlConnection = new SqlConnection(connectionString))
+            List<string> columnNames = new List<string>();
+
+            using ( SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
                 foreach(string a in list)
                 {
@@ -77,35 +71,26 @@ namespace Assignment_2
                         try
                         {
                             sqlConnection.Open();
-                        SqlDataReader dataReader = sqlCommand1.ExecuteReader();
+                            SqlDataReader dataReader = sqlCommand1.ExecuteReader();
 
-                        List<string> columnNames = new List<string>();
-                            while (dataReader.Read())
-                            {
-                                columnNames.Add(dataReader["COLUMN_NAME"].ToString());
+                                while (dataReader.Read())
+                                {
+                                    columnNames.Add(dataReader["COLUMN_NAME"].ToString());
 
-                            }
-                        sqlConnection.Close();
-                        datatable.Load(dataReader);
-                        foreach(string b in columnNames)
-                        {
-                            Console.WriteLine(b);
-                            Console.Read();
+                                }
+
+                            sqlConnection.Close();
+                    
                         }
-                        }
-
-
+                    
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
                         }
 
-
-                    
-
                 }
     
-                return datatable;
+                return columnNames;
         }
 
     }

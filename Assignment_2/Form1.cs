@@ -25,8 +25,16 @@ namespace Assignment_2
         {
             try
             {
-                DataTable dt = dal.ColumnNames();
-                messageDataGridView.DataSource = dt;
+                List<string> list = dal.ColumnNames();
+                string message = "";
+
+                foreach(string columnNames in list)
+                {
+                    message += columnNames + "\r\n";
+                }
+
+                textBox.Text = message;
+
             }
             catch (Exception ex)
             {
@@ -40,7 +48,7 @@ namespace Assignment_2
             try
             {
                 DataTable dt = dal.NumberOfRows();
-                messageDataGridView.DataSource = dt;
+               // messageDataGridView.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -61,6 +69,11 @@ namespace Assignment_2
         }
 
         private void messageDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
         {
 
         }
