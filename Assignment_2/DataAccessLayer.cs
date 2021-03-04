@@ -12,7 +12,7 @@ namespace Assignment_2
     public class DataAccessLayer
     {
         Errorhandler errorHandler = new Errorhandler();
-   
+
         private static string connectionString = "Server=uwdb18.srv.lu.se\\icssql001;Database=SYSA14_PK_ProgAssignment2;User=sysa14reader; Password=INFreader1";
 
         public List<string> ColumnNames()
@@ -36,7 +36,7 @@ namespace Assignment_2
                         while (dataReader.Read())
                         {
                             list.Add(dataReader["tableName"].ToString());
-                        
+
                         }
 
                         sqlConnection.Close();
@@ -61,68 +61,125 @@ namespace Assignment_2
         {
             List<string> columnNames = new List<string>();
 
-            using ( SqlConnection sqlConnection = new SqlConnection(connectionString))
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                foreach(string a in list)
+                foreach (string a in list)
                 {
                     SqlCommand sqlCommand1 = new SqlCommand("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + a + "'", sqlConnection);
-                    
-                       
-                        try
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+                        SqlDataReader dataReader = sqlCommand1.ExecuteReader();
+
+                        while (dataReader.Read())
                         {
-                            sqlConnection.Open();
-                            SqlDataReader dataReader = sqlCommand1.ExecuteReader();
+                            columnNames.Add(dataReader["COLUMN_NAME"].ToString());
 
-                                while (dataReader.Read())
-                                {
-                                    columnNames.Add(dataReader["COLUMN_NAME"].ToString());
-
-                                }
-
-                            sqlConnection.Close();
-                    
                         }
-                    
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
+
+                        sqlConnection.Close();
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
 
                 }
-    
+
                 return columnNames;
+            }
+
         }
 
-    }
-
-        public DataTable NumberOfRows()
+        public List<string> GetTables()
         {
-            DataTable datatable = new DataTable();
+
+            List<string> numberOfRows = new List<string>();
+
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
 
-                SqlCommand sqlCommand = new SqlCommand("SELECT COUNT (*) AS NumberOfRows FROM dbo.TablesOfInterest", sqlConnection);
-
-                try
+                using (SqlCommand sqlCommand = new SqlCommand("SELECT tableName FROM TablesOfInterest", sqlConnection))
                 {
-                sqlConnection.Open();
+                    try
+                    {
 
-                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                        sqlConnection.Open();
 
-                datatable.Load(dataReader);
-                return datatable;
+                        SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                        List<string> list = new List<string>();
+
+                        while (dataReader.Read())
+                        {
+                            list.Add(dataReader["tableName"].ToString());
+
+                        }
+
+                        sqlConnection.Close();
+                        numberOfRows = GetNumberOfRows(list);
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-
 
 
             }
 
+            return numberOfRows;
+
         }
+
+        public List<string> GetNumberOfRows(List<string> list)
+        {
+            List<string> numberOfRows = new List<string>();
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                foreach (string a in list)
+                {
+                    SqlCommand sqlCommand1 = new SqlCommand("SELECT COUNT(*) as NbrOfRows FROM " + a, sqlConnection);
+
+
+                    try
+                    {
+                        sqlConnection.Open();
+                        SqlDataReader dataReader = sqlCommand1.ExecuteReader();
+
+                        while (dataReader.Read())
+                        {
+                            numberOfRows.Add(a);
+                            numberOfRows.Add(dataReader["NbrOfRows"].ToString());
+
+                        }
+
+                        sqlConnection.Close();
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+
+                return numberOfRows;
+            }
+
+        }
+
+
+
     }
-}
+
+    }
+
+      

@@ -47,8 +47,16 @@ namespace Assignment_2
         {
             try
             {
-                DataTable dt = dal.NumberOfRows();
-               // messageDataGridView.DataSource = dt;
+                List<string> list = dal.GetTables();
+                string message = "";
+
+                foreach (string nbrOfRows in list)
+                {
+                    message += nbrOfRows + "\n";
+                }
+
+                textBox.Text = message;
+
             }
             catch (Exception ex)
             {
