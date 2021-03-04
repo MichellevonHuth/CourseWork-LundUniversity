@@ -11,6 +11,7 @@ public class Controller {
 
 	private Assignment5ServiceSoap proxy;
 	private ApplicationWindow aw;
+	Errorhandler errorhandler = new Errorhandler();
 
 
 	public ApplicationWindow getAw() {
@@ -32,9 +33,11 @@ public class Controller {
 	aw.getCreateBtn().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
+			aw.getErrorLbl().setText("");
+			
 			if(aw.getNumberTextField().getText().isEmpty() || aw.getFirstNameTextField().getText().isEmpty() || aw.getLastNameTextField().getText().isEmpty() || aw.getJobTitleTextField().getText().isEmpty()) {
 				
-				aw.getErrorLbl().setText("Please fill in all the fields");
+				aw.getErrorLbl().setText(errorhandler.emptyFields());
 			}
 			
 			else {
@@ -55,13 +58,12 @@ public class Controller {
 					aw.getJobTitleTextField().setText("");
 				}
 				else if(ifExist == false) {
-					aw.getErrorLbl().setText(number + " already exists, please use another employee number.");
+					aw.getErrorLbl().setText(errorhandler.alreadyExist(number));
 				}
 				
 				
-				} catch (RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				} catch (Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 			}
 			}
 		}
@@ -70,9 +72,11 @@ public class Controller {
 	aw.getUpdateBtn().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
+			aw.getErrorLbl().setText("");
+			
 			if(aw.getNumberTextField().getText().isEmpty() || aw.getFirstNameTextField().getText().isEmpty() || aw.getLastNameTextField().getText().isEmpty() || aw.getJobTitleTextField().getText().isEmpty()) {
 				
-				aw.getErrorLbl().setText("Please fill in all the fields");
+				aw.getErrorLbl().setText(errorhandler.emptyFields());
 			}
 			else {		
 			
@@ -89,15 +93,14 @@ public class Controller {
 						aw.getErrorLbl().setText("");
 					}
 					else {
-						aw.getErrorLbl().setText(number +  " does not exists, please create this employee number.");
+						aw.getErrorLbl().setText(errorhandler.doesNotExistPleaseCreate(number));
 						aw.getTextArea().setText("");
 					}
 					
 				
 				} 
-				catch (RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch (Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		}
@@ -106,8 +109,10 @@ public class Controller {
 	aw.getDeleteBtn().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
+			aw.getErrorLbl().setText("");
+			
 			if(aw.getNumberTextField().getText().isEmpty()) {
-				aw.getErrorLbl().setText("Please fill in the employee number!");
+				aw.getErrorLbl().setText(errorhandler.emptyFields());
 			}
 			
 			else {
@@ -121,14 +126,13 @@ public class Controller {
 					aw.getTextArea().setText(number +  " just got deleted from the database!");
 				}
 				else {
-					aw.getErrorLbl().setText(number +  " does not exists, please use another employee number.");
+					aw.getErrorLbl().setText(errorhandler.doesNotExist(number));
 					aw.getTextArea().setText("");
 				}
 					
 				} 
-				catch (RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				catch (Exception e1) {
+					aw.getErrorLbl().setText(errorhandler.handleException(e1));
 				}
 			}
 		
@@ -137,6 +141,7 @@ public class Controller {
 	
 	aw.getFindBtn().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			aw.getErrorLbl().setText("");
 			
 			try {
 				String[] employees = proxy.readEmployees();
@@ -153,9 +158,8 @@ public class Controller {
 				aw.getErrorLbl().setText("");
 				
 			}
-			catch (RemoteException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+			catch (Exception e1) {
+				aw.getErrorLbl().setText(errorhandler.handleException(e1));
 			}
 			
 		}
