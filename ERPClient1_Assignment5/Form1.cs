@@ -21,129 +21,161 @@ namespace ERPClient1_Assignment5
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-
-            if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "" )
-
+            try
             {
-                MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
-            }
+                if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "")
 
-            else
-            {
-                string no_ = textBoxNo_.Text;
-                string firstName = textBoxName.Text;
-                string lastName = textBoxLastName.Text;
-                string jobTitle = textBoxJobTitle.Text;
-
-                bool ifExists = proxy.CreateEmployee(no_, firstName, lastName, jobTitle);
-
-                if(ifExists == true)
                 {
-                    OutputTextBox.Text = no_ + " is now added in the database!";
+                    MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
                 }
 
                 else
                 {
-                    MessageBox.Show(ErrorHandler.Exists(no_));
+                    string no_ = textBoxNo_.Text;
+                    string firstName = textBoxName.Text;
+                    string lastName = textBoxLastName.Text;
+                    string jobTitle = textBoxJobTitle.Text;
+
+
+                    bool ifExists = proxy.CreateEmployee(no_, firstName, lastName, jobTitle);
+
+                    if (ifExists == true)
+                    {
+                        OutputTextBox.Text = no_ + " is now added in the database!";
+                    }
+
+                    else
+                    {
+                        MessageBox.Show(ErrorHandler.Exists(no_));
+                    }
+
+                    textBoxJobTitle.Clear();
+                    textBoxLastName.Clear();
+                    textBoxName.Clear();
+                    textBoxNo_.Clear();
                 }
-               
-                textBoxJobTitle.Clear();
-                textBoxLastName.Clear();
-                textBoxName.Clear();
-                textBoxNo_.Clear();
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ErrorHandler.HandleException(ex));
+            }
+
+
 
 
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-
-            if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "")
-
+            try
             {
+                if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "")
 
-                MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
-            }
-
-            else
-            {
-                string no_ = textBoxNo_.Text;
-                string firstName = textBoxName.Text;
-                string lastName = textBoxLastName.Text;
-                string jobTitle = textBoxJobTitle.Text;
-
-                bool ifExists = proxy.UpdateEmployee(no_, firstName, lastName, jobTitle);
-
-                if (ifExists == true)
                 {
-                    OutputTextBox.Text = no_ + " just got updated in the database!";
+
+                    MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
                 }
 
                 else
                 {
-                    MessageBox.Show(ErrorHandler.DoesNotExists(no_));
+                    string no_ = textBoxNo_.Text;
+                    string firstName = textBoxName.Text;
+                    string lastName = textBoxLastName.Text;
+                    string jobTitle = textBoxJobTitle.Text;
+
+                    bool ifExists = proxy.UpdateEmployee(no_, firstName, lastName, jobTitle);
+
+                    if (ifExists == true)
+                    {
+                        OutputTextBox.Text = no_ + " just got updated in the database!";
+                    }
+
+                    else
+                    {
+                        MessageBox.Show(ErrorHandler.DoesNotExists(no_));
+                    }
+
+
+
+                    textBoxJobTitle.Clear();
+                    textBoxLastName.Clear();
+                    textBoxName.Clear();
+                    textBoxNo_.Clear();
                 }
-
-               
-
-                textBoxJobTitle.Clear();
-                textBoxLastName.Clear();
-                textBoxName.Clear();
-                textBoxNo_.Clear();
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ErrorHandler.HandleException(ex));
+            }
+           
             
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
-            if (textBoxNo_.Text == "")
-
+            try
             {
-                MessageBox.Show("Please fill in the employee number!"); 
+                if (textBoxNo_.Text == "")
 
-            }
-
-            else
-            {
-                
-                string no_ = textBoxNo_.Text;
-                bool ifExists = proxy.DeleteEmployee(no_);
-
-                if (ifExists == true)
                 {
-                    OutputTextBox.Text = no_ + " just got deleted from the database!";
+                    MessageBox.Show("Please fill in the employee number!");
+
                 }
 
                 else
                 {
-                    MessageBox.Show(ErrorHandler.DoesNotExists(no_));
-                }
-            
-                textBoxJobTitle.Clear();
-                textBoxLastName.Clear();
-                textBoxName.Clear();
-                textBoxNo_.Clear();
 
+                    string no_ = textBoxNo_.Text;
+                    bool ifExists = proxy.DeleteEmployee(no_);
+
+                    if (ifExists == true)
+                    {
+                        OutputTextBox.Text = no_ + " just got deleted from the database!";
+                    }
+
+                    else
+                    {
+                        MessageBox.Show(ErrorHandler.DoesNotExists(no_));
+                    }
+
+                    textBoxJobTitle.Clear();
+                    textBoxLastName.Clear();
+                    textBoxName.Clear();
+                    textBoxNo_.Clear();
+
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ErrorHandler.HandleException(ex));
+            }
+          
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
         {
-           List<string> allEmployees = proxy.ReadEmployees();
-           string message = "";
-
-            {   
-                foreach(string a in allEmployees)
+            try
+            {
+                List<string> allEmployees = proxy.ReadEmployees();
+                string message = "";
 
                 {
-                    message += a;
-                    message += "\r\n"; 
-                }
+                    foreach (string a in allEmployees)
 
-                OutputTextBox.Text = message;
+                    {
+                        message += a;
+                        message += "\r\n";
+                    }
+
+                    OutputTextBox.Text = message;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ErrorHandler.HandleException(ex));
+            }
+          
         }
 
         private void OutputTextBox_TextChanged(object sender, EventArgs e)
