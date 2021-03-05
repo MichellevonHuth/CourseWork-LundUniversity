@@ -37,7 +37,7 @@
             // allColumnNameButton
             // 
             this.allColumnNameButton.AutoSize = true;
-            this.allColumnNameButton.Location = new System.Drawing.Point(43, 47);
+            this.allColumnNameButton.Location = new System.Drawing.Point(86, 32);
             this.allColumnNameButton.Name = "allColumnNameButton";
             this.allColumnNameButton.Size = new System.Drawing.Size(102, 23);
             this.allColumnNameButton.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // numberOfRowsButton
             // 
-            this.numberOfRowsButton.Location = new System.Drawing.Point(181, 47);
+            this.numberOfRowsButton.Location = new System.Drawing.Point(239, 32);
             this.numberOfRowsButton.Name = "numberOfRowsButton";
             this.numberOfRowsButton.Size = new System.Drawing.Size(102, 23);
             this.numberOfRowsButton.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // errorMessageLabel
             // 
-            this.errorMessageLabel.Location = new System.Drawing.Point(40, 266);
+            this.errorMessageLabel.Location = new System.Drawing.Point(72, 457);
             this.errorMessageLabel.Name = "errorMessageLabel";
             this.errorMessageLabel.Size = new System.Drawing.Size(243, 23);
             this.errorMessageLabel.TabIndex = 3;
@@ -66,10 +66,10 @@
             // textBox
             // 
             this.textBox.Enabled = false;
-            this.textBox.Location = new System.Drawing.Point(45, 92);
+            this.textBox.Location = new System.Drawing.Point(21, 73);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(238, 180);
+            this.textBox.Size = new System.Drawing.Size(380, 364);
             this.textBox.TabIndex = 4;
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 305);
+            this.ClientSize = new System.Drawing.Size(428, 489);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.errorMessageLabel);
             this.Controls.Add(this.numberOfRowsButton);
