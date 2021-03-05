@@ -159,7 +159,6 @@ namespace Assignment_2
                         }
 
                         sqlConnection.Close();
-
                     }
 
                     catch (Exception ex)
@@ -173,11 +172,8 @@ namespace Assignment_2
             }
 
         }
-
-
-
     }
 
-    }
+}
 
       
