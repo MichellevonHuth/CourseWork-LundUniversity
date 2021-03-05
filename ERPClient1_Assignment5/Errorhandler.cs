@@ -27,7 +27,10 @@ namespace ERPClient1_Assignment5
             {
                 errorMessage = "Wrong format on input value";
             }
-
+            else if (ex.GetType() == typeof(System.Net.WebException))
+            {
+                errorMessage = "Can not connect with web service";
+            }
             else if (ex.GetType() == typeof(SqlException))
             {
 
