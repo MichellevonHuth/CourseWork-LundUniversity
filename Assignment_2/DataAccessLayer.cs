@@ -46,15 +46,12 @@ namespace Assignment_2
 
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        throw ex;
                     }
                 }
-
-
             }
 
             return columnNames;
-
         }
 
         public List<string> GetColumns(List<string> list)
@@ -85,7 +82,7 @@ namespace Assignment_2
 
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        throw ex;
                     }
 
                 }
@@ -126,7 +123,7 @@ namespace Assignment_2
 
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        throw ex;
                     }
                 }
 
@@ -167,7 +164,7 @@ namespace Assignment_2
 
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                       throw ex;
                     }
 
                 }

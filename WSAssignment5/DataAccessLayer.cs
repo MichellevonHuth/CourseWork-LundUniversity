@@ -43,10 +43,6 @@ namespace WSAssignment5
         }
      
 
-  
-
-
-
         public void DeleteEmployee(string no_)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))

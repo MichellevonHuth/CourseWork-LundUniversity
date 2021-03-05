@@ -53,7 +53,6 @@ namespace ERPClient1_Assignment5
                 textBoxNo_.Clear();
             }
 
-
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -62,7 +61,6 @@ namespace ERPClient1_Assignment5
             if (textBoxNo_.Text == "" || textBoxName.Text == "" || textBoxLastName.Text == "" || textBoxJobTitle.Text == "")
 
             {
-
                 MessageBox.Show(ErrorHandler.ErrorMessageEmptyFields());
             }
 
@@ -84,8 +82,6 @@ namespace ERPClient1_Assignment5
                 {
                     MessageBox.Show(ErrorHandler.DoesNotExists(no_));
                 }
-
-               
 
                 textBoxJobTitle.Clear();
                 textBoxLastName.Clear();

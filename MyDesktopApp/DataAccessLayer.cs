@@ -41,7 +41,7 @@ namespace MyDesktopApp
 
             }
 
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -64,7 +64,7 @@ namespace MyDesktopApp
                     con.Close();
                 }
             }
-            catch (SystemException ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -93,7 +93,7 @@ namespace MyDesktopApp
                     con.Close();
                 }
             }
-            catch (SystemException ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
